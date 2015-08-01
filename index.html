@@ -1,103 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Just an app for scraping the events of the engadget website">
-    <meta name="author" content="akhil pandey">
-    <link rel="icon" href="img/favicon.ico">
+  	<meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 
-    <title>Home</title>
+    <title> blog | me </title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
 
     <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/icomoon.css" rel="stylesheet" >
+    <link href="assets/css/animate-custom.css" rel="stylesheet">
+
+
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
+
+    <script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/modernizr.custom.js"></script>
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
 
-  <br>
-    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="#">Home</a></li>
-            <li role="presentation" class="active"><a href="#">Blog</a></li>
-            <li role="presentation"><a href="#">AlphaStories</a></li>
-            <li role="presentation"><a href="about/">About</a></li>
-            <li role="presentation"><a href="http://github.com/AkhilHector">Code</a></li>
-            <li role="presentation"><a href="profile.html">Me</a></li>
-          </ul>
-        </nav>
-        <h3 class="text-muted"> Akhil Pandey </h3>
+
+  	<div id="navbar-main">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+			<li><a href="about/" class="smoothScroll"> About</a></li>
+			<li><a href="https://github.com/AkhilHector" class="smoothScroll">Code</a></li>
+			<li><a href="#profile" class="smoothScroll">Profile</a></li>
+			<li class="active"><a href="index.html" class="smoothScroll"> Blog</a></li>
+			<li><a href="index.html#contact" class="smoothScroll"> Contact</a></li>
+        </div>
       </div>
+    </div>
+    </div>
 
-      <div class="jumbotron">
-        <h1>Simple Web Scraping</h1>
-        <p class="lead">Using the package cheerio we can perform a handy DOM manipulations from scraping off content from a url to making changes in the DOM. Just running the app will let us know what 
-        are the latest trending news.</p>
-        <p><a class="btn btn-lg btn-success" href="https://github.com/AkhilHector" role="button">Fork it!</a></p>
-      </div>
+    	<div id="wrap">
 
-      <center><h3> Blog Posts </h3></center>
-      <center><h3 id="masthead"></h3></center>
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <div class="pane panel-info">
-    		  <div class="panel-heading">
-        			<h3 id="panel-title" class="panel-title one"> Node.Js <a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
-      		  </div>
-      		  <div class="panel-body">
-        		Node's ability to scale web apps and combining node with express to make minimal web apps.
-      		  </div>
-    	  </div>  
-        </div>
+		<div class="container" id="about" name="about">
+			<div class="row white">
+			<br>
+				<h1 class="centered"> Blog Posts </h1>
+				<hr>
 
-        <div class="col-lg-6">
-          <div class="pane panel-success">
-    		<div class="panel-heading">
-        		<h3 id="panel-title" class="panel-title two"> MOZINTF - 2015<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
-      		</div>
-      		<div class="panel-body">
-        		The experience i had at Mozilla India task force meetup in Bangalore, India.
-      		</div>
-    	  </div>  
-        </div>
-	  </div> 
+				<div class="col-lg-4">
+					<p>Node.Js and its scalability in present world
+					 Scenario.</p>
+					 <img src="assets/img/nodejs-logo.png">
+					 <center>
+					 <p><a href="#" class="btn btn-info">Read More</a></p>
+					 </center>
+				</div>
+				<div class="col-lg-4">
+					<p>My Experience at the Mozilla India Task Force
+					 Meetup Bangalore,2015.</p>
+					 <img src="assets/img/moz.jpg">
+					 <center>
+					 <p><a href="#" class="btn btn-info">Read More</a></p>
+					 </center>
+				</div>
+				<div class="col-lg-4">
+					<p>My Experience with Data Analytics and Data
+					Visualization.</p>
+					<img src="assets/img/Data.png">
+					<center>
+					<p><a href="#" class="btn btn-info">Coming up..</a></p>
+					</center>
+				</div>
+			</div>
+		</div>
 
-	  <div class="row marketing">
-        <div class="col-lg-6">
-          <div class="pane panel-warning">
-    		  <div class="panel-heading">
-        			<h3 id="panel-title" class="panel-title three"> Data the future, the oil<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
-      		  </div>
-      		  <div class="panel-body">
-        		I tried my hand out for visualizing data sets with d3.js and my experience with Data Analytics and Data Visualization.
-      		  </div>
-    	  </div>  
-        </div>
+		 <div id="push"></div>
+    </div>
 
-        <div class="col-lg-6">
-          <div class="pane panel-danger">
-    		<div class="panel-heading">
-        		<h3 id="panel-title" class="panel-title four"> Rust Programming<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
-      		</div>
-      		<div class="panel-body">
-        		Coming Soon !
-      		</div>
-    	  </div>  
-        </div>
-	  </div>    
 
-      <footer class="footer">
-        <p>&copy; Akhil Pandey 2015</p>
-      </footer>
 
-    </div> <!-- /container -->
 
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
+
+		<div id="footer">
+			<div class="container">
+				<h4>Presented by <a href="http://facebook.com/akhilhector">Akhil Pandey</a> &copy; 2015.</h4>
+			</div>
+		</div>
+
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/retina.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
+	<script type="text/javascript" src="assets/js/jquery-func.js"></script>
   </body>
 </html>
-
