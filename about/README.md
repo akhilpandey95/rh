@@ -1,4 +1,6 @@
-Projects,Code,Blog
+About Page
 ==================
+
+http://akhilhector.com/about
 
 - Akhil Pandey

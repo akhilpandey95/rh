@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>blog | Akhil</title>
+
+	<link rel="stylesheet" type="text/css" href="trash/files/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="react/theme.css">
+	<link rel="stylesheet" type="text/css" href="react/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="react/icomoon.css">
+
+</head>
+
+<body id="blog">
+	<header class="navbar navbar-inverse normal" role="banner">
+  		<div class="container">
+    		<div class="navbar-header">
+		      	<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+		      	</button>
+      			<a href="http://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
+    		</div>
+    		<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      			<ul class="nav navbar-nav">
+        			<li><a href="http://akhilhector.com/about">About</a></li>
+        			<li><a href="https://github.com/AkhilHector">Code</a></li>
+        			<li><a href="http://blog.akhilhector.com/">Blog</a></li>
+        			<li><a href="http://akhilhector.com/photos">Photos</a></li>
+      			</ul>
+    		</nav>
+  		</div>
+	</header>
+
+	
+					<div class="pages">
+						<ul class="pagination">
+						  	<li><a href="#">«</a></li>
+						  	<li class="active"><a href="#">1</a></li>
+						  	<li><a href="#">2</a></li>
+						  	<li><a href="#">»</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-3 sidebar">
+					<div class="search">
+						<form>
+							<span class="icomoon-search"></span>
+							<input name="q" placeholder="Search on blog..." type="text">
+						</form>
+					</div>
+					<div class="best-hits">
+						<strong>Check out our best hits:</strong>
+						<a href="#">Life at Zero | Lambasingi</a>
+						<a href="#">Node.Js and Scalability of Node Applications</a>
+						<a href="#">My Experience at the Mozilla India Task Force Meetup Bangalore,2015.</a>
+						<a href="#">pclub-GU, The Programming Club of GITAM Univeristy</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="footer">
+		<div class="container">
+			<center>
+			<h4><span style="color:orange;">Presented by </span><a href="http://facebook.com/akhilhector">Akhil Pandey</a> <span style="color:red;" > &copy; 2015.</span></h4>
+			</center>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function () {
+			$(".search input:text").focus(function () {
+				$(".icomoon-search").addClass("active");
+			});
+			$(".search input:text").blur(function () {
+				$(".icomoon-search").removeClass("active");
+			});
+		});
+	</script>
+
+
+	<script src="react/jquery.js"></script>
+	<script src="react/bootstrap.js"></script>
+	<script src="react/theme.js"></script>
+
+</body>
+</html>
