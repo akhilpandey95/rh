@@ -7,6 +7,6 @@ Ah this website is just an attempt to post what i feel apart from code experimen
 * Blog Posts
 * Photographs
 
-#### Note : 
+#### Note :
 
 Essentially blog.akhilhector.com is hosted on gh-pages(Github pages).The main url is hosted elsewhere :P.
