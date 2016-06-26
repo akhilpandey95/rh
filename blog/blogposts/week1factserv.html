@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>blog | hector</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
+
+</head>
+
+<body id="blogpost">
+	<header class="navbar navbar-inverse normal" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="http://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../../about/index.html">About</a></li>
+					<li><a href="https://github.com/AkhilHector">Code</a></li>
+					<li><a href="../index.html">Blog</a></li>
+					<li><a href="http://akhilhector.com/photos">Photos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="blogpost-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-pic">
+						<img src="../img/week1gsoc1.jpg" class="img-responsive" alt="blogpost">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 post">
+					<div class="title">
+						Factories, Services and Controllers | GSOC 2016 | FOSSASIA
+					</div>
+					<div class="author">
+						<img src="../img/dp.jpeg" class="avatar" alt="author">
+						By Akhil Pandey, May 27, 2016
+					</div>
+					<div class="content">
+						<p>
+							The first week of GSOC involved with dealing work with the workarea. So before
+							I start the blog post, it is better if you know more about what sTeam web interface
+							is and what are the capabilites of sTeam. Here is a previous blog post of mine explaining
+							about sTeam. <a href="../steam.gsoc.html">Click Here</a>
+							<br>
+							As mentioned in my previous article the sTeam web interface has two important controllers.
+							<ul>
+								<code>
+									<li>workareaCtrl.js</li>
+									<li>workspaceCtrl.js</li>
+								</code>
+							</ul>
+						</p>
+						<p>
+							If you want to see the code have a look at the repository all by yourself in order to better
+							understand the concepts which are about to be detailed now. <a href="http://github.com/AkhilHector/sTeam-web-UI/">Link.</a>
+						</p>
+						<br>
+						<b>So what is a Controller ?</b>
+						<p>
+							It is simply a a constructor function which is instantiated by AngularJS when it encounters
+							<code>ng-controller</code> directive in HTML.
+						</p>
+						<br>
+						<b>So what is a Factory ?</b>
+						<p>
+							In Angular Js a factory is an injectable type which helps us in encapsulating repetitive logic.
+						</p>
+						<b>How are they helpful for sTeam web interface ?</b>
+						<p>
+							So as my first week of work started of for GSOC, the core concentration has been on primarily
+							working with the controllers of the workarea and integrating them with the respective views.
+							In an attempt i started of with adding a :
+							<ul>
+								<code>
+									<li>commentsCtrl</li> : Used for adding comments to the web interface
+									<li>workspaceeditorCtrl</li> : Used for integrating textAngular to the web interface
+								</code>
+							</ul>
+						</p>
+						<p>
+							Things apart, in a broader aspect here what should be understood is about how
+							things should be implemented using controllers, factories and services. Let me illustrate
+							how it should be properly done in angular js.
+							<br>
+							<br>
+							<b>To start off</b>
+						</p>
+						<b>How are controllers really helpfull in Angular and how should they be used ?</b>
+						<p>
+							Generally we should understand that controllers responsible for augmenting the scope which is done by
+							attaching models and functions to it that are subsequently accessed in the view. There are some things
+							which are to be understood while writing controllers. Lets go one by one,
+							<ul>
+								<li>A Straight "No" for all the DOM manipulation. This must be achieved only with directives</li>
+								<li>If you are having a situation where you are about to write repeatable code, then don't do it
+								with controllers, instead encapsulate them in services.</li>
+								<li>If you are trying to expose the whole controller instance then it isn't a good idea. In fact the
+									scope object exists in order to clear separation of concern between controller and view .</li>
+							</ul>
+						</p>
+						<b>So what about Factories ?</b>
+						<blockquote>
+							<p>
+								“Services, factories, and providers are all injectable types. We must understand that
+								Factories in angular Js are just another example for an injectable type. It looks almost
+								the same as Service but when it comes to implementation you can decide and determine
+								what to instantiate and return from the factory”
+							</p>
+							<p class="quote-author">
+								<span class="color-orange"><small>scribes by hector | Akhil Pandey</small></span>
+							</p>
+						</blockquote>
+						<p>
+							Let me give you a small example before i wrap up, Have a look at the below
+							image,
+						</p>
+						<p>
+							<img src="../img/week1gsoc2.jpg">
+						</p>
+						<p>
+							Observe <code>broadcastItem, prepForBroadcast</code>. If you look keenly essentially what
+							i am doing there is creating an injectable type which enables me to change the message that
+							which has to be printed depending on the broadcast item.
+						</p>
+						<p>
+							One more key thing about factories is that a factory can also depend on other services or factories.
+							Also there is one more point to grab which is we are returning an object from the factory function,
+							so we absolutely have the freedom to determine what should be the object which is to be returned,
+							going further we can base it on certain parameters as well.
+						</p>
+						<p>
+							Thats it folks, <br>
+							<code>Happy Hacking !!</code>
+						</p>
+							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
+					</div>
+					<div class="other-posts">
+						<a href="../index.html" class="prev">
+							← Go to blog
+						</a>
+						<a href="#" class="next pull-right">
+							Next Article→
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 ">
+				</div>
+				<div class="col-md-3 copyright">
+					Weblog of Akhil Pandey | 2016
+				</div>
+				<div class="col-md-6 menu">
+					<ul>
+						<li>
+							<a href="http://akhilhector.com/about">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/AkhilHector">Code</a>
+						</li>
+						<li class="active">
+							<a href="http://akhilhector.com/blog">Blog</a>
+						</li>
+						<li>
+							<a href="http://akhilhector.com/photos">Photos</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/theme.js"></script>
+
+</body></html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>blog | hector</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
+
+</head>
+
+<body id="blogpost">
+	<header class="navbar navbar-inverse normal" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="http://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../../about/index.html">About</a></li>
+					<li><a href="https://github.com/AkhilHector">Code</a></li>
+					<li><a href="../index.html">Blog</a></li>
+					<li><a href="http://akhilhector.com/photos">Photos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="blogpost-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-pic">
+						<img src="../img/week3gsoc1.jpg" class="img-responsive" alt="blogpost">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 post">
+					<div class="title">
+						The beauty of Directives, Transclusion | GSOC 2016 | FOSSASIA
+					</div>
+					<div class="author">
+						<img src="../img/dp.jpeg" class="avatar" alt="author">
+						By Akhil Pandey, June 13, 2016
+					</div>
+					<div class="content">
+						<p>
+							To be honest in Angular directives are nothing but DOM elements simply put on steroids. Now if you
+							add transclusion to it literally the possibilty of having With that said
+							before diving into what directives are and how cool are they, let us basically understand what makes
+							directives in angular so powerful.
+						</p>
+						<p>
+							Some of the well known directives which are used regularly are :
+							<ul>
+								<li><code>ng-src</code></li>
+								<li><code>ng-show</code></li>
+								<li><code>ng-hide</code></li>
+								<li><code>ng-model</code></li>
+								<li><code>ng-repeat</code></li>
+							</ul>
+						</p>
+						<b>Custom Directives and the benifit of creating reusable components</b>
+						<p>
+							We often tend to waste a lot of time and energy in writing code which is already/previously written and
+							components which are already built. But what if you could write them only once and reuse them as
+							many times as possible ?<br>
+							<b>ANS</b> : "Directives"<br>
+							You can create truly reusable components with directives, and the approach to build
+							custom components is definitely neater and more intuitive.
+						</p>
+						<br>
+						<b>Where do Custom Directives get implemented ?</b>
+						<p>
+							<ul>
+								<li><code>elements</code></li>
+								<li><code>attributes</code></li>
+								<li><code>classes</code></li>
+							</ul>
+						</p>
+						<b>Scope of Directives</b>
+						<p>
+							After we initialize a directive we can observe that it gets a parent scope by default. In
+							the best interests of the application you write you won't really want that to happen. So
+							in order to freely modify the properties of the directive we expose the parent's controller
+							scope to the directives.In some cases your directive may want to add several properties and
+							functions to the scope that are for internal use only.<br><br>
+							<b>Example :</b> If you have a directive that deals with comments(just like my sTeam web interface),
+							you may want to set some internal variable to show or hide some of its specific sections. If we set
+							these models to the parent's scope we would pollute it.
+						</p>
+						<br>
+						<b>Without polluting, is there any option ?</b>
+						<p>
+							Absolutely there are two options,
+							<ul>
+								<li>Use a <code>child</code> scope</li>
+								<li>Use an <code>isolated</code> scope</li>
+							</ul>
+							If we use a child scope then the child scope prototypically inherits the parent's scope.
+							If we use an isolated scope then its all on its own, by not inherting its parent's scope
+						</p>
+						<b>Transclusion</b>
+						<p>
+							Transclusion is a feature that enables us to wrap a directive around arbitrary content.
+							We can extract and compile it against the correct scope later, and eventually place
+							it at the specified position in the directive template. If you set transclude:true in
+							the directive definition, a new transcluded scope will be created which prototypically
+							inherits from the parent scope. If you want your directive with isolated scope to
+							contain an arbitrary piece of content and execute it against the parent scope, tran-
+							sclusion can be used.
+						<p>
+							Example :
+						</p>
+						<p>
+							<img src="../img/week3gsoc2.jpg">
+						</p>
+						<p>
+							See the above snippet, here ng-transclude says where to put the transcluded content. In this case the DOM
+							content Hello {{name}} is extracted and put inside div ng-tran-
+							sclude /div> . The important point to remember is that the expression {{name}}
+							interpolates against the property defined in the parent scope rather than the isolated
+							scope.
+						</p>
+						<p>
+							Thats it folks, <br>
+							<code>Happy Hacking !!</code>
+						</p>
+							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
+					</div>
+					<div class="other-posts">
+						<a href="../index.html" class="prev">
+							← Go to blog
+						</a>
+						<a href="#" class="next pull-right">
+							Next Article→
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 ">
+				</div>
+				<div class="col-md-3 copyright">
+					Weblog of Akhil Pandey | 2016
+				</div>
+				<div class="col-md-6 menu">
+					<ul>
+						<li>
+							<a href="http://akhilhector.com/about">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/AkhilHector">Code</a>
+						</li>
+						<li class="active">
+							<a href="http://akhilhector.com/blog">Blog</a>
+						</li>
+						<li>
+							<a href="http://akhilhector.com/photos">Photos</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/theme.js"></script>
+
+</body></html>
