@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>blog | hector</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
+
+</head>
+
+<body id="blogpost">
+	<header class="navbar navbar-inverse normal" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="http://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../../about/index.html">About</a></li>
+					<li><a href="https://github.com/AkhilHector">Code</a></li>
+					<li><a href="../index.html">Blog</a></li>
+					<li><a href="http://akhilhector.com/photos">Photos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="blogpost-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-pic">
+						<img src="../img/week5gsoc1.jpg" class="img-responsive" alt="blogpost">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 post">
+					<div class="title">
+						The three <code>C's</code> of Javasript | GSOC 2016 | FOSSASIA
+					</div>
+					<div class="author">
+						<img src="../img/dp.jpeg" class="avatar" alt="author">
+						By Akhil Pandey, June 28, 2016
+					</div>
+					<div class="content">
+						<p>
+							You might be wondering what the three C's are :
+							<br>
+							<ul>
+								<li><code>Currying</code></li>
+								<li><code>Closures</code></li>
+								<li><code>Callbacks</code></li>
+							</ul>
+						</p>
+						<br>
+						<b>Ok what are those ?</b>
+						<p>
+							Before i start, let me tell you that in Javascript Functions are Objects. So every object in Javascript, be it
+							Number, String, Array; Every Object in javascript has a prototype object. For instance if the object is declared
+							using an <code>object</code> literal then it has access to <code>Object.prototype</code>, Similarly all the arrays
+							so declared have access to the <code>Array.prototype</code>.
+						</p>
+						<p>
+							<img src="../img/week2gsoc2.jpg" width="650" height="400">
+						</p>
+						<br>
+						<b>So how is this better than callbacks ?</b>
+						<p>
+							Generally if you are using callbacks in your codebase then at some point of time either for i/o's or file buffers or
+							something might come in your way and makes you write nested callbacks. Writing nested callbacks is difficult and an
+							alternative to that is <code>promise</code>
+						</p>
+						<p>
+							<img src="../img/week2gsoc3.jpg" width="400" height="300">
+						</p>
+						<b>REST API's, promises what are you about to explain ?</b>
+						<p>
+							Angular has this beautiful service called <code>$q</code> which is helpful for creating promises and using them in
+							your angular applications. Generally many people have concerns over <code>$q</code> but <code>$q</code> is tightly
+							integrated with the scope life cycle. So be it any task it contains all the necessary features needed by most of the
+							heavy duty asynchronous tasks.
+						</p>
+						<p>
+							Now to start off angular can be really powerfull with the <code>$http</code> Service provided the fact that it has
+							immense potential in allowing us to create heavy duty REST ful API's, CRUD operation based web applications etc. So
+							let us understand the $http service first before using promises for creating a REST ful API.
+							<br>
+							<hr>
+							<code>
+								$http<br>
+								&nbsp;  |_____ .success()<br>
+								         &nbsp;&nbsp;&nbsp; <small>For a success(), callback is called asynchronously when the request completes and the
+								  response arrives from the server</small>  <br>
+								&nbsp;  |_____ .error()<br>
+										&nbsp;&nbsp;&nbsp; <small>For an error(), the error callback is fired</small>
+							</code>
+							<hr>
+							Callbacks which are accpeted by above methods are :
+							<ul>
+								<li>data: It is a response obtained from server.</li>
+								<li>status: HTTP status codes 100x, 200x, 300x, 400x, etc which returned from server.</li>
+								<li>config: Object used for generating the request.</li>
+								<li>headers: Headers sent by the server.</li>
+								<li>statusText: HTTP status text of the status code.</li>
+							</ul>
+						</p>
+						<b>Promise Chaining</b>
+						<p>
+							Chaining is one of the most important aspects of promises. Here the basic idea is that promises can be composed
+							through chaining. This means you can trigger a specified task only after previous promise has been resolved.
+						</p>
+						<b>Handling errors by designing a promise that always rejects</b>
+						<p>No API is complete without writing a handler or a middleware that takes care of all the requests which are generally
+						errored. Designing this will be useful if we want to tell a user about the occurrence of an error in terms of a promise rather than
+						a simple value.</p>
+						<p>
+							<img src="../img/week2gsoc4.jpg">
+						</p>
+						<p>
+							NOTE : Generally while using <code>$http</code> Service there are somethings which one should have knowledge
+							of, If we happen to send a JS object as POST data in a POST/PUT request, it's serialized to JSON before getting sent.
+							Similarly, if the server responds with a JSON string it's parsed into a JavaScript object and passed to the success callback attached to the promise.
+						</p>
+						<p>
+							Thats it folks, <br>
+							<code>Happy Hacking !!</code>
+						</p>
+							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
+					</div>
+					<div class="other-posts">
+						<a href="../index.html" class="prev">
+							← Go to blog
+						</a>
+						<a href="#" class="next pull-right">
+							Next Article→
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 ">
+				</div>
+				<div class="col-md-3 copyright">
+					Weblog of Akhil Pandey | 2016
+				</div>
+				<div class="col-md-6 menu">
+					<ul>
+						<li>
+							<a href="http://akhilhector.com/about">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/AkhilHector">Code</a>
+						</li>
+						<li class="active">
+							<a href="http://akhilhector.com/blog">Blog</a>
+						</li>
+						<li>
+							<a href="http://akhilhector.com/photos">Photos</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/theme.js"></script>
+
+</body></html>
