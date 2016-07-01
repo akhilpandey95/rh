@@ -71,68 +71,111 @@
 							Before i start, let me tell you that in Javascript Functions are Objects. So every object in Javascript, be it
 							Number, String, Array; Every Object in javascript has a prototype object. For instance if the object is declared
 							using an <code>object</code> literal then it has access to <code>Object.prototype</code>, Similarly all the arrays
-							so declared have access to the <code>Array.prototype</code>.
-						</p>
-						<p>
-							<img src="../img/week2gsoc2.jpg" width="650" height="400">
+							so declared have access to the <code>Array.prototype</code>. So since functions are objects, they can be used like
+							any other value. They can be stored in variables, objects, and arrays. They can also be passed as arguments to functions,
+							and donot forget that <b>functions can be returned from functions</b>.
 						</p>
 						<br>
-						<b>So how is this better than callbacks ?</b>
+						<b>Currying :</b>
 						<p>
-							Generally if you are using callbacks in your codebase then at some point of time either for i/o's or file buffers or
-							something might come in your way and makes you write nested callbacks. Writing nested callbacks is difficult and an
-							alternative to that is <code>promise</code>
-						</p>
-						<p>
-							<img src="../img/week2gsoc3.jpg" width="400" height="300">
-						</p>
-						<b>REST API's, promises what are you about to explain ?</b>
-						<p>
-							Angular has this beautiful service called <code>$q</code> which is helpful for creating promises and using them in
-							your angular applications. Generally many people have concerns over <code>$q</code> but <code>$q</code> is tightly
-							integrated with the scope life cycle. So be it any task it contains all the necessary features needed by most of the
-							heavy duty asynchronous tasks.
-						</p>
-						<p>
-							Now to start off angular can be really powerfull with the <code>$http</code> Service provided the fact that it has
-							immense potential in allowing us to create heavy duty REST ful API's, CRUD operation based web applications etc. So
-							let us understand the $http service first before using promises for creating a REST ful API.
-							<br>
-							<hr>
-							<code>
-								$http<br>
-								&nbsp;  |_____ .success()<br>
-								         &nbsp;&nbsp;&nbsp; <small>For a success(), callback is called asynchronously when the request completes and the
-								  response arrives from the server</small>  <br>
-								&nbsp;  |_____ .error()<br>
-										&nbsp;&nbsp;&nbsp; <small>For an error(), the error callback is fired</small>
+							In Javascript if one wants to partially evaluate functions then one can take advantage of a concept called function
+							currying. Currying allows us to produce a new function by combining a function and an argument. For example let us
+							consider writing an add function, : <br><br>
+							<code style="color: #3f3f3f">
+								function add(foo, bar) { <br>
+									&nbsp;&nbsp;&nbsp;&nbsp;if(arguments.length === 1) { <br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return function (boo) { <br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		return foo + boo; <br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	} <br>
+									&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+									&nbsp;&nbsp;&nbsp;&nbsp;return foo + bar; <br>
+								} <br>
 							</code>
-							<hr>
-							Callbacks which are accpeted by above methods are :
-							<ul>
-								<li>data: It is a response obtained from server.</li>
-								<li>status: HTTP status codes 100x, 200x, 300x, 400x, etc which returned from server.</li>
-								<li>config: Object used for generating the request.</li>
-								<li>headers: Headers sent by the server.</li>
-								<li>statusText: HTTP status text of the status code.</li>
-							</ul>
+							So for the above code, <br>
+							<code>add(12, 13);</code> // gives 25<br>
+							<code>add(12)(13);</code> // gives 25<br><br>
+							The curry method works by creating a closure that holds that original function and
+							the arguments to curry. It returns a function that, when invoked, returns the result of
+							calling that original function, passing it all of the arguments from the invocation of
+							curry and the current invocation
 						</p>
-						<b>Promise Chaining</b>
+						<br>
+						<b>Closures :</b>
 						<p>
-							Chaining is one of the most important aspects of promises. Here the basic idea is that promises can be composed
-							through chaining. This means you can trigger a specified task only after previous promise has been resolved.
+							Simply put, a closure is an inner function that has access to the outer (enclosing) function’s variables scope chain.
+							Except the parameters and variables that which are defined using <code>this</code> and <code>arguments</code>
+							all, the inner functions have access to all the parameters and variables of the function in which those are defined.
+							<br><br>
+							<code style="color: #3f3f3f">
+								var a = 0;<br>
+								function counter() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;var i = 2;<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;return i*i;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+								function counter1() {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;return a+= 1;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+							<br>
+							// this wont work as part of Js closures<br>
+							function counter_foo() {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;var a = 0;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;a += 1;<br>
+							}<br>
+							<br>
+							// this also wont work as part of Js closures<br>
+							function counter_bar() {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;var c = 0;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;function go() { c+= 1;}<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;go();<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;return counter;<br>
+							}
+							<br>
+							// this will work as part of Js closures<br>
+							var counter_closure = (function () {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;var incr;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;return function() {return incr+= 1;}<br>
+						})();<br>
+						<br>
+						show(counter1());<br>
+						show(counter1());<br>
+						show(counter1()); // since we are added the counter three times the value of a is set to 3.<br>
+						show(counter_foo());<br>
+						show(counter_foo());<br>
+						show(counter_foo()); // this is similar to the above but doesnot set the value of a to 3, but returns undefined.<br>
+						show(counter_bar());<br>
+						show(counter_bar());<br>
+						show(counter_bar()); // Neither this works which will always set the value to 1<br>
+						show(counter_closure());<br>
+						show(counter_closure());<br>
+						show(counter_closure()); // Now this is called closures implementation in Js<br>
+					</code>
+							<br><br>
+							Function Closures in Javascript is all about how are the variables being treated and
+							referred to in the local or global scope. In Js variables can be given :
+							<code>'local scope'</code>
+							<code>'global scope'</code>
+							There is no inbuilt concept for something called private variables, so when there is
+							a requirement for such a scenario Closures are written in Js in order to make scope
+							for variables that are private in scope.
+							Observing the functions 'counter1()', 'counter_foo()' and 'counter_bar()' there is a
+							similarity that can be observed, Basically we can understand that closures are nothing
+							but self invoking functions in Js. Observe the example 'counter_closure()' where in we
+							are calling the function thrice and hoping to increment the functional value each time
+							when we call the function. So this self invoking function runs only once but it increments
+							the value each time it is called. The scope of the variable is protected by the anonymous
+							return function making us assume that this can be called implementation of private
+							variables in Js.
 						</p>
-						<b>Handling errors by designing a promise that always rejects</b>
-						<p>No API is complete without writing a handler or a middleware that takes care of all the requests which are generally
-						errored. Designing this will be useful if we want to tell a user about the occurrence of an error in terms of a promise rather than
-						a simple value.</p>
+						<br>
+						<b>Callbacks :</b>
 						<p>
-							<img src="../img/week2gsoc4.jpg">
-						</p>
-						<p>
-							NOTE : Generally while using <code>$http</code> Service there are somethings which one should have knowledge
-							of, If we happen to send a JS object as POST data in a POST/PUT request, it's serialized to JSON before getting sent.
-							Similarly, if the server responds with a JSON string it's parsed into a JavaScript object and passed to the success callback attached to the promise.
+							A callback function is a function that is passed to another function as a parameter and giving
+							the provision for the function to “call us back” later. Since the callback function is just a normal
+							function when it is executed, we can pass parameters to it. We can pass any of the containing function’s
+							properties (or global properties) as parameters to the callback function. Let us look at an example : <br>
+							<code>
+							</code>
 						</p>
 						<p>
 							Thats it folks, <br>
