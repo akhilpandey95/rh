@@ -92,8 +92,8 @@
 								} <br>
 							</code>
 							So for the above code, <br>
-							<code>add(12, 13);</code> // gives 25<br>
-							<code>add(12)(13);</code> // gives 25<br><br>
+							<code style="color: green">add(12, 13);</code> // gives 25<br>
+							<code style="color: green">add(12)(13);</code> // gives 25<br><br>
 							The curry method works by creating a closure that holds that original function and
 							the arguments to curry. It returns a function that, when invoked, returns the result of
 							calling that original function, passing it all of the arguments from the invocation of
@@ -137,6 +137,8 @@
 							&nbsp;&nbsp;&nbsp;&nbsp;return function() {return incr+= 1;}<br>
 						})();<br>
 						<br>
+						</code>
+						<code style="color: green">
 						show(counter1());<br>
 						show(counter1());<br>
 						show(counter1()); // since we are added the counter three times the value of a is set to 3.<br>
@@ -173,9 +175,27 @@
 							A callback function is a function that is passed to another function as a parameter and giving
 							the provision for the function to “call us back” later. Since the callback function is just a normal
 							function when it is executed, we can pass parameters to it. We can pass any of the containing function’s
-							properties (or global properties) as parameters to the callback function. Let us look at an example : <br>
-							<code>
+							properties (or global properties) as parameters to the callback function. Let us look at an example :
+							<br><br>
+							<code style="color: #3f3f3f">
+							function manipulate(foo, bar) {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;console.log("Do you know that " + foo + " is better than " + bar);<br>
+							}<br>
+
+							function useIt(boo, callback) {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;var t1 = boo.slice(1,5);<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;var t2 = boo.slice(31,36);<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;callback(t2, t1);<br>
+							}<br>
 							</code>
+							The above code can be used like this :
+							<br>
+							<code style="color: green">
+								var str = "Akhil is going to wrestle with hector";<br>
+								useIt(str, manipulate); // Gives : Do you know that Akhil is better than hector.
+							</code>
+							<br>
+							So that is how we can implement Currying, Closures and Callbacks in Javascript.
 						</p>
 						<p>
 							Thats it folks, <br>
