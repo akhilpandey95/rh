@@ -57,6 +57,89 @@
 					</div>
 					<div class="content">
 
+						<p>The recent developments with the	 <a href="https://github.com/AkhilHector/sTeam-web-UI">sTeam web interface</a>, involved me writing drag and drop directives for giving scope to drag/move
+						movements in the workarea and the workspace. The concept here is
+						providing user with the feasibility to arrange rooms/documents
+						swiftly and easily.</p>
+
+						<p>
+						<b>The idea behind it :</b>
+						<br>
+						So, in <code>sTeam-web-UI</code> the concept of rooms/documents is implemented using the <code><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/controllers/workareaCtrl.js">workareaCtrl</a></code>. After creating a document/room the created objects appear
+						in the workarea. So in the future, the items in the work area can be
+						sorted and searched for; But adding the scope for drag movements to the web interface makes the the UI/UX to be commendable.
+						</p>
+
+						<p>
+						<b>Implementation strategy :</b>
+						<br>
+						Firstly we need to create directives in angular that can support
+						the actions which when triggered in the front end must result in relative change. So in order to link those actions we must write directives which properly catch the emitted events.
+						<ul>
+							<li><code><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/directives/dragObj.js">dragObj</a></code> // The drag directive</li>
+							<li><code><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/directives/dropObj.js">dropObj</a></code> // The drop directive</li>
+						</ul>
+						</p>
+
+						<p>
+						<b>The <code>drag</code> Objective</b>
+						<br>
+						The way around for implementing the drag objective is to get the element which is selected for the drag option and then emit the event in order to complete the drag action. So we have to go the traditional way for working our way around with this.
+						<br>
+						<br>
+						<code>
+							// get the element first<br>
+							angular.element(element).attr("isDraggable": true)<br>
+							var id = angular.element(element).attr("id")<br>
+
+							if(!id) {<br>
+							id = uuid.create()<br>
+							angular.element(element).attr("id", id)<br>
+						}<br>
+						</code>
+						<br>
+						Now we emit the events.
+						<br>
+						<br>
+						<code>
+						// emit events <br>
+							element.bind("startDrag", function (send) {<br>
+							data.originalEvent.dataTransfer.setData('text', id);<br>
+							console.log("Starting to drag")<br>
+							$rootScope.emit("STEAM-DRAG-STRT")<br>
+						});<br>
+
+						element.bind("stopDrag", function (send) {<br>
+						console.log('Stopping to drag')<br>
+						$rootScope.emit("STEAM-DRAG-STOP")<br>
+					});<br>
+						</code>
+						<br>
+						If we observe the element capturing part, we are just taking the id's of the elements which are in the DOM and then we bind the respective element with an action, be it <b>startDrag</b> or <b>stopDrag</b> the idea here is to store the id of the element and bind respective action/event to it.
+						</p>
+
+						<p>
+						<b>The <code>drop</code> Objective</b>
+						<br>
+						Before we understand how the drop directive is written there has to be some clarity given on how should we go ahead in writing the directive. The drag and drop directives which when implemented should be carefully monitered since the entire process is interlinked. So the elements must be properly caught and the respective events must be properly binded. While testing we should check if the events are emitting proper actions to the elements or not.
+						<br>
+						<br>
+						<code>
+							$rootScope.$on("STEAM-DRAG-STRT", function () {<br>
+							var domelm = document.getElementById(id);<br>
+							angular.element(domelm).addClass("drag-target");<br>
+						});<br>
+
+						$rootScope.$on("STEAM-DRAG-STOP", function () {<br>
+						var domelm = document.getElementById(id);<br>
+						angular.element(domelm).removeClass("drag-target");<br>
+						angular.element(domelm).removeClass("drag-over");<br>
+					});<br>
+						</code>
+						</p>
+
+						<p>There are alternatives to replicate this mechanism in jQuery and also plain Javascript. But the efficacy of the implementation comes to play only when the DOM can be played with easily.</p>
+
 						<p>
 							Thats it folks, <br>
 							<code>Happy Hacking !!</code>
