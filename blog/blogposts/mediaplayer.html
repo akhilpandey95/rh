@@ -73,11 +73,83 @@
 
 						<p>
 							<b>Using <code>ngAudio</code></b>
+							<br>
+							<br>
+							<code style="color:black;">
+							angular.module('steam', [ 'ngAudio' ])<br>
+
+								.value("songRemember",{})<br>
+								.controller('sTeamaudioResource', function($scope, ngAudio) {<br>
+								$scope.audios = [<br>
+								ngAudio.load('audio/test.mp3'),<br>
+								]<br>
+							})<br>
+
+							.controller('sTeamaudioPlayer', ['$scope', 'ngAudio', 'songRemember', function($scope, ngAudio, <br>songRemember) {<br>
+							var url = 'test.mp3';<br>
+
+							if (songRemember[url]) {<br>
+							$scope.audio = songRemember[url];<br>
+						} else {<br>
+						$scope.audio = ngAudio.load(url);<br>
+						$scope.audio.volume = 0.8;<br>
+						songRemember[url] = $scope.audio;<br>
+					}<br>
+				}]);<br>
+							</code>
+							<br>
+							<ul>
+								<li>First create a controller for storing the resources.Store the items in an array or an object. Note the point storing the images in an <code>Array</code> or an <code>Object</code> depends on your use case, but make sure that you are calling the resources correctly.</li>
+								<li>Now create another controller which handles the control of the audio player.This controller should be responsible for handling the URI's of the media.</li>
+								<li>In the second controller which we create we must add some config to give support to controls in the front end, things like progress of the media, volume, name of the media etc. These are essentially important for the front end. So each resource loaded to the audio player must have all the above listed controls and information.</li>
+							</ul>
+							Below is the screenshot of the audio player
 							<img src="../img/week7gsoc2.jpg" width="800" height="400">
 						</p>
 
 						<p>
 							<b>Using <code>ngVideo</code></b>
+							<br>
+							<br>
+							<code style="color: black;">
+								angular.module('steam', [ 'ngVideo' ])<br>
+
+								.controller('sTeamvideoPlayer', ['$scope', '$timeout', 'video', function($scope, $timeout, video) {<br>
+									$scope.interface = {};<br>
+									$scope.playlistopen = false;<br>
+									$scope.videos = {<br>
+										test1: "test1.mp4",<br>
+										test2: "test2.mp4"<br>
+									};<br>
+
+									$scope.$on('$videoReady', function videoReady() {<br>
+										$scope.interface.options.setAutoplay(true);<br>
+									});<br>
+
+									$scope.playVideo = function playVideo(sourceUrl) {<br>
+										video.addSource('mp4', sourceUrl, true);<br>
+									}<br>
+
+									$scope.getVideoName = function getVideoName(videoModel) {<br>
+										switch (videoModel.src) {<br>
+											case ($scope.videos.test1): return "test1";<br>
+											case ($scope.videos.test2): return "test2";<br>
+											default: return "Unknown Video";<br>
+										}<br>
+									}<br>
+
+									video.addSource('mp4', $scope.videos.test1);<br>
+									video.addSource('mp4', $scope.videos.test2);<br>
+
+								}]);<br>
+							</code>
+							<ul>
+								<li>Developing the video player is quite the same as developing the audio player but this involves some extra configurations that are ought to be considered. Things like autoplay, giving the scope for playing the video on full screen etc. If keenly looked these are just additional configuration which you are trying to add in order to make your video player more efficient.</li>
+								<li>Firstly we must have the <code>$on($videoReady)</code> event written in order to autoplay the list of videos in the default playlist</li>
+								<li>Moving on, there are couple of controls which are to be given to the video player. Using the method <b>getVideoName</b> we can bind the video source to the title/name of the video.</li>
+								<li>The <code>video</code> service provider must be used for adding the video Sources, and it must be noted that the <b>mp4</b> can be altered in order to play <b>mp3</b> files or video files of different format. Before using other video format, make a note of checking the list of video files supported by <code>ngVideo</code>.</li>
+							</ul>
+							Below is the screenshot of the video player
 							<img src="../img/week7gsoc3.jpg" width="800" height="400">
 						</p>
 
