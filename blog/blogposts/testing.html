@@ -59,6 +59,14 @@
 					<div class="content">
 
 						<p>
+							<code><a href="https://github.com/AkhilHector/sTeam-web-UI">sTeam-web-UI</a></code> is an application written in angular. So the application relies on <code>sTeam's</code> existing REST api which is written in pike. Since there are a lot of API calls and actions involved ensuring that the application is making proper API calls and getting proper responses is crucial. In order to go ahead with the API testing there are two important things to be know about first.
+							<ul>
+								<li><code>frisby</code></li>
+								<li><code>jasmine</code></li>
+							</ul>
+						</p>
+
+						<p>
 						<b>What is <code>frisby</code> ?</b>
 						<blockquote>
 							<p>
@@ -76,6 +84,20 @@
 								“Jasmine is a Behavior Driven Development testing framework for JavaScript. It does not rely on browsers, DOM, or any JavaScript framework. Thus it's suited for websites, Node.js projects, or anywhere that JavaScript can run.”
 							</p>
 						</blockquote>
+						</p>
+
+						<p>
+							The api methods present in frisby can be categorized into :
+							<ul>
+								<li><code style="color: green">Expectations</code></li>
+								<li><code style="color: green">Helpers</code></li>
+								<li><code style="color: green">Headers</code></li>
+								<li><code style="color: green">Inspectors</code></li>
+							</ul>
+						</p>
+
+						<p>
+							So let me show couple of tests that are written with the help of frisby for the <code>sTeam's web interface.</code>
 						</p>
 
 <b>Checking the Home directory of the user :</b>
@@ -126,11 +148,11 @@ frisby.create('Request `/home/:user` returns proper JSON')
 <b>Accessing the file in the user's workarea :</b>
 <pre>
 <code class="javascript">
-frisby.create('Request `/home/:user/:container/:fil` returns proper JSON')
+frisby.create('Request `/home/:user/:container/:filename` returns proper JSON')
   .get(config.baseurl + 'rest.pike?request=//home/akhilhector/playground-hector/icon1.png')
   .expectStatus(200)
   .expectJSON({
-    'request': '/playground-hector/icon1.png',
+    'request': '/akhilhector/playground-hector/icon1.png',
     'request-method': 'GET',
     'me': objUnit.testMeObj,
     'inventory': function (val) {
@@ -142,6 +164,29 @@ frisby.create('Request `/home/:user/:container/:fil` returns proper JSON')
 .toss()</code>
 </pre>
 
+						<p>
+							Observing the above three modules, each of them are different from one another.
+							We have to understand that depending on the API the request payload must be sent.
+							So for suppose the API needs authentication headers to be sent then we need to use
+							the proper helper methods of frisby in order to send the same.
+							<br>
+							The <code>.get()</code> can be substituted with <code>put, post, delete</code>.
+							Basically all the frisby tests start with <code>frisby.create</code> with a description
+							of the test followed by one of get, post, put, delete, or head, and ending with toss to
+							generate the resulting response.
+							<br>
+							Apart from the request payload there is an interesting thing with the helper method
+							<code>expectJSON</code>, it is used for testing the given path or full JSON response
+							of the specified length. In order to use <code>expectJSON</code> we must pass the <code>
+							path</code> as the primary argument and the JSON as the second argument.
+							<br>
+							The <code>expectStatus</code> helper method is pretty straightforward. It helps us in
+							determining the HTTP Status code equivalent of the request so made.
+							<br>
+							<br>
+							<code style="color: blue">NOTE</code> While writing the tests it is better to put all the
+							config in one place and use that config variable for all the operations.
+						</p>
 
 						<p>
 							Thats it folks, <br>
