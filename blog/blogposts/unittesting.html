@@ -59,6 +59,48 @@
 					<div class="content">
 
 						<p>
+						In the previos <a href="testing.html">article</a> i have addressed about
+						writing tests with <code>frisby</code>. Frisby is helpful in writing tests
+						for angular applications that have active communications involving RESTful
+						api's. So more or less frisby is helpful as an API testing tool.
+						</p>
+						<p>
+						The <code><a href="https://github.com/AkhilHector/sTeam-web-ui">sTeam web interface</a></code> actively talks to a REST api written in <code>pike</code>
+						along with controllers that make the entire application a complete collaboration platform. So in order to test the working ability of individual
+						units of code, it was necessary to have unit tests written for the application.
+						</p>
+
+						<p>
+						<b>What is unit testing really ?</b>
+						<br>
+						In order to validate different segments of the same code base or isolated parts
+						of the code base we have a testing mechanism called <code>Unit testing</code>
+						which extends the afore mentioned idea of having individual or isolated pieces of code that constitute as units that are tested and ensured that they are working properly.
+						<br>
+						<code style="color: orange">NOTE:</code> It is always a good practice to write unit tests for your code base in order to ensure that all the individual segments as well as the entire code base is working without flaws.
+						</p>
+
+						<p>
+						<b>What is jasmine and how is it related ?</b>
+						<br>
+						<code>Jasmine</code> is a unit testing framework which is helpful in writing unit tests for applications and it is combined with a test runner called <code>Karma</code> in order to run/execute the tests so written. Now to put things in a simpler perspective, <code>jasmine</code> is test framework which we are going to use, but to run these tests so written we must a test runner that shall execute and give us the outcome of the tests so written with the help of the afore mentioned framework.
+						<br>
+						<code style="color: orange">NOTE:</code> Jasmine has its own syntax and code conventions.
+						</p>
+
+						<p>
+						<b>How is it really going to help ?</b>
+						<br>
+						Yes, let me give an example to illustrate the effect of writing unit tests. Let's suppose we have an angular application and it involves controllers,
+						directives etc etc. Now in order to quantify that communication is happening
+						between all the components and the process as a whole is not broken we must first ensure that in the chain of communication the previous functionalities are not effecting components that are connected further and also whilst validating that the code is not breaking there has to be some proof to support the quantification which we before established. Therefore writing unit tests will help us to prove all of that.
+						</p>
+
+						<p>
+						<b>Example :</b>
+						</p>
+
+						<p>
 							Thats it folks, <br>
 							<code>Happy Hacking !!</code>
 						</p>
