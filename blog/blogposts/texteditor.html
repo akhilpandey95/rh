@@ -59,6 +59,53 @@
 					<div class="content">
 
 						<p>
+						In the previous <code><a href="pdfviewer.html">article</a></code> we have seen how
+						handling different mime types is important, So while extending that discussion one
+						might think what is the case of files that come under a completely different aspect,
+						As in scripts, documents etc have dynamic operations that are performed over them.
+						<br>
+						<code><a href="https://github.com/societyserver/steam">sTeam's</a></code> old web
+						interface gave the user the provision for creating and editing the documents within
+						the interface. So in short the user had complete control over the documents as he
+						didn't have to go through complex process for altering documents that which are stored
+						in his/her playground.
+						</p>
+
+						<p>
+						The <code><a href="https://github.com/AkhilHector/sTeam-web-ui">sTeam web interface</a></code>
+						has a controller in the workspace called <code>workspaceDetailedCtrl</code> which basically
+						comprises of a function called <code>mimeTypeHandler</code> that helps in matching the mime-type and performing the required action if it matches a particular mime type. So let
+						us have a look as to how should one design such things;
+<pre>
+<code class="javascript">
+$scope.mimeTypeHandler = function () {
+	if(localStorageService.get('currentObjMimeType') == 'application/x-unknown-content-type') {
+		return 'unknown'
+	}
+	else if (localStorageService.get('currentObjMimeType').match(/image\/*/)) {
+		return 'image'
+	}
+	else if (localStorageService.get('currentObjMimeType') == 'application/pdf') {
+		return 'pdf'
+	}
+	else if (localStorageService.get('currentObjMimeType').match(/audio\/*/)) {
+		return 'audio'
+	}
+	else if (localStorageService.get('currentObjMimeType').match(/video\/*/)) {
+		return 'video'
+	}
+	else if (localStorageService.get('currentObjMimeType').match(/text\/*/) ||
+		localStorageService.get('currentObjMimeType') == 'application/x-javascript' ||
+		localStorageService.get('currentObjMimeType') == 'application/x-pike') {
+		return 'text'
+	}
+	else { return 'notfound' }
+}
+</code>
+</pre>
+						</p>
+
+						<p>
 						Here is how it looks:
 						<img src="../img/week12gsoc2.png" width="800" height="500">
 						</p>
