@@ -106,8 +106,112 @@ $scope.mimeTypeHandler = function () {
 						</p>
 
 						<p>
-						Here is how it looks:
+						So before we go and understand about developing a text editor let us understand
+						the library that is used for developing it. <code>textAngular</code> is the library
+						that which is used for developing the text editor, although there are many options
+						<code>textAngular</code> proves to be a minimal text editing development source that
+						can be easily setup and broadly configured.
+						</p>
+
+						<p>
+						We all know that a text editor must have the following things necessarily :
+						<ul>
+							<li>It must support basic formatting options and must extend feasibility to make
+							changes to the document in a easier way</li>
+							<li>Enabling live preview in order to see the changes made to the document instantly</li>
+							<li>Supporting indentation options for documents which are identified as scripts</li>
+						</ul>
+						We might feel that the technicalities are important apart from these notions, but it is
+						important to have these in place along with the technicalities.
+						</p>
+
+						<p>
+						Let us observe the syntax and usage of text angular.
+<pre>
+<code class="javascript">
+angular.module('steam')
+
+  .controller('workSpaceEditorCtrl', ['$scope', 'handler', 'localStorageService', 'textAngularManager', '$document',
+   function ($scope, handler, localStorageService, textAngularManager, $document) {
+    $scope.data = {
+      empty: '<small>Please enter text</small>',
+      full: ''
+    }
+    $scope.editable = true;
+    $scope.content = $scope.data.empty;
+
+    $scope.allh1 = function() {
+      textAngularManager.updateToolDisplay('h1', {
+        buttontext: 'Heading 1'
+      });
+    }
+
+    $scope.allh2 = function() {
+      textAngularManager.updateToolDisplay('h2', {
+        buttontext: 'Heading 2'
+      });
+    }
+
+    $scope.allh3 = function() {
+      textAngularManager.updateToolDisplay('h3', {
+        buttontext: 'Heading 3'
+      });
+    }
+
+    $scope.allh4 = function() {
+      textAngularManager.updateToolDisplay('h4', {
+        buttontext: 'Heading 4'
+      });
+    }
+
+    $scope.allh5 = function() {
+      textAngularManager.updateToolDisplay('h5', {
+        buttontext: 'Heading 5'
+      });
+    }
+
+    $scope.allh6 = function() {
+      textAngularManager.updateToolDisplay('h6', {
+        buttontext: 'Heading 6'
+      });
+    }
+
+    $scope.submit = function () {
+      console.log("The document has been submitted");
+    }
+    $scope.clear = function () {
+      console.log("The document has been reset");
+      $scope.data = {
+        orightml: $scope.content
+      }
+    }
+    $scope.resetEditor = function () {
+      textAngularManager.resetToolsDisplay();
+    }
+  }])
+</code>
+</pre>
+						</p>
+
+						<p>
+						So if we observe we can see that there is a service called <code>textAngularManager
+						</code> which is needed for customizing the text editor. There are a few things that
+						are to be looked upon while customizing the editor.
+						<ul>
+							<li>We can totally customize the text editor's options as well as the appearence
+							of the text editor</li>
+							<li>We can give scope for customized functions that could be part of the controller.
+							Observe the above code snippet where functions like <code>resetEditor</code> etc are
+							customized to the needs of the application</li>
+							<li>Finally We can add more options to the text editor using the <code>textAngular
+							</code> service in order to make it better</li>
+						</ul>
+						</p>
+
+						<p>
+						After all the customizations and changes Here is how it looks:
 						<img src="../img/week12gsoc2.png" width="800" height="500">
+						Source : <code><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/newUI/cmp3.html">click here</a></code>
 						</p>
 
 						<p>
