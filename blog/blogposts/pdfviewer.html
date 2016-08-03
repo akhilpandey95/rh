@@ -72,6 +72,46 @@
 						</p>
 
 						<p>
+						The process as a whole is quite simple in developing the pdf viewer. Let us have a
+						look at the process;
+						<ul>
+							<li>We have to utilize the <code>PDFViewerService</code> in order to build the
+							PDF viewer</li>
+							<li>The configuration variables are pretty much few in number, although it is
+							very necessary to look after what URI is being passed to the <code>pdfURL</code>
+							variable as it is solely responsible for loading the content from the file.</li>
+							<li></li>
+						</ul>
+						</p>
+
+<pre>
+<code class="javascript">
+angular.module('steam', [ 'ngPDFViewer' ])
+.controller('workspaceDetailedCtrl', [ '$scope', 'PDFViewerService', function($scope, pdf) {
+  $scope.pdfURL = "test.pdf"
+  $scope.instance = pdf.Instance("viewer")
+
+  $scope.nextPage = function() {
+    $scope.instance.nextPage()
+  }
+  $scope.prevPage = function() {
+    $scope.instance.prevPage()
+  }
+  $scope.gotoPage = function(page) {
+    $scope.instance.gotoPage(page)
+  }
+  $scope.pageLoaded = function(curPage, totalPages) {
+    $scope.currentPage = curPage
+    $scope.totalPages = totalPages
+  }
+  $scope.loadProgress = function(loaded, total, state) {
+    console.log('loaded =', loaded, 'total =', total, 'state =', state)
+  }
+}]);
+</code>
+</pre>
+
+						<p>
 						Here is the final outcome of it:
 						<img src="../img/week11gsoc2.png" width="800" height="500">
 						<img src="../img/week11gsoc3.png" width="800" height="500">
