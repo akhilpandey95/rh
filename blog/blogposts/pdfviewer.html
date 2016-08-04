@@ -80,7 +80,23 @@
 							<li>The configuration variables are pretty much few in number, although it is
 							very necessary to look after what URI is being passed to the <code>pdfURL</code>
 							variable as it is solely responsible for loading the content from the file.</li>
-							<li></li>
+							<li>Using the pdf viewer instance is pretty much simple as we have to declare
+							the instance viewer first and then use the same <code>$scope.instance</code>
+							for performing operations like :
+								<ol>
+									<li>Going to the next page</li>
+									<li>Going to the prev page</li>
+									<li>Going to a particular page</li>
+									<li>Displaying the total number of pages loaded</li>
+									<li>Displaying the progress of the loaded files</li>
+								</ol></li>
+							<li>Lastly there is one important thing to be noted, <code>ngPDFViewer</code>
+							is comparitively a light weight library that could be used for development of
+							a PDF viewer although when the application is bloated with large sized PDF's
+							it takes couple of seconds to load the PDF. A smart move here would be using
+							the <code>$scope.currentPages</code> and <code>$scope.totalPages</code> in
+							order to make a small calculation and display it at the users end as to how
+							much percentage of the file is loaded.</li>
 						</ul>
 						</p>
 
@@ -115,6 +131,7 @@ angular.module('steam', [ 'ngPDFViewer' ])
 						Here is the final outcome of it:
 						<img src="../img/week11gsoc2.png" width="800" height="500">
 						<img src="../img/week11gsoc3.png" width="800" height="500">
+						Source : <code><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/newUI/cmp4.html">click here</a></code>
 						</p>
 
 						<p>
