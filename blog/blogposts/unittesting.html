@@ -89,7 +89,7 @@
 						</p>
 
 						<p>
-						<b>How is it really going to help ?</b>
+						<b>Is it really going to help ?</b>
 						<br>
 						Yes, let me give an example to illustrate the effect of writing unit tests. Let's suppose we have an angular application and it involves controllers,
 						directives etc etc. Now in order to quantify that communication is happening
@@ -97,7 +97,58 @@
 						</p>
 
 						<p>
-						<b>Example :</b>
+						<b>Syntax and style :</b>
+<pre>
+<code class="javascript">
+'use strict';
+
+describe('controllers', function(){
+
+  beforeEach(module('sTeam.controllers'));
+
+  it('should ....', inject(function() {
+    // here the test specs go
+  }));
+
+  it('should ....', inject(function() {
+    // here the test specs go
+  }));
+});
+</code>
+</pre>
+						</p>
+
+						<p>
+						<b>Let's go ahead and test a real directive</b>
+						<br>
+<pre>
+<code class="javascript">
+'use strict';
+
+describe('directives', function() {
+
+  beforeEach(module('sTeam.directives'));
+
+  describe('fileModel', function() {
+    it('Must give the flag whether the file upload directive is working or not', function() {
+      module(function($provide) {
+        $provide.value('model', 'attrs.fileModel');
+      });
+      inject(function($compile, $rootScope) {
+        var DOM = $compile("<input type="file" file-model="myfile">")($rootScope);
+    	$rootScope.$digest();
+      });
+    });
+  });
+});
+</code>
+</pre>
+						</p>
+
+						<p>
+						Basically in the above example we are testing a unit of the <code>sTeam web
+						interface</code>, a file uploader. It is basically a directive written in order
+						to upload files to the web interface.
 						</p>
 
 						<p>
