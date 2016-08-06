@@ -135,8 +135,9 @@ describe('directives', function() {
         $provide.value('model', 'attrs.fileModel');
       });
       inject(function($compile, $rootScope) {
-        var DOM = $compile("<input type="file" file-model="myfile">")($rootScope);
+        var DOM = $compile("the html goes here")($rootScope);
     	$rootScope.$digest();
+    	expect(element.status()).toEqual('something');
       });
     });
   });
@@ -149,6 +150,18 @@ describe('directives', function() {
 						Basically in the above example we are testing a unit of the <code>sTeam web
 						interface</code>, a file uploader. It is basically a directive written in order
 						to upload files to the web interface.
+						</p>
+
+						<p>
+						So the unit test comprises of a function called <code>$inject</code> which is
+						responsible for injected the DOM code which we wish to test, and then compile
+						the HTML. So after compiling the HTML we have a function called <code>expect
+						</code> which is used for checking whether the desired output is obtained in
+						the DOM or not.
+						</p>
+
+						<p>
+						Source : <code><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/directives/fileModel.js">fileModel.js</a></code>
 						</p>
 
 						<p>
