@@ -59,6 +59,96 @@
 					<div class="content">
 
 						<p>
+							I always used to find myself in a difficult situation when i had to travel
+							and work. The main reason for this is my machine had a <code>GNU/Linux</code>
+							based distro running and i couldn't stay away from a charging spot for more than
+							two hours. I always was intrigued to explore this segment and solve this very problem
+							in order to better my travel experience.
+						</p>
+
+						<p>
+						 Basically there are couple of things to be kept in mind before you go out and try
+						 the tricks mentioned here, Consider them basics; So they are :
+						 <ul>
+							 	<li>The Kernel plays a major role in providing support to enhance battery life.
+								So i have tested the battery saving hacks on kernel's :
+									<ul>
+										<li><code>4.2.x</code></li>
+										<li><code>4.2.x</code></li>
+										<li><code>4.7*</code>// Arch</li>
+									</ul>
+								So make sure you have kernel above <code>4.x.x</code> as they show a significant
+								improvement with latest set of processors
+								</li>
+								<li>Apart from the kernel the next major role is played by the distro, so it is very
+								important to have a desktop environment that is not bloated will unecessary software.
+								For example LXDE, Xfce, Xmonad, OpenBox are the options you might want to look at if you
+								are keen on battery and minimalism</li>
+								<li>The distro comes next, you might think that having a light weight Desktop environment
+								will do your job, although your job is only halfdone. So in order to complete the list of
+							  basics you must ensure that you have a light weight Distro like Arch Linux, Arch Bang,
+							  Xubuntu, Lubuntu. Don't expect these hacks to work properly on Unity, Gnome</li>
+						 </ul>
+						</p>
+
+						<p>
+						<b>My setup :</b>
+						<br />
+						I basically use <code>Arch linux + XFCE</code> with the latest kernel;
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+Linux machine 4.7.2-1-ARCH #1 SMP PREEMPT Sat Aug 20 23:02:56 CEST 2016 x86_64 GNU/Linux
+</code>
+</pre>
+						</p>
+
+						<p>
+						Things to be installed before starting this:
+						<br />
+						<b>For Arch</b>
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+pacman -S tlp
+pacman -S powertop
+pacman -S intel-ucode
+pacman -S yaourt
+yaourt thermald
+</code>
+</pre>
+						<br />
+						<b>For *buntu</b>
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+apt-get install tlp
+apt-get install powertop
+# Thermald is installed by default in *buntu based distro's
+</code>
+</pre>
+						</p>
+
+						<p>
+						Before i start let me just say couple of things which are to be kept in
+						mind whilst copying/pasting the commands listed in the article.
+						<ul>
+							<li>There might be a command which might not be suitable to your machine
+							or your hardware in specific, so kindly read about the same before you
+						  unleash your fingers</li>
+							<li>Some of these commands might be very handy or might be not at all,
+							since we have to take many things like kernel support etc into consideration
+						  and also rather than having a thought that this would be mind-blowingexpect
+							the outcome to be mildly good.</li>
+							<li>If you are new to GNU/Linux please make sure that you have a reference by
+							your side whilst going through this article.</li>
+						</ul>
+						</p>
+
+						<p>
+						<b>Let's get started :</b>
+						<br />
+						 
+						</p>
+
+						<p>
 							Thats it folks, <br>
 							<code>Happy Hacking !!</code>
 						</p>
