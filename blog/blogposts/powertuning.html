@@ -145,7 +145,67 @@ apt-get install powertop
 						<p>
 						<b>Let's get started :</b>
 						<br />
-						 
+						 So considering that you have installed the afore mentioned packages, let's
+						 get started:
+						 <br />
+						 <br />
+
+						 <b>Aspect 1 : <code>brightness</code></b>
+						 <br />
+						 Although you might have the feeling that you know this thing from a long time,
+						 there are some things to ensure that you use this method the right way. So open
+						 the terminal and type :
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+cat /sys/class/backlight/intel_backlight/brightness
+</code>
+</pre>
+						Typing the above command gives you the brightness which your screen is currently
+						set to, now go ahead and type:
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+cat /sys/class/backlight/intel_backlight/max_brightness
+</code>
+</pre>
+						Typing the above command gives you the maximum brightness that can be set to your
+						machine. So now the important part to be noted here is, make sure that your current
+						brightness is set to nearly <code>8.5%</code> of your maximum brightness. Making sure
+						that you set this to that value you can increase the battery time invariably.
+						<br />
+						<br />
+
+						<b>Aspect 2: <code>Events & Services</code></b>
+						<br />
+						The next important part of the process is using the services which system wants and
+						removing the things which are not necessary. So things like <code>bluetooth, mongodb,
+						mysql, rethinkdb, etc....</code> could be disabled. Note that the idea here is not about
+						disabling a specific service or distinguishing them, although it is basically about stopping
+						all the unwanted services. Turn them off by typing
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# Arch linus
+systemctl --failed --all
+systemctl stop service_name
+
+# Ubuntu based distros
+service service_name stop
+</code>
+</pre>
+						Make sure that cursor blink mode is disabled, since this event is responsible for
+						consuming a significant amount of power. Type the following command :
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# Any distro doesn't matter
+gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_blink_mode off
+</code>
+</pre>
+						The above command <code>gconftool-2</code> is basically a configuration tool for
+						changing the default values in a system. All the preferences are basically key:value
+						pairs. Typing the above command the cursor blinking mod is turned off.
+						<br />
+						<br />
+
+						<b>Aspect 3 : <code>Screensaver and display manager</code></b>
 						</p>
 
 						<p>
