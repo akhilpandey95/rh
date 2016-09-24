@@ -343,6 +343,60 @@ echo min_power > /sys/class/scsi_host/host2/link_power_management_policy
 						might work just fine, but if you are facing any issues or if you feel that the Read
 						write speeds are visibly slowed down, then alter the above three parameters by typing
 						<code>max_performance</code> instead of <code>min_power</code>
+						<br />
+						<br />
+
+						<b>Aspect 6: <code>Audio devices</code></b>
+						<br />
+						So audio cards consume a significant amount of power when are in use, but there is no
+						point in spending that when you are not using them. Thereby in order to ensure that the
+						sound cards accepts a power saving mechanism just type;
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# Check the parameter first using cat
+cat /sys/module/snd_hda_intel/parameters/power_save_controller
+
+# now if it is N, then change it to Y
+echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
+</code>
+</pre>
+						<br />
+						<br />
+
+						<b>Aspect 7: <code>Tools</code></b>
+						<br />
+						If you are an avid Linux user you might have come across the tools called
+						<code>powertop, tlp</code>. These are two handy tools which complete this
+						transaction. Consider them like the last piece of the puzzle. Provided that
+						you have downloaded them there is pretty much nothing to configure with them,
+						they can be used right away after installation.
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# Start tlp first
+tlp start
+
+# In order to use powertop efficiently first calibrate
+powertop --calibrate
+
+# Now auto tune powertop with regard to your system specs
+powertop --auto-tune
+</code>
+</pre>
+						<b>NOTE:</b> After you hit calibrate the screen will go blank, don't worry
+						</p>
+
+						<p>
+						With that we basically complete all the basic aspects of power saving that are
+						to be ensured. People who have a bit of expertise in this field might be wondering
+						as to why i didn't mention about CPU freq, Intel p-states etc. Well after some research
+						i found that <code>tlp</code> turns effective with usage and altering of <code>C-states</code>
+						and <code>P-states</code>. So if you want to take a step ahead and alter modes like <code>no_turbo
+						</code>, <code>max_perf_pct</code> etc, go ahead but i do want to mention that there is not much
+						of significance as i have tried them out too.
+						<br />
+						PS : If you are using <code>nvidia</code> driver instead of <code>Xorg</code>, then
+						download the package <code>nvidia-settings</code> and change your power saving profiles
+						over there.
 						</p>
 
 						<p>
