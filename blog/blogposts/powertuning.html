@@ -201,11 +201,148 @@ gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_bli
 </pre>
 						The above command <code>gconftool-2</code> is basically a configuration tool for
 						changing the default values in a system. All the preferences are basically key:value
-						pairs. Typing the above command the cursor blinking mod is turned off.
+						pairs. Typing the above command makes sure that cursor blinking mod is turned off.
 						<br />
 						<br />
 
 						<b>Aspect 3 : <code>Screensaver and display manager</code></b>
+						<br />
+						Assuming that you are using <code>Xorg</code>, there are couple of things
+						which you might want to know so that there is a clear understanding of
+						system's power consumption policy when it goes down for a <b>suspend or screen
+						blank</b>. Before you get started on this aspect, please have a look at the man
+						page for <code>xset</code>. Now let's go through what all should be done;
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# first check your config by typing
+xset q
+
+# if you have screen saver enabled disable that first
+xset s off
+
+# Next, disable power blanking and exposures
+xset s noblank
+xset s noexpose
+</code>
+</pre>
+
+						Now that you have disabled screen saver and power blanking, the next step
+						is regarding <code>DPMS</code>. If you want to know regarding DPMS
+						<a href="https://www.x.org/releases/X11R7.7/doc/xextproto/dpms.html"
+						target="_blank">click here</a>. So disable/enable DPMS depending upon your
+						need.
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+xset -dpms  // disables Energy star (DPMS)
+xset +dpms  // enables  Energy star (DPMS)
+</code>
+</pre>
+						<br />
+						<br />
+
+						<b>Aspect 4: <code>Wireless and Network</code></b>
+						<br />
+						So most of the time we make sure that we are connected to the internet, thus
+						making sure to optimize battery in this use case is a bit tough and challenging.
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# enable power saving using iwconfig
+iwconfig card_label power on
+
+# enable power saving using iw
+iw card_label set power_save on
+
+# configure dynamic power save timeout
+iwconfig card_label power 100m
+</code>
+</pre>
+						There are couple of things to be kept in mind after you type those :
+						<ul>
+							<li>There are some <b>atheros</b> chips that are configured for power save
+							in the first place, so you might not observe much of a change in your
+						  battery life.</li>
+							<li>Basically all Wireless cards use a significant amount of power, although
+							when compared using <b>ethernet</b> over to <b>wifi</b> is better. So opt for
+						  ethernet if you have an option</li>
+							<li>From system to system the battery drain is directly proportional to the
+							card you use, so if you have a high transmit network card then these settings
+						  might not be effective to your overall battery time.</li>
+							<li>Even though you go through all those above mentioned gruelling scenarios
+							there is good chance that you might save upto <code>30-40 mins</code></li>
+						</ul>
+						Next, disable or kill bluetooth if you are not using it;
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# Arch linux
+systemctl stop bluetooth.service
+
+# Ubuntu based distros
+service bluetooth stop
+</code>
+</pre>
+
+						<br />
+						<br />
+
+						<b>Aspect 5: <code>Hard drive</code></b>
+						<br />
+						It is basically the most important part of this entire process, so there are two
+						approaches to ensure that you have power save enabled to your hard disk and you
+						are not compromising on performance. So Linux gives you the feasibility to alter
+						the hard drive spindown speed using the command <code>hdparm</code>. To know more
+						about the command type <b>man hdparm</b>.
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# To alter spindown timeout
+hdparm -S {time} /dev/{name}
+
+#spindown_time = 60  # 5 min
+#spindown_time = 240 # 20 min
+#spindown_time = 250 # 30 min
+#spindown_time = 280 # 1 hour
+#spindown_time = 340 # 2 hours
+</code>
+</pre>
+						Next in queue comes a small but very good measure called <code>noatime</code>.
+						So basically with <code>noatime</code> disabled the access times of all the
+						directories and files in your file system are not really in your control,
+						meaning even if you have your hard disk spindown time set, but imagine there
+						is a read operation of a file from your cache, this essentially is registered
+						as a normal read operation and it basically ensures that the hard disk is
+						spinning all the time. So in order to negate this and ensure that this doesn't
+						null the effect of <code>hdparm</code>. Do the following:
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# Open fstab
+vim /etc/fstab
+
+# add noatime to your hard disk at the end of the line
+
+# before
+UUID=2e0e754e-7dc2-4c21-9101-b539b8a501a8  /       ext4   errors=remount-ro 0   1
+
+# after
+UUID=2e0e754e-7dc2-4c21-9101-b539b8a501a8  /       ext4   errors=remount-ro,<b>noatime</b> 0   1
+</code>
+</pre>
+						Save the <code>/etc/fstab</code> and reboot your system in order to have it in
+						effective usage. So now <code>hdparm</code> will be successfull at spinning down
+						the hard drive when not in use. Moving ahead there is also some more things that
+						could be done in order to ensure that an extra power saving flag is passed to the
+						system. In order to do that;
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+# Change the following from max_performance to min_power
+echo min_power > /sys/class/scsi_host/host0/link_power_management_policy
+echo min_power > /sys/class/scsi_host/host1/link_power_management_policy
+echo min_power > /sys/class/scsi_host/host2/link_power_management_policy
+</code>
+</pre>
+						Although this worked fine on some systems it is to be noted that when you are not
+						in <b>AC</b> mode, i.e when you are using your system on battery the above commands
+						might work just fine, but if you are facing any issues or if you feel that the Read
+						write speeds are visibly slowed down, then alter the above three parameters by typing
+						<code>max_performance</code> instead of <code>min_power</code>
 						</p>
 
 						<p>
