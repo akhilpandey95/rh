@@ -1,11 +1,11 @@
 /* modules */
 /* this mixin makes possible to add transition to a specific vendor, example: */
 /* -webkit-transition: -webkit-transform 0.5s linear; */
-@import url(../bootstrap/bootstrap.min.css);
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic,900,900italic);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
-@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300italic,300,400italic,700,700italic);
+@import url(bootstrap.min.css);
+@import url(f1.css);
+@import url(f2.css);
+@import url(f3.css);
+@import url(f4.css);
 *:focus {
   outline: 0; }
 
@@ -657,7 +657,7 @@ a:focus, button:focus {
   overflow: hidden;
   background: #4B4848;
   background-size: cover;
-  background-image: url("https://farm9.staticflickr.com/8222/8254861601_1fbf969a14_b.jpg");
+  background-image: url("../img/main.jpg");
   /* These are some ready-to-use backgrounds you can test out by uncommenting them */
   /*background-image: url("../../images/bg2.png");*/
   /*background-image: url("../../images/bg3.png");*/
@@ -1380,7 +1380,7 @@ a:focus, button:focus {
         #home2 #hero .slides .slide.first {
           padding-top: 50px; } }
       #home2 #hero .slides .slide.first .bg {
-        background-image: url("https://farm9.staticflickr.com/8482/8203794182_8004f8f636_b.jpg");
+        background-image: url("../img/main.jpg");
         background-position: center 18%; }
         #home2 #hero .slides .slide.first .bg:after {
           background: rgba(52, 52, 58, 0.6); }
@@ -1460,7 +1460,7 @@ a:focus, button:focus {
           padding-top: 40px; } }
       #home2 #hero .slides .slide.second .bg {
         /*background-image: url('https://24.media.tumblr.com/899355a7363be380170ecfcbdc9744d7/tumblr_myp93odkni1st5lhmo1_1280.jpg');*/
-        background-image: url("https://farm4.staticflickr.com/3758/9011116378_32e56983e3_b.jpg");
+        background-image: url("../img/main.jpg");
         background-position: center 29%; }
         #home2 #hero .slides .slide.second .bg:after {
           background: rgba(5, 11, 29, 0.55); }
@@ -1524,7 +1524,7 @@ a:focus, button:focus {
           #home2 #hero .slides .slide.third {
             padding-top: 50px; } }
         #home2 #hero .slides .slide.third .bg {
-          background-image: url("https://farm6.staticflickr.com/5267/5783999789_9d06e5d7df_b.jpg");
+          background-image: url("../img/main.jpg");
           background-position: center 15%; }
           #home2 #hero .slides .slide.third .bg:after {
             background: rgba(3, 9, 27, 0.5); }
@@ -6783,7 +6783,7 @@ html.bg {
   padding: 0;
   list-style: none;
   position: relative;
-} 
+}
 
 /* The line */
 .cbp_tmtimeline:before {
@@ -6841,7 +6841,7 @@ html.bg {
   background: #18bc9c;
 }
 
-.cbp_tmtimeline > li .cbp_tmlabel h2 { 
+.cbp_tmtimeline > li .cbp_tmlabel h2 {
   margin-top: 0px;
   padding: 0 0 10px 0;
   border-bottom: 1px solid rgba(255,255,255,0.4);
@@ -6953,6 +6953,5 @@ html.bg {
     float: right;
     left: auto;
     margin: -55px 5px 0 0px;
-  } 
+  }
 }
-
