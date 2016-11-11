@@ -36,7 +36,8 @@ module.exports.unleash = function() {
     router.get('/blog/page/:pageno', function (req, res) {
         var pagenum = req.params.pageno
         res.sendFile(__dirname + '/templates/blogpages/' + pagenum + '.html')
-    })
+        console.log(req.url)
+    });
 
     router.get('/rhetorics', function(req, res) {
     		res.sendFile(__dirname + '/templates/rhetorics.html');
@@ -44,29 +45,6 @@ module.exports.unleash = function() {
 
     router.get('/snaps', function(req, res) {
             res.sendFile(__dirname + '/templates/snaps.html');
-    });
-
-    router.get('/[0-9]', function(req, res) {
-            res.redirect(errorPage);
-    });
-
-    router.get('*', function(req, res) {
-        var match = '/' + req.params[0] + '.html';
-        fs.exists(match, function(present) {
-                if(present) {
-                    fs.readFile(match, function(err, data) {
-                            if(err) {
-                                    res.send(errorPage.toStrng(), "UTF-8");
-                            }
-                            else {
-                                    res.end(data, "UTF-8");
-                            }
-                    });
-                }
-                else {
-                    res.end(errorPage.toString(), "UTF-8");
-                }
-        });
     });
 
     app.use('/', router);
