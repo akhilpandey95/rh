@@ -1,17 +1,55 @@
-var nodeStatic = require('node-static')
-var fileServer = new nodeStatic.Server('./')
-var port = process.env.port || 1337
+/*
+ * Express Router for serving the templates
+ * Akhil Pandey
+ */
 
-require('http').createServer(function (request, response) {
-  request.addListener('end', function () {
-    fileServer.serve(request, response, function (err, result) {
-      if (err) {
-        console.error('Error serving ' + request.url + ' - ' + err.message)
-        response.writeHead(err.status, err.headers)
-        response.end()
-      }
-    })
-  }).resume()
-}).listen(port)
+const fs = require('fs')
+const http = require('http')
+const express = require('express')
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 
-console.log('Server running at http://localhost:' + port)
+module.exports.unleash = function() {
+    var port = process.env.PORT || 1337;
+    var app = express();
+    var router = express.Router();
+    var errorPage = fs.readFileSync("404.html", "UTF-8");
+
+    app.use(express.static('assets'));
+    app.set('title', "home | akhil");
+    app.use(cookieParser());
+    app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({extended: true}));
+
+    router.get('/', function(req, res) {
+            res.sendFile(__dirname + '/templates/index.html');
+    });
+
+    router.get('/about', function(req, res) {
+            res.sendFile(__dirname + '/templates/about.html');
+    });
+
+    router.get('/blog', function(req, res) {
+        res.sendFile(__dirname + '/templates/blogpages/0.html');
+    });
+
+    router.get('/blog/page/:pageno', function (req, res) {
+        var pagenum = req.params.pageno
+        res.sendFile(__dirname + '/templates/blogpages/' + pagenum + '.html')
+        console.log(req.url)
+    });
+
+    router.get('/rhetorics', function(req, res) {
+    		res.sendFile(__dirname + '/templates/rhetorics.html');
+    });
+
+    router.get('/snaps', function(req, res) {
+            res.sendFile(__dirname + '/templates/snaps.html');
+    });
+
+    app.use('/', router);
+
+    http.createServer(app).listen(port, function() {
+            console.log("Front End Application Server started");
+    });
+}

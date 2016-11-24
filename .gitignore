@@ -1,0 +1,13 @@
+#dir
+test-dir/
+
+#files
+test.js
+test.html
+
+#logs
+*.log
+
+#dependencies
+node_modules/
+bower_components
