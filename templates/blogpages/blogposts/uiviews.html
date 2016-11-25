@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>blog | hector</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
+	<link rel="stylesheet" type="text/css" href="../css/highlight.css">
+
+</head>
+
+<body id="blogpost">
+	<header class="navbar navbar-inverse normal" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="https://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../../about/index.html">About</a></li>
+					<li><a href="https://github.com/AkhilHector">Code</a></li>
+					<li><a href="../index.html">Blog</a></li>
+					<li><a href="https://akhilhector.com/photos">Photos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="blogpost-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-pic">
+						<img src="../img/week13gsoc1.jpeg" class="img-responsive" alt="blogpost">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 post">
+					<div class="title">
+						Nested views and templates in Angular
+					</div>
+					<div class="author">
+						<img src="../img/dp.jpeg" class="avatar" alt="author">
+						By Akhil Pandey, August 11, 2016
+					</div>
+					<div class="content">
+
+						<p>
+						<code><a href="https://github.com/AkhilHector/sTeam-web-UI">sTeam web interface</a></code>
+						is a perfect example of an Angular application that has multiple views to deal with. The
+						router for sTeam is built using <code>ui.router</code>, which is a classic library for dealing
+						with applications that might have a combination of both parent and child routes that are ought to be reused.
+						</p>
+
+						<p>
+						<b>What is the difference between <code>ui-view</code> and <code>ng-view</code> ?</b>
+						<br>
+						Generally we often get confused with the concept of <code>view</code> when it is used with a router and when it is used inside for injecting templates. The concept of view is simple, it acts like a small placeholder so that we can co-relate or place particular piece of DOM in a
+						required location.
+						<br>
+						So to understand this better and clear the confusion we must first know how views and templates work. So the web interface for sTeam uses <code>ui.router</code> as a result the concept of <code>ui-view</code> differs from <code>ng-view</code>.
+						<br>
+						Both of these afore mentioned have different service provides while <code>ui-view</code> belongs to <code>ui.router</code>, <code>ng-view</code> belongs to the default angular's
+						<code>ngRouter</code>
+
+						</p>
+
+						<p>
+						<b>How do we implement them ?</b>
+						<br>
+						We must understand that we have three things involved while writing views using <code>ui.router</code>. Let us look at them carefully
+						<ul>
+							<li>router</li>
+							<li>template</li>
+							<li>view</li>
+						</ul>
+						Let us suppose the below is an example of the view that contains the configuration in the router
+
+<pre>
+<code class="javascript">
+.state('workarea.list', {
+  url: '^/room/:path',
+  requireLogin: true,
+  views: {
+    'options': {
+      templateUrl: '/views/options.html',
+      controller: 'optionsCtrl'
+    },
+    'workspaceList': {
+      templateUrl: '/views/workspaceList.html',
+      controller: 'workspaceListCtrl'
+    },
+    'comments': {
+      templateUrl: '/views/comments.html',
+      controller: 'commentsCtrl'
+    }
+  }
+})
+</code>
+</pre>
+						Let us now have a look at the html
+<pre>
+<code class="html">
+  div class="row"
+    div class="col-lg-2"
+    div
+    div class="col-lg-10"
+      legend class="text-left">Comments
+      legend
+      form class="form-horizontal"
+        div class="form-group"
+          div class="col-sm-10"
+            input class="form-control" type="text" ng-model="commentContent" required id="searchMe"
+            span
+            span
+          div
+          div class="col-sm-2"
+            button type="button" class="btn btn-primary" ng-click="addComment();">Submit
+            button
+          div
+          div
+            ul id="comments"
+          <!-- <li ng-repeat="comment in comments track by $index">
+            <span>{{comment.text}}</span>
+          </li> -->
+        ul
+      div
+    div
+  form
+div
+div
+</code>
+</pre>
+						Now since we have the html written, we can use the same in the same state that which we
+						have declared in the router we are ready to use the view. Let us observe how should the route be used :
+<pre>
+<code class="html">
+div ui-view="comments" div
+</code>
+</pre>
+						<p>
+						So if we carefully observe the <code>ui-view</code> attribute we can see that the name of the view is being written, so accordingly we must declare the name in that place in order to use that view.
+						</p>
+						</p>
+
+						<p>
+							Thats it folks, <br>
+							<code>Happy Hacking !!</code>
+						</p>
+							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
+					</div>
+					<div class="other-posts">
+						<a href="../index.html" class="prev">
+							← Go to blog
+						</a>
+						<a href="#" class="next pull-right">
+							Next Article→
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 ">
+				</div>
+				<div class="col-md-3 copyright">
+					Weblog of Akhil Pandey | 2016
+				</div>
+				<div class="col-md-6 menu">
+					<ul>
+						<li>
+							<a href="https://akhilhector.com/about">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/AkhilHector">Code</a>
+						</li>
+						<li class="active">
+							<a href="https://akhilhector.com/blog">Blog</a>
+						</li>
+						<li>
+							<a href="https://akhilhector.com/photos">Photos</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/theme.js"></script>
+	<script src="../js/highlight.min.js"></script>
+
+</body></html>

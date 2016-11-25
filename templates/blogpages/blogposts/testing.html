@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>blog | hector</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
+	<link rel="stylesheet" type="text/css" href="../css/highlight.css">
+
+</head>
+
+<body id="blogpost">
+	<header class="navbar navbar-inverse normal" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="https://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../../about/index.html">About</a></li>
+					<li><a href="https://github.com/AkhilHector">Code</a></li>
+					<li><a href="../index.html">Blog</a></li>
+					<li><a href="https://akhilhector.com/photos">Photos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="blogpost-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-pic">
+						<img src="../img/week9gsoc1.gif" class="img-responsive" alt="blogpost">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 post">
+					<div class="title">
+						Angular API testing with <code>frisby</code> and <code>jasmine-node</code>
+					</div>
+					<div class="author">
+						<img src="../img/dp.jpeg" class="avatar" alt="author">
+						By Akhil Pandey, July 22, 2016
+					</div>
+					<div class="content">
+
+						<p>
+							<code><a href="https://github.com/AkhilHector/sTeam-web-UI">sTeam-web-UI</a></code> is an application written in angular. So the application relies on <code>sTeam's</code> existing REST api which is written in pike. Since there are a lot of API calls and actions involved ensuring that the application is making proper API calls and getting proper responses is crucial. In order to go ahead with the API testing there are two important things to be know about first.
+							<ul>
+								<li><code>frisby</code></li>
+								<li><code>jasmine</code></li>
+							</ul>
+						</p>
+
+						<p>
+						<b>What is <code>frisby</code> ?</b>
+						<blockquote>
+							<p>
+								“Frisby is a REST API testing framework built on node.js and Jasmine that makes
+								testing API endpoints easy, fast, and fun. Read below for a quick overview, or
+								check out the API documentation.”
+							</p>
+						</blockquote>
+						</p>
+
+						<p>
+						<b>What is <code>Jasmine</code> ?</b>
+						<blockquote>
+							<p>
+								“Jasmine is a Behavior Driven Development testing framework for JavaScript. It does not rely on browsers, DOM, or any JavaScript framework. Thus it's suited for websites, Node.js projects, or anywhere that JavaScript can run.”
+							</p>
+						</blockquote>
+						</p>
+
+						<p>
+							The api methods present in frisby can be categorized into :
+							<ul>
+								<li><code style="color: green">Expectations</code></li>
+								<li><code style="color: green">Helpers</code></li>
+								<li><code style="color: green">Headers</code></li>
+								<li><code style="color: green">Inspectors</code></li>
+							</ul>
+						</p>
+
+						<p>
+							So let me show couple of tests that are written with the help of frisby for the <code>sTeam's web interface.</code>
+						</p>
+
+<b>Checking the Home directory of the user :</b>
+
+<pre>
+<code class="javascript">
+frisby.create('Request `/home` returns proper JSON')
+  .get(config.baseurl + 'rest.pike?request=/home')
+  .expectStatus(200)
+  .expectJSON({
+    'request': '/home',
+    'request-method': 'GET',
+    'me': objUnit.testMeObj,
+    'inventory': function (val) {
+      val.forEach(function (e) {
+        objUnit.testInventoryObj(e)
+      })
+    }
+  })
+.toss()</code>
+</pre>
+
+<br>
+<br>
+
+<b>Checking the container of the user :</b>
+<pre>
+<code class="javascript">
+frisby.create('Request `/home/:user` returns proper JSON')
+  .get(config.baseurl + 'rest.pike?request=/home/akhilhector/container')
+  .expectStatus(200)
+  .expectJSON({
+    'request': '/akhilhector',
+    'request-method': 'GET',
+    'me': objUnit.testMeObj,
+    'inventory': function (val) {
+      val.forEach(function (e) {
+        objUnit.testInventoryObj(e)
+      })
+    }
+  })
+.toss()</code>
+</pre>
+
+<br>
+<br>
+
+<b>Accessing the file in the user's workarea :</b>
+<pre>
+<code class="javascript">
+frisby.create('Request `/home/:user/:container/:filename` returns proper JSON')
+  .get(config.baseurl + 'rest.pike?request=//home/akhilhector/playground-hector/icon1.png')
+  .expectStatus(200)
+  .expectJSON({
+    'request': '/akhilhector/playground-hector/icon1.png',
+    'request-method': 'GET',
+    'me': objUnit.testMeObj,
+    'inventory': function (val) {
+      val.forEach(function (e) {
+        objUnit.testInventoryObj(e)
+      })
+    }
+  })
+.toss()</code>
+</pre>
+
+						<p>
+							Observing the above three modules, each of them are different from one another.
+							We have to understand that depending on the API the request payload must be sent.
+							So for suppose the API needs authentication headers to be sent then we need to use
+							the proper helper methods of frisby in order to send the same.
+							<br>
+							The <code>.get()</code> can be substituted with <code>put, post, delete</code>.
+							Basically all the frisby tests start with <code>frisby.create</code> with a description
+							of the test followed by one of get, post, put, delete, or head, and ending with toss to
+							generate the resulting response.
+							<br>
+							Apart from the request payload there is an interesting thing with the helper method
+							<code>expectJSON</code>, it is used for testing the given path or full JSON response
+							of the specified length. In order to use <code>expectJSON</code> we must pass the <code>
+							path</code> as the primary argument and the JSON as the second argument.
+							<br>
+							The <code>expectStatus</code> helper method is pretty straightforward. It helps us in
+							determining the HTTP Status code equivalent of the request so made.
+							<br>
+							<br>
+							<code style="color: blue">NOTE</code> While writing the tests it is better to put all the
+							config in one place and use that config variable for all the operations.
+						</p>
+
+						<p>
+							Thats it folks, <br>
+							<code>Happy Hacking !!</code>
+						</p>
+							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
+					</div>
+					<div class="other-posts">
+						<a href="../index.html" class="prev">
+							← Go to blog
+						</a>
+						<a href="#" class="next pull-right">
+							Next Article→
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 ">
+				</div>
+				<div class="col-md-3 copyright">
+					Weblog of Akhil Pandey | 2016
+				</div>
+				<div class="col-md-6 menu">
+					<ul>
+						<li>
+							<a href="https://akhilhector.com/about">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/AkhilHector">Code</a>
+						</li>
+						<li class="active">
+							<a href="https://akhilhector.com/blog">Blog</a>
+						</li>
+						<li>
+							<a href="https://akhilhector.com/photos">Photos</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/theme.js"></script>
+	<script src="../js/highlight.min.js"></script>
+
+</body></html>

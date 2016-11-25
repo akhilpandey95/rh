@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>blog | hector</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
+	<link rel="stylesheet" type="text/css" href="../css/highlight.css">
+
+</head>
+
+<body id="blogpost">
+	<header class="navbar navbar-inverse normal" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="https://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../../about/index.html">About</a></li>
+					<li><a href="https://github.com/AkhilHector">Code</a></li>
+					<li><a href="../index.html">Blog</a></li>
+					<li><a href="https://akhilhector.com/photos">Photos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="blogpost-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-pic">
+						<img src="../img/week14gsoc1.jpg" class="img-responsive" alt="blogpost">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 post">
+					<div class="title">
+						Managing multiple states with <code>ui.router</code>
+					</div>
+					<div class="author">
+						<img src="../img/dp.jpeg" class="avatar" alt="author">
+						By Akhil Pandey, August 18, 2016
+					</div>
+					<div class="content">
+
+						<p>
+						Most of the angular applications today have an application router for dealing with the routes of the application. So the web interface for <code>sTeam</code> had the usage of <code>ui.router</code> a library for helping people write routers for complex and big applications.
+						So before i contextualize the usage of <code>ui.router</code> and also give an essence of how routing works with <code>ui.router</code> let us just have a look at the syntax :
+						</p>
+
+						<p>
+<pre>
+<code class="javascript">
+angular.module('steam', 'ui.router')
+
+.config(['$locationProvider', '$stateProvider', '$urlRouterProvider', '$provide',
+  function ($locationProvider, $stateProvider, $urlRouterProvider, $provide) {
+
+.state('state_name', {
+  url: '/route_goes_here',
+  templateUrl: '/path_to/templates_go_here.html',
+  controller: 'controller_comes_here',
+  requireLogin: false || true // depending on the requirement
+ })
+
+}])
+</code>
+</pre>
+						<br>
+						In the above snippet we can see how to initialize a bare minimum router for an angular application. But to use the <code>ui.router</code> for couple of routes is very much not using the router to the fullest of the features.
+						</p>
+
+						<p>
+						<b>What are states ?</b>
+						<br>
+						<code>$state</code> is nothing but a service which is part of the <code>ui.router</code>
+						module. So it can be considered as a service that is responsible for transitioning states accordingly from one state to another. There are many types of states that we can deal with while writing a router for a complex application that deals with multiple and nested states.
+						<ul>
+							<li><code style="color: black">parent State</code></li>
+							<li><code style="color: black">sibling State</code></li>
+							<li><code style="color: black">grand child state</code></li>
+						</ul>
+						The parent states generally go with the normal implementation, all we have to use is the state name while declaring the state. But things are not same with sibling state and grandchild state. Let us have a look as to how things are different with them :
+<pre>
+<code class="javascript">
+// sibling state
+.state('^.sibling_name_goes_here', {
+  url: '^/route_goes_here',
+  templateUrl: '/path_to/templates_go_here.html',
+  controller: 'controller_comes_here',
+  requireLogin: false || true // depending on the requirement
+ })
+
+// grand child state
+.state('^.sibling_name_goes_here.grandchild_name_goes_here', {
+  url: '^/route_goes_here/:path',
+  templateUrl: '/path_to/templates_go_here.html',
+  controller: 'controller_comes_here',
+  requireLogin: false || true // depending on the requirement
+ })
+</code>
+</pre>
+						</p>
+
+						<p>
+						<b>How should multiple routes be handled and how should views be added to the config ?</b>
+						<br>
+						As explained in my previous <a href="http://blog.fossasia.org/nested-views-and-templates-in-angular-gsoc-2016-fossasia/">article</a> there is a way to use the <code>ui-view</code> in order to write reusable components for the angular application. So let us have a look at how views are to be added to the router's config :
+
+<pre>
+<code class="javascript">
+// state with views
+.state('state_name_goes_here', {
+  url: '/route_goes_here',
+  requireLogin: true || false, // depending on the requirement
+  views: {
+    'view_name_goes_here': {
+      templateUrl: '/path_to/templates_go_here.html',
+      controller: 'controller_name_goes_here'
+    },
+    'view_name_goes_here': {
+      templateUrl: '/path_to/templates_go_here.html',
+      controller: 'controller_name_goes_here'
+    },
+    'view_name_goes_here': {
+      templateUrl: '/path_to/templates_go_here.html',
+      controller: 'controller_name_goes_here'
+    }
+  }
+})
+</code>
+</pre>
+						<br>
+						<code>NOTE :</code> We can have the possibility of an application that has a silbing route and all the routes of the parent route are inherited to the sibling route. Enabling this to happen is the beauty of <code>ui.router</code>
+						</p>
+
+						<p>
+						Now taking the above syntax we can just add more and more states to the config. It is pretty much that easy to write router config for an application dealing with multiple states. Therefore taking this ahead we can write application router's for applications that need to handle many routes, but the point here is to understand the point of how the <code>ui.router</code> can be leveraged to the maximum in order to take the best of its features.
+						</p>
+
+						<p>
+							Thats it folks, <br>
+							<code>Happy Hacking !!</code>
+						</p>
+							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
+					</div>
+					<div class="other-posts">
+						<a href="../index.html" class="prev">
+							← Go to blog
+						</a>
+						<a href="#" class="next pull-right">
+							Next Article→
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 ">
+				</div>
+				<div class="col-md-3 copyright">
+					Weblog of Akhil Pandey | 2016
+				</div>
+				<div class="col-md-6 menu">
+					<ul>
+						<li>
+							<a href="https://akhilhector.com/about">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/AkhilHector">Code</a>
+						</li>
+						<li class="active">
+							<a href="https://akhilhector.com/blog">Blog</a>
+						</li>
+						<li>
+							<a href="https://akhilhector.com/photos">Photos</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/theme.js"></script>
+	<script src="../js/highlight.min.js"></script>
+
+</body></html>

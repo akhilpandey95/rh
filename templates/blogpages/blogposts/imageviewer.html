@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>blog | hector</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/blog.css">
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
+
+</head>
+
+<body id="blogpost">
+	<header class="navbar navbar-inverse normal" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="https://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="../../about/index.html">About</a></li>
+					<li><a href="https://github.com/AkhilHector">Code</a></li>
+					<li><a href="../index.html">Blog</a></li>
+					<li><a href="https://akhilhector.com/photos">Photos</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div id="blogpost-wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="main-pic">
+						<img src="../img/week8gsoc0.jpg" class="img-responsive" alt="blogpost">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-10 post">
+					<div class="title">
+						Developing Image Viewer in Angular JS
+					</div>
+					<div class="author">
+						<img src="../img/dp.jpeg" class="avatar" alt="author">
+						By Akhil Pandey, July 15, 2016
+					</div>
+					<div class="content">
+
+						<p>In the previous article i have addressed about developing audio and video players
+						for sTeam. To know more about developing audio and video players, <a href="mediaplayer.html">click here</a>. This article is an extension to the previous one, as to how one could develop image viewer in angular.
+						<br>
+						Since <code>sTeam</code> is a collaboration platform there was the necessity of having an image viewer. So in angular <code>bootstrapLightbox</code> is very useful in building image viewers, galleries, sliders etc.</p>
+
+						<p>
+						<b>Implementation Strategy :</b>
+						<br>
+						There are basically two things involved in developing this;
+						<ul>
+							<li><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/newUI/cmp7.html">steamImageViewer</a> &nbsp;&nbsp;&nbsp;&nbsp;// the controller</li>
+							<li><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/newUI/cmp7.html">imageViewer($index)</a>&nbsp;&nbsp;// DOM</li>
+						</ul>
+						</p>
+
+						<p>
+						<b>The Controller</b>
+						<br>
+						<br>
+						<code style="color: black;">
+							angular.module('steam', [ 'bootstrapLightbox', 'ui.bootstrap' ])<br>
+							.controller('steamImageViewer', ['$scope', 'Lightbox', function($scope, Lightbox) {<br>
+							$scope.images = [<br>
+							{<br>
+								'url': 'https://societyserver.org/home/akhilhector/playground%20-%20hector/icon1.png',<br>
+								'title': 'icon1.png'<br>
+							},<br>
+							{<br>
+								'url': 'https://societyserver.org/home/akhilhector/playground%20-%20hector/icon3.jpg',<br>
+								'title': 'icon3.jpg'<br>
+							},<br>
+							{<br>
+								'url': 'https://societyserver.org/home/akhilhector/playground%20-%20hector/icon4.png',<br>
+								'title': 'icon4.png'<br>
+							},<br>
+							{<br>
+								'url': 'https://societyserver.org/home/akhilhector/playground%20-%20hector/icon4.jpg',<br>
+								'title': 'icon4.jpg'<br>
+							}];<br>
+
+							$scope.imageViewer = function (index) {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;Lightbox.openModal($scope.images, index);<br>
+							};<br>
+						}]);
+						</code>
+						<br>
+						<br>
+						Observe the controller over here, we pass an array of images or a single image to an array object and then we use the same for our DOM. Options like URL, Title, and Thumbnail can be passed in the same object. In the same controller we need to write another function that uses the <code>LightBox</code> service in order to open a modal and serve the image which was passed as an URL. So the modal displays whatever source is being passed as an argument. Also if we are using a REST api for retrieving the images then we can have a we can have similar array object that stores all the information recieved from the api response. In order to better this, there can be a mime-handler written so that if an unknown/unsupported mime type is being requested for, then an error can be popped.
+						</p>
+
+						<p>
+						<b>The HTML</b>
+						<br>
+						<br>
+						<code style="color: black;">
+							div class="row" ng-controller="steamImageViewer"<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;div class="col-md-12" ng-repeat="image in images"<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div class="roomItem"<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div class="itemText"> {{image.title}}<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a href="#" ng-click="imageViewer($index)">view<br>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;div<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;div<br>
+							div<br>
+						</code>
+						<br>
+						The above DOM seems pretty straight forward, we use the help of the function which we previously wrote in the controller in order to get the data. So as soon as we click the <code>Lightbox</code> modal fires and displays the image. It is to be observed that this implementation goes with consideration that there are an array of images that are ought to be retrieved, but the same logic wouldn't be fruitful for displaying a single image. In order to acheive that we can pass the image object to the <code>$scope</code> and use the same for displaying the image. And minor changes in the HTML will help displaying a single image instead of an array of images.
+						</p>
+
+						<p>
+							<b>So here is how it looks:</b>
+
+							<img src="../img/week8gsoc3.png" width="800" height="400">
+							<img src="../img/week8gsoc1.png" width="800" height="400">
+							<img src="../img/week8gsoc2.png" width="800" height="400">
+						</p>
+
+						<p>
+							Thats it folks, <br>
+							<code>Happy Hacking !!</code>
+						</p>
+							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
+					</div>
+					<div class="other-posts">
+						<a href="../index.html" class="prev">
+							← Go to blog
+						</a>
+						<a href="#" class="next pull-right">
+							Next Article→
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 ">
+				</div>
+				<div class="col-md-3 copyright">
+					Weblog of Akhil Pandey | 2016
+				</div>
+				<div class="col-md-6 menu">
+					<ul>
+						<li>
+							<a href="https://akhilhector.com/about">About</a>
+						</li>
+						<li>
+							<a href="https://github.com/AkhilHector">Code</a>
+						</li>
+						<li class="active">
+							<a href="https://akhilhector.com/blog">Blog</a>
+						</li>
+						<li>
+							<a href="https://akhilhector.com/photos">Photos</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.js"></script>
+	<script src="../js/theme.js"></script>
+
+</body></html>
