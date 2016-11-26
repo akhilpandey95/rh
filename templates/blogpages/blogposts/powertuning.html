@@ -1,111 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Akhil Pandey">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>blog | akhil</title>
 
-	<title>blog | hector</title>
-
-	<link rel="stylesheet" type="text/css" href="../css/blog.css">
-	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
-	<link rel="stylesheet" type="text/css" href="../css/highlight.css">
+    	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/clean-blog.min.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    	<link rel="stylesheet" type="text/css" href="css/fonts1.css">
+    	<link rel="stylesheet" type="text/css" href="css/fonts2.css">
 
 </head>
 
-<body id="blogpost">
-	<header class="navbar navbar-inverse normal" role="banner">
-		<div class="container">
-			<div class="navbar-header">
-				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="https://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
-			</div>
-			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-				<ul class="nav navbar-nav">
-					<li><a href="../../about/index.html">About</a></li>
-					<li><a href="https://github.com/AkhilHector">Code</a></li>
-					<li><a href="../index.html">Blog</a></li>
-					<li><a href="https://akhilhector.com/photos">Photos</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+<body>
 
-	<div id="blogpost-wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="main-pic">
-						<img src="../img/week16bp1.jpg" class="img-responsive" alt="blogpost">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-10 post">
-					<div class="title">
-						Increasing the battery life for Linux based distros
-					</div>
-					<div class="author">
-						<img src="../img/dp.jpeg" class="avatar" alt="author">
-						By Akhil Pandey, September 12, 2016
-					</div>
-					<div class="content">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/" style="color: #fff">Home</a>
+            </div>
 
-						<p>
-							I always used to find myself in a difficult situation when i had to travel
-							and work. The main reason for this is my machine had a <code>GNU/Linux</code>
-							based distro running and i couldn't stay away from a charging spot for more than
-							two hours. I always was intrigued to explore this segment and solve this very problem
-							in order to better my travel experience.
-						</p>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/about" style="color: #fff;">About</a>
+                    </li>
+                    <li>
+                        <a href="/blog" style="color: #fff; text-decoration: underline;">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/rhetorics" style="color: #fff;">Rhetorics</a>
+                    </li>
+                    <li>
+                        <a href="/snaps" style="color: #fff;">Snaps</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-						<p>
-						 Basically there are couple of things to be kept in mind before you go out and try
-						 the tricks mentioned here, Consider them basics; So they are :
-						 <ul>
-							 	<li>The Kernel plays a major role in providing support to enhance battery life.
-								So i have tested the battery saving hacks on kernel's :
-									<ul>
-										<li><code>4.2.x</code></li>
-										<li><code>4.2.x</code></li>
-										<li><code>4.7*</code>// Arch</li>
-									</ul>
-								So make sure you have kernel above <code>4.x.x</code> as they show a significant
-								improvement with latest set of processors
-								</li>
-								<li>Apart from the kernel the next major role is played by the distro, so it is very
-								important to have a desktop environment that is not bloated will unecessary software.
-								For example LXDE, Xfce, Xmonad, OpenBox are the options you might want to look at if you
-								are keen on battery and minimalism</li>
-								<li>The distro comes next, you might think that having a light weight Desktop environment
-								will do your job, although your job is only halfdone. So in order to complete the list of
-							  basics you must ensure that you have a light weight Distro like Arch Linux, Arch Bang,
-							  Xubuntu, Lubuntu. Don't expect these hacks to work properly on Unity, Gnome</li>
-						 </ul>
-						</p>
+    <header class="intro-header" style="background-image: url('../img/week16bp1.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Tuning the GNU/Linux System</h1>
+                        <h2 class="subheading">Increasing the battery life for Linux based distros</h2>
+                        <span class="meta">By <a href="/about">Akhil Pandey</a> on September 12, 2016</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-						<p>
-						<b>My setup :</b>
-						<br />
-						I basically use <code>Arch linux + XFCE</code> with the latest kernel;
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <p>
+                        I always used to find myself in a difficult situation when i had to travel
+                        and work. The main reason for this is my machine had a <code>GNU/Linux</code>
+                        based distro running and i couldn't stay away from a charging spot for more than
+                        two hours. I always was intrigued to explore this segment and solve this very problem
+                        in order to better my travel experience.
+                    </p>
+
+                    <p>
+                     Basically there are couple of things to be kept in mind before you go out and try
+                     the tricks mentioned here, Consider them basics; So they are :
+                     <ul>
+                            <li>The Kernel plays a major role in providing support to enhance battery life.
+                            So i have tested the battery saving hacks on kernel's :
+                                <ul>
+                                    <li><code>4.2.x</code></li>
+                                    <li><code>4.2.x</code></li>
+                                    <li><code>4.7*</code>// Arch</li>
+                                </ul>
+                            So make sure you have kernel above <code>4.x.x</code> as they show a significant
+                            improvement with latest set of processors
+                            </li>
+                            <li>Apart from the kernel the next major role is played by the distro, so it is very
+                            important to have a desktop environment that is not bloated will unecessary software.
+                            For example LXDE, Xfce, Xmonad, OpenBox are the options you might want to look at if you
+                            are keen on battery and minimalism</li>
+                            <li>The distro comes next, you might think that having a light weight Desktop environment
+                            will do your job, although your job is only halfdone. So in order to complete the list of
+                          basics you must ensure that you have a light weight Distro like Arch Linux, Arch Bang,
+                          Xubuntu, Lubuntu. Don't expect these hacks to work properly on Unity, Gnome</li>
+                     </ul>
+                    </p>
+
+                    <p>
+                    <b>My setup :</b>
+                    <br />
+                    I basically use <code>Arch linux + XFCE</code> with the latest kernel;
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 Linux machine 4.7.2-1-ARCH #1 SMP PREEMPT Sat Aug 20 23:02:56 CEST 2016 x86_64 GNU/Linux
 </code>
 </pre>
-						</p>
+                    </p>
 
-						<p>
-						Things to be installed before starting this:
-						<br />
-						<b>For Arch</b>
+                    <p>
+                    Things to be installed before starting this:
+                    <br />
+                    <b>For Arch</b>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 pacman -S tlp
@@ -115,8 +127,8 @@ pacman -S yaourt
 yaourt thermald
 </code>
 </pre>
-						<br />
-						<b>For *buntu</b>
+                    <br />
+                    <b>For *buntu</b>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 apt-get install tlp
@@ -124,63 +136,63 @@ apt-get install powertop
 # Thermald is installed by default in *buntu based distro's
 </code>
 </pre>
-						</p>
+                    </p>
 
-						<p>
-						Before i start let me just say couple of things which are to be kept in
-						mind whilst copying/pasting the commands listed in the article.
-						<ul>
-							<li>There might be a command which might not be suitable to your machine
-							or your hardware in specific, so kindly read about the same before you
-						  unleash your fingers</li>
-							<li>Some of these commands might be very handy or might be not at all,
-							since we have to take many things like kernel support etc into consideration
-						  and also rather than having a thought that this would be mind-blowingexpect
-							the outcome to be mildly good.</li>
-							<li>If you are new to GNU/Linux please make sure that you have a reference by
-							your side whilst going through this article.</li>
-						</ul>
-						</p>
+                    <p>
+                    Before i start let me just say couple of things which are to be kept in
+                    mind whilst copying/pasting the commands listed in the article.
+                    <ul>
+                        <li>There might be a command which might not be suitable to your machine
+                        or your hardware in specific, so kindly read about the same before you
+                      unleash your fingers</li>
+                        <li>Some of these commands might be very handy or might be not at all,
+                        since we have to take many things like kernel support etc into consideration
+                      and also rather than having a thought that this would be mind-blowingexpect
+                        the outcome to be mildly good.</li>
+                        <li>If you are new to GNU/Linux please make sure that you have a reference by
+                        your side whilst going through this article.</li>
+                    </ul>
+                    </p>
 
-						<p>
-						<b>Let's get started :</b>
-						<br />
-						 So considering that you have installed the afore mentioned packages, let's
-						 get started:
-						 <br />
-						 <br />
+                    <p>
+                    <b>Let's get started :</b>
+                    <br />
+                     So considering that you have installed the afore mentioned packages, let's
+                     get started:
+                     <br />
+                     <br />
 
-						 <b>Aspect 1 : <code>brightness</code></b>
-						 <br />
-						 Although you might have the feeling that you know this thing from a long time,
-						 there are some things to ensure that you use this method the right way. So open
-						 the terminal and type :
+                     <b>Aspect 1 : <code>brightness</code></b>
+                     <br />
+                     Although you might have the feeling that you know this thing from a long time,
+                     there are some things to ensure that you use this method the right way. So open
+                     the terminal and type :
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 cat /sys/class/backlight/intel_backlight/brightness
 </code>
 </pre>
-						Typing the above command gives you the brightness which your screen is currently
-						set to, now go ahead and type:
+                    Typing the above command gives you the brightness which your screen is currently
+                    set to, now go ahead and type:
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 cat /sys/class/backlight/intel_backlight/max_brightness
 </code>
 </pre>
-						Typing the above command gives you the maximum brightness that can be set to your
-						machine. So now the important part to be noted here is, make sure that your current
-						brightness is set to nearly <code>8.5%</code> of your maximum brightness. Making sure
-						that you set this to that value you can increase the battery time invariably.
-						<br />
-						<br />
+                    Typing the above command gives you the maximum brightness that can be set to your
+                    machine. So now the important part to be noted here is, make sure that your current
+                    brightness is set to nearly <code>8.5%</code> of your maximum brightness. Making sure
+                    that you set this to that value you can increase the battery time invariably.
+                    <br />
+                    <br />
 
-						<b>Aspect 2: <code>Events & Services</code></b>
-						<br />
-						The next important part of the process is using the services which system wants and
-						removing the things which are not necessary. So things like <code>bluetooth, mongodb,
-						mysql, rethinkdb, etc....</code> could be disabled. Note that the idea here is not about
-						disabling a specific service or distinguishing them, although it is basically about stopping
-						all the unwanted services. Turn them off by typing
+                    <b>Aspect 2: <code>Events & Services</code></b>
+                    <br />
+                    The next important part of the process is using the services which system wants and
+                    removing the things which are not necessary. So things like <code>bluetooth, mongodb,
+                    mysql, rethinkdb, etc....</code> could be disabled. Note that the idea here is not about
+                    disabling a specific service or distinguishing them, although it is basically about stopping
+                    all the unwanted services. Turn them off by typing
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Arch linus
@@ -191,27 +203,27 @@ systemctl stop service_name
 service service_name stop
 </code>
 </pre>
-						Make sure that cursor blink mode is disabled, since this event is responsible for
-						consuming a significant amount of power. Type the following command :
+                    Make sure that cursor blink mode is disabled, since this event is responsible for
+                    consuming a significant amount of power. Type the following command :
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Any distro doesn't matter
 gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_blink_mode off
 </code>
 </pre>
-						The above command <code>gconftool-2</code> is basically a configuration tool for
-						changing the default values in a system. All the preferences are basically key:value
-						pairs. Typing the above command makes sure that cursor blinking mod is turned off.
-						<br />
-						<br />
+                    The above command <code>gconftool-2</code> is basically a configuration tool for
+                    changing the default values in a system. All the preferences are basically key:value
+                    pairs. Typing the above command makes sure that cursor blinking mod is turned off.
+                    <br />
+                    <br />
 
-						<b>Aspect 3 : <code>Screensaver and display manager</code></b>
-						<br />
-						Assuming that you are using <code>Xorg</code>, there are couple of things
-						which you might want to know so that there is a clear understanding of
-						system's power consumption policy when it goes down for a <b>suspend or screen
-						blank</b>. Before you get started on this aspect, please have a look at the man
-						page for <code>xset</code>. Now let's go through what all should be done;
+                    <b>Aspect 3 : <code>Screensaver and display manager</code></b>
+                    <br />
+                    Assuming that you are using <code>Xorg</code>, there are couple of things
+                    which you might want to know so that there is a clear understanding of
+                    system's power consumption policy when it goes down for a <b>suspend or screen
+                    blank</b>. Before you get started on this aspect, please have a look at the man
+                    page for <code>xset</code>. Now let's go through what all should be done;
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # first check your config by typing
@@ -226,24 +238,24 @@ xset s noexpose
 </code>
 </pre>
 
-						Now that you have disabled screen saver and power blanking, the next step
-						is regarding <code>DPMS</code>. If you want to know regarding DPMS
-						<a href="https://www.x.org/releases/X11R7.7/doc/xextproto/dpms.html"
-						target="_blank">click here</a>. So disable/enable DPMS depending upon your
-						need.
+                    Now that you have disabled screen saver and power blanking, the next step
+                    is regarding <code>DPMS</code>. If you want to know regarding DPMS
+                    <a href="https://www.x.org/releases/X11R7.7/doc/xextproto/dpms.html"
+                    target="_blank">click here</a>. So disable/enable DPMS depending upon your
+                    need.
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 xset -dpms  // disables Energy star (DPMS)
 xset +dpms  // enables  Energy star (DPMS)
 </code>
 </pre>
-						<br />
-						<br />
+                    <br />
+                    <br />
 
-						<b>Aspect 4: <code>Wireless and Network</code></b>
-						<br />
-						So most of the time we make sure that we are connected to the internet, thus
-						making sure to optimize battery in this use case is a bit tough and challenging.
+                    <b>Aspect 4: <code>Wireless and Network</code></b>
+                    <br />
+                    So most of the time we make sure that we are connected to the internet, thus
+                    making sure to optimize battery in this use case is a bit tough and challenging.
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # enable power saving using iwconfig
@@ -256,21 +268,21 @@ iw card_label set power_save on
 iwconfig card_label power 100m
 </code>
 </pre>
-						There are couple of things to be kept in mind after you type those :
-						<ul>
-							<li>There are some <b>atheros</b> chips that are configured for power save
-							in the first place, so you might not observe much of a change in your
-						  battery life.</li>
-							<li>Basically all Wireless cards use a significant amount of power, although
-							when compared using <b>ethernet</b> over to <b>wifi</b> is better. So opt for
-						  ethernet if you have an option</li>
-							<li>From system to system the battery drain is directly proportional to the
-							card you use, so if you have a high transmit network card then these settings
-						  might not be effective to your overall battery time.</li>
-							<li>Even though you go through all those above mentioned gruelling scenarios
-							there is good chance that you might save upto <code>30-40 mins</code></li>
-						</ul>
-						Next, disable or kill bluetooth if you are not using it;
+                    There are couple of things to be kept in mind after you type those :
+                    <ul>
+                        <li>There are some <b>atheros</b> chips that are configured for power save
+                        in the first place, so you might not observe much of a change in your
+                      battery life.</li>
+                        <li>Basically all Wireless cards use a significant amount of power, although
+                        when compared using <b>ethernet</b> over to <b>wifi</b> is better. So opt for
+                      ethernet if you have an option</li>
+                        <li>From system to system the battery drain is directly proportional to the
+                        card you use, so if you have a high transmit network card then these settings
+                      might not be effective to your overall battery time.</li>
+                        <li>Even though you go through all those above mentioned gruelling scenarios
+                        there is good chance that you might save upto <code>30-40 mins</code></li>
+                    </ul>
+                    Next, disable or kill bluetooth if you are not using it;
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Arch linux
@@ -281,16 +293,16 @@ service bluetooth stop
 </code>
 </pre>
 
-						<br />
-						<br />
+                    <br />
+                    <br />
 
-						<b>Aspect 5: <code>Hard drive</code></b>
-						<br />
-						It is basically the most important part of this entire process, so there are two
-						approaches to ensure that you have power save enabled to your hard disk and you
-						are not compromising on performance. So Linux gives you the feasibility to alter
-						the hard drive spindown speed using the command <code>hdparm</code>. To know more
-						about the command type <b>man hdparm</b>.
+                    <b>Aspect 5: <code>Hard drive</code></b>
+                    <br />
+                    It is basically the most important part of this entire process, so there are two
+                    approaches to ensure that you have power save enabled to your hard disk and you
+                    are not compromising on performance. So Linux gives you the feasibility to alter
+                    the hard drive spindown speed using the command <code>hdparm</code>. To know more
+                    about the command type <b>man hdparm</b>.
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # To alter spindown timeout
@@ -303,14 +315,14 @@ hdparm -S {time} /dev/{name}
 #spindown_time = 340 # 2 hours
 </code>
 </pre>
-						Next in queue comes a small but very good measure called <code>noatime</code>.
-						So basically with <code>noatime</code> disabled the access times of all the
-						directories and files in your file system are not really in your control,
-						meaning even if you have your hard disk spindown time set, but imagine there
-						is a read operation of a file from your cache, this essentially is registered
-						as a normal read operation and it basically ensures that the hard disk is
-						spinning all the time. So in order to negate this and ensure that this doesn't
-						null the effect of <code>hdparm</code>. Do the following:
+                    Next in queue comes a small but very good measure called <code>noatime</code>.
+                    So basically with <code>noatime</code> disabled the access times of all the
+                    directories and files in your file system are not really in your control,
+                    meaning even if you have your hard disk spindown time set, but imagine there
+                    is a read operation of a file from your cache, this essentially is registered
+                    as a normal read operation and it basically ensures that the hard disk is
+                    spinning all the time. So in order to negate this and ensure that this doesn't
+                    null the effect of <code>hdparm</code>. Do the following:
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Open fstab
@@ -325,11 +337,11 @@ UUID=2e0e754e-7dc2-4c21-9101-b539b8a501a8  /       ext4   errors=remount-ro 0   
 UUID=2e0e754e-7dc2-4c21-9101-b539b8a501a8  /       ext4   errors=remount-ro,<b>noatime</b> 0   1
 </code>
 </pre>
-						Save the <code>/etc/fstab</code> and reboot your system in order to have it in
-						effective usage. So now <code>hdparm</code> will be successfull at spinning down
-						the hard drive when not in use. Moving ahead there is also some more things that
-						could be done in order to ensure that an extra power saving flag is passed to the
-						system. In order to do that;
+                    Save the <code>/etc/fstab</code> and reboot your system in order to have it in
+                    effective usage. So now <code>hdparm</code> will be successfull at spinning down
+                    the hard drive when not in use. Moving ahead there is also some more things that
+                    could be done in order to ensure that an extra power saving flag is passed to the
+                    system. In order to do that;
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Change the following from max_performance to min_power
@@ -338,19 +350,19 @@ echo min_power > /sys/class/scsi_host/host1/link_power_management_policy
 echo min_power > /sys/class/scsi_host/host2/link_power_management_policy
 </code>
 </pre>
-						Although this worked fine on some systems it is to be noted that when you are not
-						in <b>AC</b> mode, i.e when you are using your system on battery the above commands
-						might work just fine, but if you are facing any issues or if you feel that the Read
-						write speeds are visibly slowed down, then alter the above three parameters by typing
-						<code>max_performance</code> instead of <code>min_power</code>
-						<br />
-						<br />
+                    Although this worked fine on some systems it is to be noted that when you are not
+                    in <b>AC</b> mode, i.e when you are using your system on battery the above commands
+                    might work just fine, but if you are facing any issues or if you feel that the Read
+                    write speeds are visibly slowed down, then alter the above three parameters by typing
+                    <code>max_performance</code> instead of <code>min_power</code>
+                    <br />
+                    <br />
 
-						<b>Aspect 6: <code>Audio devices</code></b>
-						<br />
-						So audio cards consume a significant amount of power when are in use, but there is no
-						point in spending that when you are not using them. Thereby in order to ensure that the
-						sound cards accepts a power saving mechanism just type;
+                    <b>Aspect 6: <code>Audio devices</code></b>
+                    <br />
+                    So audio cards consume a significant amount of power when are in use, but there is no
+                    point in spending that when you are not using them. Thereby in order to ensure that the
+                    sound cards accepts a power saving mechanism just type;
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Check the parameter first using cat
@@ -360,16 +372,16 @@ cat /sys/module/snd_hda_intel/parameters/power_save_controller
 echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
 </code>
 </pre>
-						<br />
-						<br />
+                    <br />
+                    <br />
 
-						<b>Aspect 7: <code>Tools</code></b>
-						<br />
-						If you are an avid Linux user you might have come across the tools called
-						<code>powertop, tlp</code>. These are two handy tools which complete this
-						transaction. Consider them like the last piece of the puzzle. Provided that
-						you have downloaded them there is pretty much nothing to configure with them,
-						they can be used right away after installation.
+                    <b>Aspect 7: <code>Tools</code></b>
+                    <br />
+                    If you are an avid Linux user you might have come across the tools called
+                    <code>powertop, tlp</code>. These are two handy tools which complete this
+                    transaction. Consider them like the last piece of the puzzle. Provided that
+                    you have downloaded them there is pretty much nothing to configure with them,
+                    they can be used right away after installation.
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Start tlp first
@@ -382,74 +394,74 @@ powertop --calibrate
 powertop --auto-tune
 </code>
 </pre>
-						<b>NOTE:</b> After you hit calibrate the screen will go blank, don't worry
-						</p>
+                    <b>NOTE:</b> After you hit calibrate the screen will go blank, don't worry
+                    </p>
 
-						<p>
-						With that we basically complete all the basic aspects of power saving that are
-						to be ensured. People who have a bit of expertise in this field might be wondering
-						as to why i didn't mention about CPU freq, Intel p-states etc. Well after some research
-						i found that <code>tlp</code> turns effective with usage and altering of <code>C-states</code>
-						and <code>P-states</code>. So if you want to take a step ahead and alter modes like <code>no_turbo
-						</code>, <code>max_perf_pct</code> etc, go ahead but i do want to mention that there is not much
-						of significance as i have tried them out too.
-						<br />
-						PS : If you are using <code>nvidia</code> driver instead of <code>Xorg</code>, then
-						download the package <code>nvidia-settings</code> and change your power saving profiles
-						over there.
-						</p>
+                    <p>
+                    With that we basically complete all the basic aspects of power saving that are
+                    to be ensured. People who have a bit of expertise in this field might be wondering
+                    as to why i didn't mention about CPU freq, Intel p-states etc. Well after some research
+                    i found that <code>tlp</code> turns effective with usage and altering of <code>C-states</code>
+                    and <code>P-states</code>. So if you want to take a step ahead and alter modes like <code>no_turbo
+                    </code>, <code>max_perf_pct</code> etc, go ahead but i do want to mention that there is not much
+                    of significance as i have tried them out too.
+                    <br />
+                    PS : If you are using <code>nvidia</code> driver instead of <code>Xorg</code>, then
+                    download the package <code>nvidia-settings</code> and change your power saving profiles
+                    over there.
+                    </p>
 
-						<p>
-							Thats it folks, <br>
-							<code>Happy Hacking !!</code>
-						</p>
-							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
-					</div>
-					<div class="other-posts">
-						<a href="../index.html" class="prev">
-							← Go to blog
-						</a>
-						<a href="#" class="next pull-right">
-							Next Article→
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <p>
+                        Thats it folks, <br>
+                        <code>Happy Hacking !!</code>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </article>
 
+    <hr>
 
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 ">
-				</div>
-				<div class="col-md-3 copyright">
-					Weblog of Akhil Pandey | 2016
-				</div>
-				<div class="col-md-6 menu">
-					<ul>
-						<li>
-							<a href="https://akhilhector.com/about">About</a>
-						</li>
-						<li>
-							<a href="https://github.com/AkhilHector">Code</a>
-						</li>
-						<li class="active">
-							<a href="https://akhilhector.com/blog">Blog</a>
-						</li>
-						<li>
-							<a href="https://akhilhector.com/photos">Photos</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Weblog of <code>Akhil Pandey</code> <strong>2016</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-	<script src="../js/jquery.js"></script>
-	<script src="../js/bootstrap.js"></script>
-	<script src="../js/theme.js"></script>
-	<script src="../js/highlight.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/clean-blog.min.js"></script>
 
-</body></html>
+</body>
+
+</html>

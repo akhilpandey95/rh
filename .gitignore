@@ -4,6 +4,9 @@ test-dir/
 #files
 test.js
 test.html
+templates/test.html
+templates/blogpages/test.html
+templates/blogpages/blogposts/test.html
 
 #logs
 *.log
