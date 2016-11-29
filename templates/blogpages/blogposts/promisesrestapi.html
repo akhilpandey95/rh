@@ -70,14 +70,86 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<p>
-					<center><img src="../img/week18bp2.png"></center>
-					</p>
+                    <p>
+                        Before breaking it down, to all those who don't know what REST API's are :
+                        <br>
+                        <br>
+                        "REST is acronym for REpresentational State Transfer. It is architectural style for distributed hypermedia systems ans was first presented by Roy Fielding in 2000 in his famous dissertation."
+                        <small>Source : "restfulapi.net"</small>
+                    </p>
+                    <br>
+                    <b>So what is a Promise ?</b>
+                    <p>
+                        Generally promises are representation of a value that which might not be available to us as of now
+                        but at some point eventually it will be available. Observe the below image to understand how promises
+                        work.
+                    </p>
+                    <p>
+                        <img src="../img/week2gsoc2.jpg" width="650" height="400">
+                    </p>
+                    <br>
+                    <b>So how is this better than callbacks ?</b>
+                    <p>
+                        Generally if you are using callbacks in your codebase then at some point of time either for i/o's or file buffers or
+                        something might come in your way and makes you write nested callbacks. Writing nested callbacks is difficult and an
+                        alternative to that is <code>promise</code>
+                    </p>
+                    <p>
+                        <img src="../img/week2gsoc3.jpg" width="400" height="300">
+                    </p>
+                    <b>REST API's, promises what are you about to explain ?</b>
+                    <p>
+                        Angular has this beautiful service called <code>$q</code> which is helpful for creating promises and using them in
+                        your angular applications. Generally many people have concerns over <code>$q</code> but <code>$q</code> is tightly
+                        integrated with the scope life cycle. So be it any task it contains all the necessary features needed by most of the
+                        heavy duty asynchronous tasks.
+                    </p>
+                    <p>
+                        Now to start off angular can be really powerfull with the <code>$http</code> Service provided the fact that it has
+                        immense potential in allowing us to create heavy duty REST ful API's, CRUD operation based web applications etc. So
+                        let us understand the $http service first before using promises for creating a REST ful API.
+                        <br>
+                        <hr>
+                        <code>
+                            $http<br>
+                            &nbsp;  |_____ .success()<br>
+                                     &nbsp;&nbsp;&nbsp; <small>For a success(), callback is called asynchronously when the request completes and the
+                              response arrives from the server</small>  <br>
+                            &nbsp;  |_____ .error()<br>
+                                    &nbsp;&nbsp;&nbsp; <small>For an error(), the error callback is fired</small>
+                        </code>
+                        <hr>
+                        Callbacks which are accpeted by above methods are :
+                        <ul>
+                            <li>data: It is a response obtained from server.</li>
+                            <li>status: HTTP status codes 100x, 200x, 300x, 400x, etc which returned from server.</li>
+                            <li>config: Object used for generating the request.</li>
+                            <li>headers: Headers sent by the server.</li>
+                            <li>statusText: HTTP status text of the status code.</li>
+                        </ul>
+                    </p>
+                    <b>Promise Chaining</b>
+                    <p>
+                        Chaining is one of the most important aspects of promises. Here the basic idea is that promises can be composed
+                        through chaining. This means you can trigger a specified task only after previous promise has been resolved.
+                    </p>
+                    <b>Handling errors by designing a promise that always rejects</b>
+                    <p>No API is complete without writing a handler or a middleware that takes care of all the requests which are generally
+                    errored. Designing this will be useful if we want to tell a user about the occurrence of an error in terms of a promise rather than
+                    a simple value.</p>
+                    <p>
+                        <img src="../img/week2gsoc4.jpg">
+                    </p>
+                    <p>
+                        NOTE : Generally while using <code>$http</code> Service there are somethings which one should have knowledge
+                        of, If we happen to send a JS object as POST data in a POST/PUT request, it's serialized to JSON before getting sent.
+                        Similarly, if the server responds with a JSON string it's parsed into a JavaScript object and passed to the success callback attached to the promise.
+                    </p>
+                    <p>
+                        Thats it folks, <br>
+                        <code>Happy Hacking !!</code>
+                    </p>
 
-					<p>
-						Thats it folks, <br>
-						<code>Happy Hacking !!</code>
-					</p>
 				</div>
             </div>
         </div>
