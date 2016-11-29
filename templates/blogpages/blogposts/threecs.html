@@ -1,252 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Akhil Pandey">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Pragma" content="no-cache">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>blog | akhil</title>
 
-	<title>blog | hector</title>
-
-	<link rel="stylesheet" type="text/css" href="../css/blog.css">
-	<link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
-	<link rel="stylesheet" type="text/css" href="../css/icomoon.css">
+    	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/clean-blog.min.css">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    	<link rel="stylesheet" type="text/css" href="css/fonts1.css">
+    	<link rel="stylesheet" type="text/css" href="css/fonts2.css">
 
 </head>
 
-<body id="blogpost">
-	<header class="navbar navbar-inverse normal" role="banner">
-		<div class="container">
-			<div class="navbar-header">
-				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="https://akhilhector.com" class="navbar-brand">Akhil Pandey</a>
-			</div>
-			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-				<ul class="nav navbar-nav">
-					<li><a href="../../about/index.html">About</a></li>
-					<li><a href="https://github.com/AkhilHector">Code</a></li>
-					<li><a href="../index.html">Blog</a></li>
-					<li><a href="https://akhilhector.com/photos">Photos</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
+<body>
 
-	<div id="blogpost-wrapper">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="main-pic">
-						<img src="../img/week5gsoc1.jpg" class="img-responsive" alt="blogpost">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-10 post">
-					<div class="title">
-						The three <code>C's</code> of Javasript
-					</div>
-					<div class="author">
-						<img src="../img/dp.jpeg" class="avatar" alt="author">
-						By Akhil Pandey, June 28, 2016
-					</div>
-					<div class="content">
-						<p>
-							You might be wondering what the three C's are :
-							<br>
-							<ul>
-								<li><code>Currying</code></li>
-								<li><code>Closures</code></li>
-								<li><code>Callbacks</code></li>
-							</ul>
-						</p>
-						<br>
-						<b>Ok what are those ?</b>
-						<p>
-							Before i start, let me tell you that in Javascript Functions are Objects. So every object in Javascript, be it
-							Number, String, Array; Every Object in javascript has a prototype object. For instance if the object is declared
-							using an <code>object</code> literal then it has access to <code>Object.prototype</code>, Similarly all the arrays
-							so declared have access to the <code>Array.prototype</code>. So since functions are objects, they can be used like
-							any other value. They can be stored in variables, objects, and arrays. They can also be passed as arguments to functions,
-							and donot forget that <b>functions can be returned from functions</b>.
-						</p>
-						<br>
-						<b>Currying :</b>
-						<p>
-							In Javascript if one wants to partially evaluate functions then one can take advantage of a concept called function
-							currying. Currying allows us to produce a new function by combining a function and an argument. For example let us
-							consider writing an add function, : <br><br>
-							<code style="color: #3f3f3f">
-								function add(foo, bar) { <br>
-									&nbsp;&nbsp;&nbsp;&nbsp;if(arguments.length === 1) { <br>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return function (boo) { <br>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		return foo + boo; <br>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	} <br>
-									&nbsp;&nbsp;&nbsp;&nbsp;} <br>
-									&nbsp;&nbsp;&nbsp;&nbsp;return foo + bar; <br>
-								} <br>
-							</code>
-							So for the above code, <br>
-							<code style="color: green">add(12, 13);</code> // gives 25<br>
-							<code style="color: green">add(12)(13);</code> // gives 25<br><br>
-							The curry method works by creating a closure that holds that original function and
-							the arguments to curry. It returns a function that, when invoked, returns the result of
-							calling that original function, passing it all of the arguments from the invocation of
-							curry and the current invocation
-						</p>
-						<br>
-						<b>Closures :</b>
-						<p>
-							Simply put, a closure is an inner function that has access to the outer (enclosing) function’s variables scope chain.
-							Except the parameters and variables that which are defined using <code>this</code> and <code>arguments</code>
-							all, the inner functions have access to all the parameters and variables of the function in which those are defined.
-							<br><br>
-							<code style="color: #3f3f3f">
-								var a = 0;<br>
-								function counter() {<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;var i = 2;<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;return i*i;<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/" style="color: #fff">Home</a>
+            </div>
 
-								function counter1() {<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;return a+= 1;<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-							<br>
-							// this wont work as part of Js closures<br>
-							function counter_foo() {<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;var a = 0;<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;a += 1;<br>
-							}<br>
-							<br>
-							// this also wont work as part of Js closures<br>
-							function counter_bar() {<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;var c = 0;<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;function go() { c+= 1;}<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;go();<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;return counter;<br>
-							}
-							<br>
-							// this will work as part of Js closures<br>
-							var counter_closure = (function () {<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;var incr;<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;return function() {return incr+= 1;}<br>
-						})();<br>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/about" style="color: #fff;">About</a>
+                    </li>
+                    <li>
+                        <a href="/blog" style="color: #fff; text-decoration: underline;">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/rhetorics" style="color: #fff;">Rhetorics</a>
+                    </li>
+                    <li>
+                        <a href="/snaps" style="color: #fff;">Snaps</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="intro-header" style="background-image: url('../img/week16bp1.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>The three C's of Javascript</h1>
+                        <h2 class="subheading">Currying, Closures and Callbacks</h2>
+                        <span class="meta">By <a href="/about">Akhil Pandey</a> on June 28, 2016</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+					<p>
+						You might be wondering what the three C's are :
 						<br>
+						<ul>
+							<li><code>Currying</code></li>
+							<li><code>Closures</code></li>
+							<li><code>Callbacks</code></li>
+						</ul>
+					</p>
+					<br>
+					<b>Ok what are those ?</b>
+					<p>
+						Before i start, let me tell you that in Javascript Functions are Objects. So every object in Javascript, be it
+						Number, String, Array; Every Object in javascript has a prototype object. For instance if the object is declared
+						using an <code>object</code> literal then it has access to <code>Object.prototype</code>, Similarly all the arrays
+						so declared have access to the <code>Array.prototype</code>. So since functions are objects, they can be used like
+						any other value. They can be stored in variables, objects, and arrays. They can also be passed as arguments to functions,
+						and donot forget that <b>functions can be returned from functions</b>.
+					</p>
+					<br>
+					<b>Currying :</b>
+					<p>
+						In Javascript if one wants to partially evaluate functions then one can take advantage of a concept called function
+						currying. Currying allows us to produce a new function by combining a function and an argument. For example let us
+						consider writing an add function, : <br><br>
+						<code style="color: #3f3f3f">
+							function add(foo, bar) { <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;if(arguments.length === 1) { <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	return function (boo) { <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		return foo + boo; <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	} <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;} <br>
+								&nbsp;&nbsp;&nbsp;&nbsp;return foo + bar; <br>
+							} <br>
 						</code>
-						<code style="color: green">
-						show(counter1());<br>
-						show(counter1());<br>
-						show(counter1()); // since we are added the counter three times the value of a is set to 3.<br>
-						show(counter_foo());<br>
-						show(counter_foo());<br>
-						show(counter_foo()); // this is similar to the above but doesnot set the value of a to 3, but returns undefined.<br>
-						show(counter_bar());<br>
-						show(counter_bar());<br>
-						show(counter_bar()); // Neither this works which will always set the value to 1<br>
-						show(counter_closure());<br>
-						show(counter_closure());<br>
-						show(counter_closure()); // Now this is called closures implementation in Js<br>
-					</code>
-							<br><br>
-							Function Closures in Javascript is all about how are the variables being treated and
-							referred to in the local or global scope. In Js variables can be given :
-							<code>'local scope'</code>
-							<code>'global scope'</code>
-							There is no inbuilt concept for something called private variables, so when there is
-							a requirement for such a scenario Closures are written in Js in order to make scope
-							for variables that are private in scope.
-							Observing the functions 'counter1()', 'counter_foo()' and 'counter_bar()' there is a
-							similarity that can be observed, Basically we can understand that closures are nothing
-							but self invoking functions in Js. Observe the example 'counter_closure()' where in we
-							are calling the function thrice and hoping to increment the functional value each time
-							when we call the function. So this self invoking function runs only once but it increments
-							the value each time it is called. The scope of the variable is protected by the anonymous
-							return function making us assume that this can be called implementation of private
-							variables in Js.
-						</p>
+						So for the above code, <br>
+						<code style="color: green">add(12, 13);</code> // gives 25<br>
+						<code style="color: green">add(12)(13);</code> // gives 25<br><br>
+						The curry method works by creating a closure that holds that original function and
+						the arguments to curry. It returns a function that, when invoked, returns the result of
+						calling that original function, passing it all of the arguments from the invocation of
+						curry and the current invocation
+					</p>
+					<br>
+					<b>Closures :</b>
+					<p>
+						Simply put, a closure is an inner function that has access to the outer (enclosing) function’s variables scope chain.
+						Except the parameters and variables that which are defined using <code>this</code> and <code>arguments</code>
+						all, the inner functions have access to all the parameters and variables of the function in which those are defined.
+						<br><br>
+						<code style="color: #3f3f3f">
+							var a = 0;<br>
+							function counter() {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;var i = 2;<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;return i*i;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+
+							function counter1() {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;return a+= 1;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 						<br>
-						<b>Callbacks :</b>
-						<p>
-							A callback function is a function that is passed to another function as a parameter and giving
-							the provision for the function to “call us back” later. Since the callback function is just a normal
-							function when it is executed, we can pass parameters to it. We can pass any of the containing function’s
-							properties (or global properties) as parameters to the callback function. Let us look at an example :
-							<br><br>
-							<code style="color: #3f3f3f">
-							function manipulate(foo, bar) {<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;console.log("Do you know that " + foo + " is better than " + bar);<br>
-							}<br>
+						// this wont work as part of Js closures<br>
+						function counter_foo() {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;var a = 0;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;a += 1;<br>
+						}<br>
+						<br>
+						// this also wont work as part of Js closures<br>
+						function counter_bar() {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;var c = 0;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;function go() { c+= 1;}<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;go();<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;return counter;<br>
+						}
+						<br>
+						// this will work as part of Js closures<br>
+						var counter_closure = (function () {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;var incr;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;return function() {return incr+= 1;}<br>
+					})();<br>
+					<br>
+					</code>
+					<code style="color: green">
+					show(counter1());<br>
+					show(counter1());<br>
+					show(counter1()); // since we are added the counter three times the value of a is set to 3.<br>
+					show(counter_foo());<br>
+					show(counter_foo());<br>
+					show(counter_foo()); // this is similar to the above but doesnot set the value of a to 3, but returns undefined.<br>
+					show(counter_bar());<br>
+					show(counter_bar());<br>
+					show(counter_bar()); // Neither this works which will always set the value to 1<br>
+					show(counter_closure());<br>
+					show(counter_closure());<br>
+					show(counter_closure()); // Now this is called closures implementation in Js<br>
+				</code>
+						<br><br>
+						Function Closures in Javascript is all about how are the variables being treated and
+						referred to in the local or global scope. In Js variables can be given :
+						<code>'local scope'</code>
+						<code>'global scope'</code>
+						There is no inbuilt concept for something called private variables, so when there is
+						a requirement for such a scenario Closures are written in Js in order to make scope
+						for variables that are private in scope.
+						Observing the functions 'counter1()', 'counter_foo()' and 'counter_bar()' there is a
+						similarity that can be observed, Basically we can understand that closures are nothing
+						but self invoking functions in Js. Observe the example 'counter_closure()' where in we
+						are calling the function thrice and hoping to increment the functional value each time
+						when we call the function. So this self invoking function runs only once but it increments
+						the value each time it is called. The scope of the variable is protected by the anonymous
+						return function making us assume that this can be called implementation of private
+						variables in Js.
+					</p>
+					<br>
+					<b>Callbacks :</b>
+					<p>
+						A callback function is a function that is passed to another function as a parameter and giving
+						the provision for the function to “call us back” later. Since the callback function is just a normal
+						function when it is executed, we can pass parameters to it. We can pass any of the containing function’s
+						properties (or global properties) as parameters to the callback function. Let us look at an example :
+						<br><br>
+						<code style="color: #3f3f3f">
+						function manipulate(foo, bar) {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;console.log("Do you know that " + foo + " is better than " + bar);<br>
+						}<br>
 
-							function useIt(boo, callback) {<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;var t1 = boo.slice(1,5);<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;var t2 = boo.slice(31,36);<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;callback(t2, t1);<br>
-							}<br>
-							</code>
-							The above code can be used like this :
-							<br>
-							<code style="color: green">
-								var str = "Akhil is going to wrestle with hector";<br>
-								useIt(str, manipulate); // Gives : Do you know that Akhil is better than hector.
-							</code>
-							<br>
-							So that is how we can implement Currying, Closures and Callbacks in Javascript.
-						</p>
-						<p>
-							Thats it folks, <br>
-							<code>Happy Hacking !!</code>
-						</p>
-							<center><img width="300px" height="100px" src="../img/sign.jpg"></center>
-					</div>
-					<div class="other-posts">
-						<a href="../index.html" class="prev">
-							← Go to blog
-						</a>
-						<a href="#" class="next pull-right">
-							Next Article→
-						</a>
-					</div>
+						function useIt(boo, callback) {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;var t1 = boo.slice(1,5);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;var t2 = boo.slice(31,36);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;callback(t2, t1);<br>
+						}<br>
+						</code>
+						The above code can be used like this :
+						<br>
+						<code style="color: green">
+							var str = "Akhil is going to wrestle with hector";<br>
+							useIt(str, manipulate); // Gives : Do you know that Akhil is better than hector.
+						</code>
+						<br>
+						So that is how we can implement Currying, Closures and Callbacks in Javascript.
+					</p>
+					<p>
+						Thats it folks, <br>
+						<code>Happy Hacking !!</code>
+					</p>
+
 				</div>
-			</div>
-		</div>
-	</div>
+            </div>
+        </div>
+    </article>
 
+    <hr>
 
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3 ">
-				</div>
-				<div class="col-md-3 copyright">
-					Weblog of Akhil Pandey | 2016
-				</div>
-				<div class="col-md-6 menu">
-					<ul>
-						<li>
-							<a href="https://akhilhector.com/about">About</a>
-						</li>
-						<li>
-							<a href="https://github.com/AkhilHector">Code</a>
-						</li>
-						<li class="active">
-							<a href="https://akhilhector.com/blog">Blog</a>
-						</li>
-						<li>
-							<a href="https://akhilhector.com/photos">Photos</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Weblog of <code>Akhil Pandey</code> <strong>2016</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-	<script src="../js/jquery.js"></script>
-	<script src="../js/bootstrap.js"></script>
-	<script src="../js/theme.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/clean-blog.min.js"></script>
 
-</body></html>
+</body>
+
+</html>
