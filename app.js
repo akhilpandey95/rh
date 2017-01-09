@@ -30,12 +30,38 @@ module.exports.unleash = function() {
     });
 
     router.get('/blog', function(req, res) {
-        res.sendFile(__dirname + '/templates/blogpages/0.html');
+        res.redirect('/blog/page/0')
     });
 
     router.get('/blog/page/:pageno', function (req, res) {
         var pagenum = req.params.pageno
         res.sendFile(__dirname + '/templates/blogpages/' + pagenum + '.html')
+    });
+
+    router.get('/blog/page/blogposts/:blogname', function (req, res) {
+        var blogpostName = req.params.blogname
+        res.sendFile(__dirname + '/templates/blogpages/blogposts/' + blogpostName)
+    });
+
+    router.get('/blog/page/blogposts/:assetdir/:assetName', function (req, res) {
+        var dir = req.params.assetdir
+        var assetName = req.params.assetName
+        var img
+        res.sendFile(__dirname + '/assets/' + dir + '/' + assetName)
+        console.log(req.url)
+    });
+
+    router.get('/blog/page/:assetdir/:assetName', function (req, res) {
+        var dir = req.params.assetdir
+        var assetName = req.params.assetName
+        var img
+        res.sendFile(__dirname + '/assets/' + dir + '/' + assetName)
+        console.log(req.url)
+    });
+
+    router.get('/img/:imgName', function (req, res) {
+        var imgName = req.params.imgName
+        res.sendFile(__dirname + '/assets/img/' + imgName)
         console.log(req.url)
     });
 

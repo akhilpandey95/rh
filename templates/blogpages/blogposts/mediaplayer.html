@@ -52,7 +52,7 @@
         </div>
     </nav>
 
-    <header class="intro-header" style="background-image: url('../img/week16bp1.jpg')">
+    <header class="intro-header" style="background-color: black;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -88,28 +88,30 @@
 						<b>Using <code>ngAudio</code></b>
 						<br>
 						<br>
-						<code style="color:black;">
-						angular.module('steam', [ 'ngAudio' ])<br>
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+    angular.module('steam', [ 'ngAudio' ])<br>
 
-							.value("songRemember",{})<br>
-							.controller('sTeamaudioResource', function($scope, ngAudio) {<br>
-							$scope.audios = [<br>
-							ngAudio.load('audio/test.mp3'),<br>
-							]<br>
-						})<br>
+        .value("songRemember",{})<br>
+        .controller('sTeamaudioResource', function($scope, ngAudio) {<br>
+        $scope.audios = [<br>
+        ngAudio.load('audio/test.mp3'),<br>
+        ]<br>
+    })<br>
 
-						.controller('sTeamaudioPlayer', ['$scope', 'ngAudio', 'songRemember', function($scope, ngAudio, <br>songRemember) {<br>
-						var url = 'test.mp3';<br>
+    .controller('sTeamaudioPlayer', ['$scope', 'ngAudio', 'songRemember', function($scope, ngAudio, <br>songRemember) {<br>
+    var url = 'test.mp3';<br>
 
-						if (songRemember[url]) {<br>
-						$scope.audio = songRemember[url];<br>
-					} else {<br>
-					$scope.audio = ngAudio.load(url);<br>
-					$scope.audio.volume = 0.8;<br>
-					songRemember[url] = $scope.audio;<br>
-				}<br>
-			}]);<br>
-						</code>
+    if (songRemember[url]) {<br>
+    $scope.audio = songRemember[url];<br>
+} else {<br>
+$scope.audio = ngAudio.load(url);<br>
+$scope.audio.volume = 0.8;<br>
+songRemember[url] = $scope.audio;<br>
+}<br>
+}]);
+</code>
+</pre>
 						<br>
 						<ul>
 							<li>First create a controller for storing the resources.Store the items in an array or an object. Note the point storing the images in an <code>Array</code> or an <code>Object</code> depends on your use case, but make sure that you are calling the resources correctly.</li>
@@ -124,38 +126,40 @@
 						<b>Using <code>ngVideo</code></b>
 						<br>
 						<br>
-						<code style="color: black;">
-							angular.module('steam', [ 'ngVideo' ])<br>
+<pre style="background-color: #666; border-radius: 10px;">
+<code style="color: white;" class="shell">
+angular.module('steam', [ 'ngVideo' ])<br>
 
-							.controller('sTeamvideoPlayer', ['$scope', '$timeout', 'video', function($scope, $timeout, video) {<br>
-								$scope.interface = {};<br>
-								$scope.playlistopen = false;<br>
-								$scope.videos = {<br>
-									test1: "test1.mp4",<br>
-									test2: "test2.mp4"<br>
-								};<br>
+.controller('sTeamvideoPlayer', ['$scope', '$timeout', 'video', function($scope, $timeout, video) {<br>
+    $scope.interface = {};<br>
+    $scope.playlistopen = false;<br>
+    $scope.videos = {<br>
+        test1: "test1.mp4",<br>
+        test2: "test2.mp4"<br>
+    };<br>
 
-								$scope.$on('$videoReady', function videoReady() {<br>
-									$scope.interface.options.setAutoplay(true);<br>
-								});<br>
+    $scope.$on('$videoReady', function videoReady() {<br>
+        $scope.interface.options.setAutoplay(true);<br>
+    });<br>
 
-								$scope.playVideo = function playVideo(sourceUrl) {<br>
-									video.addSource('mp4', sourceUrl, true);<br>
-								}<br>
+    $scope.playVideo = function playVideo(sourceUrl) {<br>
+        video.addSource('mp4', sourceUrl, true);<br>
+    }<br>
 
-								$scope.getVideoName = function getVideoName(videoModel) {<br>
-									switch (videoModel.src) {<br>
-										case ($scope.videos.test1): return "test1";<br>
-										case ($scope.videos.test2): return "test2";<br>
-										default: return "Unknown Video";<br>
-									}<br>
-								}<br>
+    $scope.getVideoName = function getVideoName(videoModel) {<br>
+        switch (videoModel.src) {<br>
+            case ($scope.videos.test1): return "test1";<br>
+            case ($scope.videos.test2): return "test2";<br>
+            default: return "Unknown Video";<br>
+        }<br>
+    }<br>
 
-								video.addSource('mp4', $scope.videos.test1);<br>
-								video.addSource('mp4', $scope.videos.test2);<br>
+    video.addSource('mp4', $scope.videos.test1);<br>
+    video.addSource('mp4', $scope.videos.test2);<br>
 
-							}]);<br>
-						</code>
+}]);<br>
+</code>
+</pre>
 						<ul>
 							<li>Developing the video player is quite the same as developing the audio player but this involves some extra configurations that are ought to be considered. Things like autoplay, giving the scope for playing the video on full screen etc. If keenly looked these are just additional configuration which you are trying to add in order to make your video player more efficient.</li>
 							<li>Firstly we must have the <code>$on($videoReady)</code> event written in order to autoplay the list of videos in the default playlist</li>
