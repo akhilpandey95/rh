@@ -18,48 +18,49 @@
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     	<link rel="stylesheet" type="text/css" href="css/fonts1.css">
     	<link rel="stylesheet" type="text/css" href="css/fonts2.css">
+        <link rel="stylesheet" type="text/css" href="css/blog.css">
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color: #f2f2f2;">
         <div class="container-fluid">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/" style="color: #fff">Home</a>
+                <a class="navbar-brand" href="/" style="color: #000">Home</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/about" style="color: #fff;">About</a>
+                        <a href="/about" style="color: #000;">About</a>
                     </li>
                     <li>
-                        <a href="/blog" style="color: #fff; text-decoration: underline;">Blog</a>
+                        <a href="/blog" style="color: #000; text-decoration: underline;">Blog</a>
                     </li>
                     <li>
-                        <a href="/rhetorics" style="color: #fff;">Rhetorics</a>
+                        <a href="/rhetorics" style="color: #000;">Rhetorics</a>
                     </li>
                     <li>
-                        <a href="/snaps" style="color: #fff;">Snaps</a>
+                        <a href="/snaps" style="color: #000;">Snaps</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="intro-header" style="background-color: black;">
+    <header class="intro-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Tuning the GNU/Linux System</h1>
-                        <h2 class="subheading">Increasing the battery life for Linux based distros</h2>
-                        <span class="meta">By <a href="/about">Akhil Pandey</a> on September 12, 2016</span>
+                        <h1 style="color: black;">Tuning the <br /> GNU/Linux System</h1>
+                        <h2 style="color: black;">Increasing the battery life for Linux based distros</h2>
+                        <span style="color: #8f8f8f;" class="meta">By <a style="color: black;" href="/about">Akhil Pandey</a> on September 12, 2016</span>
                     </div>
                 </div>
             </div>
@@ -71,8 +72,8 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <p>
-                        I always used to find myself in a difficult situation when i had to travel
-                        and work. The main reason for this is my machine had a <code>GNU/Linux</code>
+                        <span class="starting-letter">I</span> always used to find myself in a difficult situation when i had to travel
+                        <span class="move-right">and work. The main reason for this is my machine had a <code>GNU/Linux</code></span>
                         based distro running and i couldn't stay away from a charging spot for more than
                         two hours. I always was intrigued to explore this segment and solve this very problem
                         in order to better my travel experience.
@@ -164,35 +165,41 @@ apt-get install powertop
 
                      <b>Aspect 1 : <code>brightness</code></b>
                      <br />
-                     Although you might have the feeling that you know this thing from a long time,
-                     there are some things to ensure that you use this method the right way. So open
-                     the terminal and type :
+                     <p>
+                         Although you might have the feeling that you know this thing from a long time,
+                         there are some things to ensure that you use this method the right way. So open
+                         the terminal and type :
+                     </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 cat /sys/class/backlight/intel_backlight/brightness
 </code>
 </pre>
-                    Typing the above command gives you the brightness which your screen is currently
-                    set to, now go ahead and type:
+                    <p>
+                        Typing the above command gives you the brightness which your screen is currently
+                        set to, now go ahead and type:
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 cat /sys/class/backlight/intel_backlight/max_brightness
 </code>
 </pre>
-                    Typing the above command gives you the maximum brightness that can be set to your
-                    machine. So now the important part to be noted here is, make sure that your current
-                    brightness is set to nearly <code>8.5%</code> of your maximum brightness. Making sure
-                    that you set this to that value you can increase the battery time invariably.
-                    <br />
-                    <br />
+                    <p>
+                        Typing the above command gives you the maximum brightness that can be set to your
+                        machine. So now the important part to be noted here is, make sure that your current
+                        brightness is set to nearly <code>8.5%</code> of your maximum brightness. Making sure
+                        that you set this to that value you can increase the battery time invariably.
+                    </p>
 
                     <b>Aspect 2: <code>Events & Services</code></b>
                     <br />
-                    The next important part of the process is using the services which system wants and
-                    removing the things which are not necessary. So things like <code>bluetooth, mongodb,
-                    mysql, rethinkdb, etc....</code> could be disabled. Note that the idea here is not about
-                    disabling a specific service or distinguishing them, although it is basically about stopping
-                    all the unwanted services. Turn them off by typing
+                    <p>
+                        The next important part of the process is using the services which system wants and
+                        removing the things which are not necessary. So things like <code>bluetooth, mongodb,
+                        mysql, rethinkdb, etc....</code> could be disabled. Note that the idea here is not about
+                        disabling a specific service or distinguishing them, although it is basically about stopping
+                        all the unwanted services. Turn them off by typing
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Arch linus
@@ -203,27 +210,31 @@ systemctl stop service_name
 service service_name stop
 </code>
 </pre>
-                    Make sure that cursor blink mode is disabled, since this event is responsible for
-                    consuming a significant amount of power. Type the following command :
+                    <p>
+                        Make sure that cursor blink mode is disabled, since this event is responsible for
+                        consuming a significant amount of power. Type the following command :
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Any distro doesn't matter
 gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_blink_mode off
 </code>
 </pre>
-                    The above command <code>gconftool-2</code> is basically a configuration tool for
-                    changing the default values in a system. All the preferences are basically key:value
-                    pairs. Typing the above command makes sure that cursor blinking mod is turned off.
-                    <br />
-                    <br />
+                    <p>
+                        The above command <code>gconftool-2</code> is basically a configuration tool for
+                        changing the default values in a system. All the preferences are basically key:value
+                        pairs. Typing the above command makes sure that cursor blinking mod is turned off.
+                    </p>
 
                     <b>Aspect 3 : <code>Screensaver and display manager</code></b>
                     <br />
-                    Assuming that you are using <code>Xorg</code>, there are couple of things
-                    which you might want to know so that there is a clear understanding of
-                    system's power consumption policy when it goes down for a <b>suspend or screen
-                    blank</b>. Before you get started on this aspect, please have a look at the man
-                    page for <code>xset</code>. Now let's go through what all should be done;
+                    <p>
+                        Assuming that you are using <code>Xorg</code>, there are couple of things
+                        which you might want to know so that there is a clear understanding of
+                        system's power consumption policy when it goes down for a <b>suspend or screen
+                        blank</b>. Before you get started on this aspect, please have a look at the man
+                        page for <code>xset</code>. Now let's go through what all should be done;
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # first check your config by typing
@@ -238,11 +249,13 @@ xset s noexpose
 </code>
 </pre>
 
-                    Now that you have disabled screen saver and power blanking, the next step
-                    is regarding <code>DPMS</code>. If you want to know regarding DPMS
-                    <a href="https://www.x.org/releases/X11R7.7/doc/xextproto/dpms.html"
-                    target="_blank">click here</a>. So disable/enable DPMS depending upon your
-                    need.
+                    <p>
+                        Now that you have disabled screen saver and power blanking, the next step
+                        is regarding <code>DPMS</code>. If you want to know regarding DPMS
+                        <a href="https://www.x.org/releases/X11R7.7/doc/xextproto/dpms.html"
+                        target="_blank">click here</a>. So disable/enable DPMS depending upon your
+                        need.
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 xset -dpms  // disables Energy star (DPMS)
@@ -254,8 +267,10 @@ xset +dpms  // enables  Energy star (DPMS)
 
                     <b>Aspect 4: <code>Wireless and Network</code></b>
                     <br />
-                    So most of the time we make sure that we are connected to the internet, thus
-                    making sure to optimize battery in this use case is a bit tough and challenging.
+                    <p>
+                        So most of the time we make sure that we are connected to the internet, thus
+                        making sure to optimize battery in this use case is a bit tough and challenging.
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # enable power saving using iwconfig
@@ -268,7 +283,9 @@ iw card_label set power_save on
 iwconfig card_label power 100m
 </code>
 </pre>
-                    There are couple of things to be kept in mind after you type those :
+                    <p>
+                        There are couple of things to be kept in mind after you type those :
+                    </p>
                     <ul>
                         <li>There are some <b>atheros</b> chips that are configured for power save
                         in the first place, so you might not observe much of a change in your
@@ -282,7 +299,9 @@ iwconfig card_label power 100m
                         <li>Even though you go through all those above mentioned gruelling scenarios
                         there is good chance that you might save upto <code>30-40 mins</code></li>
                     </ul>
-                    Next, disable or kill bluetooth if you are not using it;
+                    <p>
+                        Next, disable or kill bluetooth if you are not using it;
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Arch linux
@@ -298,11 +317,13 @@ service bluetooth stop
 
                     <b>Aspect 5: <code>Hard drive</code></b>
                     <br />
-                    It is basically the most important part of this entire process, so there are two
-                    approaches to ensure that you have power save enabled to your hard disk and you
-                    are not compromising on performance. So Linux gives you the feasibility to alter
-                    the hard drive spindown speed using the command <code>hdparm</code>. To know more
-                    about the command type <b>man hdparm</b>.
+                    <p>
+                        It is basically the most important part of this entire process, so there are two
+                        approaches to ensure that you have power save enabled to your hard disk and you
+                        are not compromising on performance. So Linux gives you the feasibility to alter
+                        the hard drive spindown speed using the command <code>hdparm</code>. To know more
+                        about the command type <b>man hdparm</b>.
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # To alter spindown timeout
@@ -315,14 +336,16 @@ hdparm -S {time} /dev/{name}
 #spindown_time = 340 # 2 hours
 </code>
 </pre>
-                    Next in queue comes a small but very good measure called <code>noatime</code>.
-                    So basically with <code>noatime</code> disabled the access times of all the
-                    directories and files in your file system are not really in your control,
-                    meaning even if you have your hard disk spindown time set, but imagine there
-                    is a read operation of a file from your cache, this essentially is registered
-                    as a normal read operation and it basically ensures that the hard disk is
-                    spinning all the time. So in order to negate this and ensure that this doesn't
-                    null the effect of <code>hdparm</code>. Do the following:
+                    <p>
+                        Next in queue comes a small but very good measure called <code>noatime</code>.
+                        So basically with <code>noatime</code> disabled the access times of all the
+                        directories and files in your file system are not really in your control,
+                        meaning even if you have your hard disk spindown time set, but imagine there
+                        is a read operation of a file from your cache, this essentially is registered
+                        as a normal read operation and it basically ensures that the hard disk is
+                        spinning all the time. So in order to negate this and ensure that this doesn't
+                        null the effect of <code>hdparm</code>. Do the following:
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Open fstab
@@ -337,11 +360,13 @@ UUID=2e0e754e-7dc2-4c21-9101-b539b8a501a8  /       ext4   errors=remount-ro 0   
 UUID=2e0e754e-7dc2-4c21-9101-b539b8a501a8  /       ext4   errors=remount-ro,<b>noatime</b> 0   1
 </code>
 </pre>
-                    Save the <code>/etc/fstab</code> and reboot your system in order to have it in
-                    effective usage. So now <code>hdparm</code> will be successfull at spinning down
-                    the hard drive when not in use. Moving ahead there is also some more things that
-                    could be done in order to ensure that an extra power saving flag is passed to the
-                    system. In order to do that;
+                    <p>
+                        Save the <code>/etc/fstab</code> and reboot your system in order to have it in
+                        effective usage. So now <code>hdparm</code> will be successfull at spinning down
+                        the hard drive when not in use. Moving ahead there is also some more things that
+                        could be done in order to ensure that an extra power saving flag is passed to the
+                        system. In order to do that;
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Change the following from max_performance to min_power
@@ -350,19 +375,23 @@ echo min_power > /sys/class/scsi_host/host1/link_power_management_policy
 echo min_power > /sys/class/scsi_host/host2/link_power_management_policy
 </code>
 </pre>
-                    Although this worked fine on some systems it is to be noted that when you are not
-                    in <b>AC</b> mode, i.e when you are using your system on battery the above commands
-                    might work just fine, but if you are facing any issues or if you feel that the Read
-                    write speeds are visibly slowed down, then alter the above three parameters by typing
-                    <code>max_performance</code> instead of <code>min_power</code>
+                    <p>
+                        Although this worked fine on some systems it is to be noted that when you are not
+                        in <b>AC</b> mode, i.e when you are using your system on battery the above commands
+                        might work just fine, but if you are facing any issues or if you feel that the Read
+                        write speeds are visibly slowed down, then alter the above three parameters by typing
+                        <code>max_performance</code> instead of <code>min_power</code>
+                    </p>
                     <br />
                     <br />
 
                     <b>Aspect 6: <code>Audio devices</code></b>
                     <br />
-                    So audio cards consume a significant amount of power when are in use, but there is no
-                    point in spending that when you are not using them. Thereby in order to ensure that the
-                    sound cards accepts a power saving mechanism just type;
+                    <p>
+                        So audio cards consume a significant amount of power when are in use, but there is no
+                        point in spending that when you are not using them. Thereby in order to ensure that the
+                        sound cards accepts a power saving mechanism just type;
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Check the parameter first using cat
@@ -377,11 +406,13 @@ echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
 
                     <b>Aspect 7: <code>Tools</code></b>
                     <br />
-                    If you are an avid Linux user you might have come across the tools called
-                    <code>powertop, tlp</code>. These are two handy tools which complete this
-                    transaction. Consider them like the last piece of the puzzle. Provided that
-                    you have downloaded them there is pretty much nothing to configure with them,
-                    they can be used right away after installation.
+                    <p>
+                        If you are an avid Linux user you might have come across the tools called
+                        <code>powertop, tlp</code>. These are two handy tools which complete this
+                        transaction. Consider them like the last piece of the puzzle. Provided that
+                        you have downloaded them there is pretty much nothing to configure with them,
+                        they can be used right away after installation.
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
 # Start tlp first
