@@ -104,9 +104,9 @@
                      </ul>
                     </p>
 
-                    <p>
-                    <b>My setup :</b>
                     <br />
+                    <b class="side-heading">My setup :</b>
+                    <p>
                     I basically use <code>Arch linux + XFCE</code> with the latest kernel;
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white;" class="shell">
@@ -163,8 +163,8 @@ apt-get install powertop
                      <br />
                      <br />
 
-                     <b>Aspect 1 : <code>brightness</code></b>
                      <br />
+                     <b class="side-heading">Aspect 1 : <code>brightness</code></b>
                      <p>
                          Although you might have the feeling that you know this thing from a long time,
                          there are some things to ensure that you use this method the right way. So open
@@ -191,8 +191,8 @@ cat /sys/class/backlight/intel_backlight/max_brightness
                         that you set this to that value you can increase the battery time invariably.
                     </p>
 
-                    <b>Aspect 2: <code>Events & Services</code></b>
                     <br />
+                    <b class="side-heading">Aspect 2: <code>Events & Services</code></b>
                     <p>
                         The next important part of the process is using the services which system wants and
                         removing the things which are not necessary. So things like <code>bluetooth, mongodb,
@@ -226,8 +226,8 @@ gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/cursor_bli
                         pairs. Typing the above command makes sure that cursor blinking mod is turned off.
                     </p>
 
-                    <b>Aspect 3 : <code>Screensaver and display manager</code></b>
                     <br />
+                    <b class="side-heading">Aspect 3 : <code>Screensaver and display manager</code></b>
                     <p>
                         Assuming that you are using <code>Xorg</code>, there are couple of things
                         which you might want to know so that there is a clear understanding of
@@ -265,8 +265,8 @@ xset +dpms  // enables  Energy star (DPMS)
                     <br />
                     <br />
 
-                    <b>Aspect 4: <code>Wireless and Network</code></b>
                     <br />
+                    <b class="side-heading">Aspect 4: <code>Wireless and Network</code></b>
                     <p>
                         So most of the time we make sure that we are connected to the internet, thus
                         making sure to optimize battery in this use case is a bit tough and challenging.
@@ -315,8 +315,8 @@ service bluetooth stop
                     <br />
                     <br />
 
-                    <b>Aspect 5: <code>Hard drive</code></b>
                     <br />
+                    <b class="side-heading">Aspect 5: <code>Hard drive</code></b>
                     <p>
                         It is basically the most important part of this entire process, so there are two
                         approaches to ensure that you have power save enabled to your hard disk and you
@@ -385,8 +385,8 @@ echo min_power > /sys/class/scsi_host/host2/link_power_management_policy
                     <br />
                     <br />
 
-                    <b>Aspect 6: <code>Audio devices</code></b>
                     <br />
+                    <b class="side-heading">Aspect 6: <code>Audio devices</code></b>
                     <p>
                         So audio cards consume a significant amount of power when are in use, but there is no
                         point in spending that when you are not using them. Thereby in order to ensure that the
@@ -404,8 +404,8 @@ echo Y > /sys/module/snd_hda_intel/parameters/power_save_controller
                     <br />
                     <br />
 
-                    <b>Aspect 7: <code>Tools</code></b>
                     <br />
+                    <b class="side-heading">Aspect 7: <code>Tools</code></b>
                     <p>
                         If you are an avid Linux user you might have come across the tools called
                         <code>powertop, tlp</code>. These are two handy tools which complete this
