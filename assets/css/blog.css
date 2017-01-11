@@ -14,14 +14,36 @@ h2 {
     font-weight: 100;
 }
 
-p, ul, li, b, code {
+p, ul, b {
     font-family:"Playfair Display", sans-serif;
     font-style: normal;
     color: #5f5f5f;
     font-weight: 400;
     letter-spacing: 0.9px;
     text-align: justify;
-    font-size: 23px;
+    font-size: 22.5px;
+    line-height: 33px;
+}
+
+li {
+    font-family:"Playfair Display", sans-serif;
+    font-style: normal;
+    color: #5f5f5f;
+    font-weight: 400;
+    letter-spacing: 0.9px;
+    text-align: justify;
+    font-size: 20px;
+    line-height: 33px;
+}
+
+code {
+    color: #c23f3f;
+    font-family:"Playfair Display", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.9px;
+    text-align: justify;
+    font-size: 20px;
     line-height: 33px;
 }
 
@@ -35,6 +57,14 @@ p, ul, li, b, code {
     color: #6f6f6f;
     font-weight: 900;
     font-size: 60px;
+}
+
+.side-heading {
+    font-family:"Playfair Display", sans-serif;
+    font-style: normal;
+    color: #6f6f6f;
+    font-weight: 900;
+    font-size: 30px;
 }
 
 .starting-sentence .move-right {
