@@ -18,6 +18,7 @@
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     	<link rel="stylesheet" type="text/css" href="css/fonts1.css">
     	<link rel="stylesheet" type="text/css" href="css/fonts2.css">
+        <link rel="stylesheet" type="text/css" href="css/blog.css">
 
 </head>
 
@@ -30,36 +31,36 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/" style="color: #fff">Home</a>
+                <a class="navbar-brand" href="/" style="color: #000">Home</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/about" style="color: #fff;">About</a>
+                        <a href="/about" style="color: #000;">About</a>
                     </li>
                     <li>
-                        <a href="/blog" style="color: #fff; text-decoration: underline;">Blog</a>
+                        <a href="/blog" style="color: #000; text-decoration: underline;">Blog</a>
                     </li>
                     <li>
-                        <a href="/rhetorics" style="color: #fff;">Rhetorics</a>
+                        <a href="/rhetorics" style="color: #000;">Rhetorics</a>
                     </li>
                     <li>
-                        <a href="/snaps" style="color: #fff;">Snaps</a>
+                        <a href="/snaps" style="color: #000;">Snaps</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="intro-header" style="background-color: black;">
+    <header class="intro-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>The three C's of Javascript</h1>
-                        <h2 class="subheading">Currying, Closures and Callbacks</h2>
-                        <span class="meta">By <a href="/about">Akhil Pandey</a> on June 28, 2016</span>
+                        <h1 style="color: black;">The three C's of Javascript</h1>
+                        <h2 style="color: black;">Currying, Closures and Callbacks</h2>
+                        <span style="color: #8f8f8f;">By <a href="/about">Akhil Pandey</a> on June 28, 2016</span>
                     </div>
                 </div>
             </div>
@@ -126,7 +127,7 @@ add(12)(13); // gives 25
 						Simply put, a closure is an inner function that has access to the outer (enclosing) function’s variables scope chain.
 						Except the parameters and variables that which are defined using <code>this</code> and <code>arguments</code>
 						all, the inner functions have access to all the parameters and variables of the function in which those are defined.
-
+                    </p>
 <pre style="background-color: #666; border-radius: 10px;">
 <code style="color: white; font-size: 16px; font-weight: 800;" class="shell">
 var a = 0;<br>
@@ -176,6 +177,7 @@ show(counter_closure());
 show(counter_closure()); // Now this is called closures implementation in Js
 </code>
 </pre>
+                    <p>
 						<br><br>
 						Function Closures in Javascript is all about how are the variables being treated and
 						referred to in the local or global scope. In Js variables can be given :
