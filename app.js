@@ -9,7 +9,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser')
 
-module.exports.unleash = function() {
+module.exports.unleash = () => {
     var port = process.env.PORT || 1337;
     var app = express();
     var router = express.Router();
@@ -21,15 +21,15 @@ module.exports.unleash = function() {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended: true}));
 
-    router.get('/', function(req, res) {
-            res.sendFile(__dirname + '/templates/index.html');
+    router.get('/', (req, res) => {
+        res.sendFile(__dirname + '/templates/index.html');
     });
 
-    router.get('/about', function(req, res) {
-            res.sendFile(__dirname + '/templates/about.html');
+    router.get('/about', (req, res) => {
+        res.sendFile(__dirname + '/templates/index.html');
     });
 
-    router.get('/blog', function(req, res) {
+    router.get('/blog', (req, res) => {
         res.redirect('/blog/page/0')
     });
 
@@ -65,12 +65,12 @@ module.exports.unleash = function() {
         console.log(req.url)
     });
 
-    router.get('/rhetorics', function(req, res) {
-    		res.sendFile(__dirname + '/templates/rhetorics.html');
+    router.get('/rhetorics', (req, res) => {
+    	res.sendFile(__dirname + '/templates/rhetorics.html');
     });
 
-    router.get('/snaps', function(req, res) {
-            res.sendFile(__dirname + '/templates/snaps.html');
+    router.get('/snaps', (req, res) => {
+        res.sendFile(__dirname + '/templates/snaps.html');
     });
 
     app.use('/', router);
