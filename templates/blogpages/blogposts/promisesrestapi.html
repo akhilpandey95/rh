@@ -18,48 +18,47 @@
         <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     	<link rel="stylesheet" type="text/css" href="css/fonts1.css">
     	<link rel="stylesheet" type="text/css" href="css/fonts2.css">
+        <link rel="stylesheet" type="text/css" href="css/blog.css">
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top" style="background-color: #f2f2f2;">
         <div class="container-fluid">
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="/" style="color: #fff">Home</a>
+                <a class="navbar-brand" href="/" style="color: #000; font-family: Times New Roman;">HOME</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="/about" style="color: #fff;">About</a>
+                        <a href="/blog" style="color: #000;">Blog</a>
+                        <hr class="small" style="border-color: orange; margin: -15px auto; max-width: 40px;">
                     </li>
                     <li>
-                        <a href="/blog" style="color: #fff; text-decoration: underline;">Blog</a>
+                        <a href="/rhetorics" style="color: #000;">Rhetorics</a>
                     </li>
                     <li>
-                        <a href="/rhetorics" style="color: #fff;">Rhetorics</a>
-                    </li>
-                    <li>
-                        <a href="/snaps" style="color: #fff;">Snaps</a>
+                        <a href="/snaps" style="color: #000;">Snaps</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="intro-header" style="background-color: black;">
+    <header class="intro-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Promises, REST API's & Angular</h1>
-                        <h2 class="subheading"> Concept and implementation of promises in angular applications</h2>
-                        <span class="meta">By <a href="/about">Akhil Pandey</a> on June 04, 2016</span>
+                        <h1 style="color: black;">Promises, REST API's & Angular</h1>
+                        <h2 style="color: black;"> Concept and implementation of promises in angular applications</h2>
+                        <span style="color: #8f8f8f;" class="meta">By <a style="color: black;" href="/about">Akhil Pandey</a> on June 04, 2016</span>
                     </div>
                 </div>
             </div>
@@ -78,7 +77,7 @@
                         <small>Source : "restfulapi.net"</small>
                     </p>
                     <br>
-                    <b>So what is a Promise ?</b>
+                    <b class="side-heading">So what is a Promise ?</b>
                     <p>
                         Generally promises are representation of a value that which might not be available to us as of now
                         but at some point eventually it will be available. Observe the below image to understand how promises
@@ -88,7 +87,7 @@
                         <img src="../img/week2gsoc2.jpg" width="650" height="400">
                     </p>
                     <br>
-                    <b>So how is this better than callbacks ?</b>
+                    <b class="side-heading">So how is this better than callbacks ?</b>
                     <p>
                         Generally if you are using callbacks in your codebase then at some point of time either for i/o's or file buffers or
                         something might come in your way and makes you write nested callbacks. Writing nested callbacks is difficult and an
@@ -97,7 +96,7 @@
                     <p>
                         <img src="../img/week2gsoc3.jpg" width="400" height="300">
                     </p>
-                    <b>REST API's, promises what are you about to explain ?</b>
+                    <b class="side-heading">REST API's, promises what are you about to explain ?</b>
                     <p>
                         Angular has this beautiful service called <code>$q</code> which is helpful for creating promises and using them in
                         your angular applications. Generally many people have concerns over <code>$q</code> but <code>$q</code> is tightly
@@ -128,7 +127,7 @@
                             <li>statusText: HTTP status text of the status code.</li>
                         </ul>
                     </p>
-                    <b>Promise Chaining</b>
+                    <b class="side-heading">Promise Chaining</b>
                     <p>
                         Chaining is one of the most important aspects of promises. Here the basic idea is that promises can be composed
                         through chaining. This means you can trigger a specified task only after previous promise has been resolved.
