@@ -106,7 +106,7 @@
 						In Javascript if one wants to partially evaluate functions then one can take advantage of a concept called function
 						currying. Currying allows us to produce a new function by combining a function and an argument. For example let us
 						consider writing an add function, :
-<pre style="background-color: #666; border-radius: 10px;">
+<pre style="background-color: #000; border-radius: 10px;">
 <code style="color: white; font-size: 16px;" class="language-javascript">
 <span class="hljs-title">function</span> add(foo, bar) {
     <span class="hljs-keyword">if</span> (arguments.length === 1) {
@@ -119,10 +119,10 @@
 </code>
 </pre>
                         </p>So for the above code,</p> <br>
-<pre style="background-color: #666; border-radius: 10px;">
+<pre style="background-color: #000; border-radius: 10px;">
 <code style="color: white; font-size: 16px;" class="language-javascript">
-add(12, 13); // gives 25
-add(12)(13); // gives 25
+<span class="hljs-keyword">add</span>(12, 13); // gives 25
+<span class="hljs-keyword">add</span>(12)(13); // gives 25
 </code>
 </pre>
                     <p>
@@ -138,7 +138,7 @@ add(12)(13); // gives 25
 						Except the parameters and variables that which are defined using <code>this</code> and <code>arguments</code>
 						all, the inner functions have access to all the parameters and variables of the function in which those are defined.
                     </p>
-<pre style="background-color: #666; border-radius: 10px;">
+<pre style="background-color: #000; border-radius: 10px;">
 <code style="color: white; font-size: 16px;" class="language-javascript">
 <span class="hljs-keyword">var</span> a = 0;
 <span class="hljs-title">function</span> counter() {
@@ -172,7 +172,7 @@ add(12)(13); // gives 25
 </code>
 </pre>
 
-<pre style="background-color: #666; border-radius: 10px;">
+<pre style="background-color: #000; border-radius: 10px;">
 <code style="color: white; font-size: 16px;" class="language-javascript">
 <span class="hljs-title">show</span>(counter1());
 <span class="hljs-title">show</span>(counter1());
@@ -214,7 +214,7 @@ add(12)(13); // gives 25
 						function when it is executed, we can pass parameters to it. We can pass any of the containing function’s
 						properties (or global properties) as parameters to the callback function. Let us look at an example :
 
-<pre style="background-color: #666; border-radius: 10px;">
+<pre style="background-color: #000; border-radius: 10px;">
 <code style="color: white; font-size: 16px;" class="language-javascript">
 <span class="hljs-title">function</span> manipulate(foo, bar) {
     <span class="hljs-keyword">console</span>.log(<span class="hljs-string">"Do you know that "</span> + foo + <span class="hljs-string">" is better than "</span> + bar);
@@ -230,10 +230,10 @@ add(12)(13); // gives 25
 						<p>
                             The above code can be used like this :
                         </p>
-<pre style="background-color: #666; border-radius: 10px;">
+<pre style="background-color: #000; border-radius: 10px;">
 <code style="color: white; font-size: 16px;" class="language-javascript">
 <span class="hljs-keyword">var</span> str = <span class="hljs-string"> "Akhil is going to wrestle with hector"</span>;
-useIt(str, manipulate); // Gives : Do you know that Akhil is better than hector.
+<span class="hljs-keyword">useIt</span>(str, manipulate); // Gives : Do you know that Akhil is better than hector.
 </code>
 </pre>
                         <p>
