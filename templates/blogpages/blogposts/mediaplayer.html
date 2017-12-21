@@ -19,6 +19,8 @@
     	<link rel="stylesheet" type="text/css" href="css/fonts1.css">
     	<link rel="stylesheet" type="text/css" href="css/fonts2.css">
         <link rel="stylesheet" type="text/css" href="css/blog.css">
+        <link rel="stylesheet" type="text/css" href="css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="css/sublime.css">
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -80,12 +82,11 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 					<p>
-					<code><a href="https://github.com/AkhilHector/sTeam-web-UI">sTeam web interface</a></code>, part of sTeam is a collaboration platform so there was the need to support media. In any collaboration platform support for basic/diverse MIME types is necessary. In angular <code>ngVideo</code> and <code>ngAudio</code> are two good packages that are helpful in building audio and video players for any angular application. So let us see how to go ahead with things while implementing media players.
+					<code><a href="https://github.com/AkhilHector/sTeam-web-UI">sTeam web interface</a></code>, part of sTeam is a collaboration platform so there was the need to support media. In any collaboration platform support for basic/diverse MIME types is necessary. In <span class="hljs-keyword">angular</span> <code>ngVideo</code> and <code>ngAudio</code> are two good packages that are helpful in building audio and video players for any <span class="hljs-keyword">angular</span> application. So let us see how to go ahead with things while implementing media players.
 					</p>
 
 					<br>
 					<b>Controllers and the template :</b>
-					<br>
 					<p>
 						<ul>
 							<li><code><a href="https://github.com/AkhilHector/sTeam-web-UI/blob/master/newUI/cmp5.html">sTeam-web-UI/newUI/audio-player</a></code> <small>// the audio controller and template</small></li>
@@ -95,30 +96,28 @@
 
 					<p>
 						<b>Using <code>ngAudio</code></b>
-						<br>
-						<br>
 <pre style="background-color: #666; border-radius: 10px;">
-<code style="color: white;" class="shell">
-    angular.module('steam', [ 'ngAudio' ])<br>
+<code style="color: white;" class="language-javascript">
+    <span class="hljs-keyword"><span class="hljs-keyword">angular</span></span>.module(<span class="hljs-string">'steam'</span>, [<span class="hljs-string">'ngAudio'</span> ])
+        .value("songRemember",{})
 
-        .value("songRemember",{})<br>
-        .controller('sTeamaudioResource', function($scope, ngAudio) {<br>
-        $scope.audios = [<br>
-        ngAudio.load('audio/test.mp3'),<br>
-        ]<br>
-    })<br>
+        .<span class="hljs-title">controller</span>('sTeamaudioResource', function(<span class="hljs-literal">$scope</span>, ngAudio) {
+            <span class="hljs-literal">$scope</span>.audios = [
+            ngAudio.load('audio/test.mp3'),
+            ]
+    })
 
-    .controller('sTeamaudioPlayer', ['$scope', 'ngAudio', 'songRemember', function($scope, ngAudio, <br>songRemember) {<br>
-    var url = 'test.mp3';<br>
+    .<span class="hljs-title">controller</span>('sTeamaudioPlayer', ['<span class="hljs-literal">$scope</span>', 'ngAudio', 'songRemember', function(<span class="hljs-literal">$scope</span>, ngAudio, songRemember) {
+        <span class="hljs-keyword">var</span> url =<span class="hljs-string">'test.mp3'</span>;
 
-    if (songRemember[url]) {<br>
-    $scope.audio = songRemember[url];<br>
-} else {<br>
-$scope.audio = ngAudio.load(url);<br>
-$scope.audio.volume = 0.8;<br>
-songRemember[url] = $scope.audio;<br>
-}<br>
-}]);
+        <span class="hljs-keyword">if</span> (songRemember[url]) {
+            <span class="hljs-literal">$scope</span>.audio = songRemember[url];
+        }<span class="hljs-keyword"> else</span> {
+            <span class="hljs-literal">$scope</span>.audio = ngAudio.load(url);
+            <span class="hljs-literal">$scope</span>.audio.volume = 0.8;
+            songRemember[url] = <span class="hljs-literal">$scope</span>.audio;
+        }
+    }]);
 </code>
 </pre>
 						<br>
@@ -127,7 +126,9 @@ songRemember[url] = $scope.audio;<br>
 							<li>Now create another controller which handles the control of the audio player.This controller should be responsible for handling the URI's of the media.</li>
 							<li>In the second controller which we create we must add some config to give support to controls in the front end, things like progress of the media, volume, name of the media etc. These are essentially important for the front end. So each resource loaded to the audio player must have all the above listed controls and information.</li>
 						</ul>
-						Below is the screenshot of the audio player
+						<p>
+                            Below is the screenshot of the audio player
+                        </p>
 						<img src="../img/week7gsoc2.jpg" width="800" height="400">
 					</p>
 
@@ -136,37 +137,37 @@ songRemember[url] = $scope.audio;<br>
 						<br>
 						<br>
 <pre style="background-color: #666; border-radius: 10px;">
-<code style="color: white;" class="shell">
-angular.module('steam', [ 'ngVideo' ])<br>
+<code style="color: white;" class="language-javascript">
+<span class="hljs-keyword">angular</span>.module('steam', [ 'ngVideo' ])
 
-.controller('sTeamvideoPlayer', ['$scope', '$timeout', 'video', function($scope, $timeout, video) {<br>
-    $scope.interface = {};<br>
-    $scope.playlistopen = false;<br>
-    $scope.videos = {<br>
-        test1: "test1.mp4",<br>
-        test2: "test2.mp4"<br>
-    };<br>
+<span class="hljs-title">.controller</span>('sTeamvideoPlayer', ['<span class="hljs-literal">$scope</span>', '$timeout', 'video', function(<span class="hljs-literal">$scope</span>, $timeout, video) {
+    <span class="hljs-literal">$scope</span>.interface = {};
+    <span class="hljs-literal">$scope</span>.playlistopen = false;
+    <span class="hljs-literal">$scope</span>.videos = {
+        test1: "test1.mp4",
+        test2: "test2.mp4"
+    };
 
-    $scope.$on('$videoReady', function videoReady() {<br>
-        $scope.interface.options.setAutoplay(true);<br>
-    });<br>
+    <span class="hljs-literal">$scope</span>.$on('$videoReady', function videoReady() {
+        <span class="hljs-literal">$scope</span>.interface.options.setAutoplay(true);
+    });
 
-    $scope.playVideo = function playVideo(sourceUrl) {<br>
-        video.addSource('mp4', sourceUrl, true);<br>
-    }<br>
+    <span class="hljs-literal">$scope</span>.playVideo = function playVideo(sourceUrl) {
+        video.addSource('mp4', sourceUrl, true);
+    }
 
-    $scope.getVideoName = function getVideoName(videoModel) {<br>
-        switch (videoModel.src) {<br>
-            case ($scope.videos.test1): return "test1";<br>
-            case ($scope.videos.test2): return "test2";<br>
-            default: return "Unknown Video";<br>
-        }<br>
-    }<br>
+    <span class="hljs-literal">$scope</span>.getVideoName = function getVideoName(videoModel) {
+        <span class="hljs-keyword">switch</span> (videoModel.src) {
+            <span class="hljs-keyword">case</span> (<span class="hljs-literal">$scope</span>.videos.test1): return "test1";
+            <span class="hljs-keyword">case</span> (<span class="hljs-literal">$scope</span>.videos.test2): return "test2";
+            default: return "Unknown Video";
+        }
+    }
 
-    video.addSource('mp4', $scope.videos.test1);<br>
-    video.addSource('mp4', $scope.videos.test2);<br>
+    video.addSource('mp4', <span class="hljs-literal">$scope</span>.videos.test1);
+    video.addSource('mp4', <span class="hljs-literal">$scope</span>.videos.test2);
 
-}]);<br>
+}]);
 </code>
 </pre>
 						<ul>
@@ -175,13 +176,15 @@ angular.module('steam', [ 'ngVideo' ])<br>
 							<li>Moving on, there are couple of controls which are to be given to the video player. Using the method <b>getVideoName</b> we can bind the video source to the title/name of the video.</li>
 							<li>The <code>video</code> service provider must be used for adding the video Sources, and it must be noted that the <b>mp4</b> can be altered in order to play <b>mp3</b> files or video files of different format. Before using other video format, make a note of checking the list of video files supported by <code>ngVideo</code>.</li>
 						</ul>
-						Below is the screenshot of the video player
+						<p>
+                            Below is the screenshot of the video player
+                        </p>
 						<img src="../img/week7gsoc3.jpg" width="800" height="400">
 					</p>
 
 					<p>
 						Thats it folks, <br>
-						<code>Happy Hacking !!</code>
+						Happy Hacking !!
 					</p>
 
 				</div>
@@ -212,6 +215,7 @@ angular.module('steam', [ 'ngVideo' ])<br>
     </footer>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/highlight.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/clean-blog.min.js"></script>
 

@@ -19,6 +19,8 @@
     	<link rel="stylesheet" type="text/css" href="css/fonts1.css">
     	<link rel="stylesheet" type="text/css" href="css/fonts2.css">
         <link rel="stylesheet" type="text/css" href="css/blog.css">
+        <link rel="stylesheet" type="text/css" href="css/highlight.min.css">
+        <link rel="stylesheet" type="text/css" href="css/sublime.css">
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -89,7 +91,7 @@
 						</ul>
 					</p>
 					<br>
-					<b>Ok what are those ?</b>
+					<b class="side-heading">Ok what are those ?</b>
 					<p>
 						Before i start, let me tell you that in Javascript Functions are Objects. So every object in Javascript, be it
 						Number, String, Array; Every Object in javascript has a prototype object. For instance if the object is declared
@@ -99,90 +101,91 @@
 						and donot forget that <b>functions can be returned from functions</b>.
 					</p>
 					<br>
-					<b>Currying :</b>
+					<b class="side-heading">Currying :</b>
 					<p>
 						In Javascript if one wants to partially evaluate functions then one can take advantage of a concept called function
 						currying. Currying allows us to produce a new function by combining a function and an argument. For example let us
 						consider writing an add function, :
 <pre style="background-color: #666; border-radius: 10px;">
-<code style="color: white; font-size: 16px; font-weight: 800;" class="shell">
-function add(foo, bar) { <br>
-    if(arguments.length === 1) { <br>
-    	return function (boo) { <br>
-    		return foo + boo; <br>
-    	} <br>
-    } <br>
-    return foo + bar; <br>
+<code style="color: white; font-size: 16px;" class="language-javascript">
+<span class="hljs-title">function</span> add(foo, bar) {
+    <span class="hljs-keyword">if</span> (arguments.length === 1) {
+    	<span class="hljs-keyword">return</span> function (boo) {
+    		<span class="hljs-keyword">return</span> foo + boo;
+    	}
+    }
+    <span class="hljs-keyword">return</span> foo + bar;
 }
 </code>
 </pre>
-						So for the above code, <br>
+                        </p>So for the above code,</p> <br>
 <pre style="background-color: #666; border-radius: 10px;">
-<code style="color: white; font-size: 16px; font-weight: 800;" class="shell">
+<code style="color: white; font-size: 16px;" class="language-javascript">
 add(12, 13); // gives 25
 add(12)(13); // gives 25
 </code>
 </pre>
-
+                    <p>
 						The curry method works by creating a closure that holds that original function and
 						the arguments to curry. It returns a function that, when invoked, returns the result of
 						calling that original function, passing it all of the arguments from the invocation of
-						curry and the current invocation
+						curry and the current invocation.</p>
 					</p>
 					<br>
-					<b>Closures :</b>
+					<b class="side-heading">Closures :</b>
 					<p>
 						Simply put, a closure is an inner function that has access to the outer (enclosing) function’s variables scope chain.
 						Except the parameters and variables that which are defined using <code>this</code> and <code>arguments</code>
 						all, the inner functions have access to all the parameters and variables of the function in which those are defined.
                     </p>
 <pre style="background-color: #666; border-radius: 10px;">
-<code style="color: white; font-size: 16px; font-weight: 800;" class="shell">
-var a = 0;<br>
-function counter() {<br>
-    var i = 2;<br>
-    return i*i;<br>
-}<br>
-
-function counter1() {<br>
-    return a+= 1;<br>
-}<br>
-
-// this wont work as part of Js closures<br>
-function counter_foo() {<br>
-    var a = 0;<br>
-    a += 1;<br>
-}<br>
-// this also wont work as part of Js closures<br>
-function counter_bar() {<br>
-    var c = 0;<br>
-    function go() { c+= 1;}<br>
-    go();<br>
-    return counter;<br>
+<code style="color: white; font-size: 16px;" class="language-javascript">
+<span class="hljs-keyword">var</span> a = 0;
+<span class="hljs-title">function</span> counter() {
+    <span class="hljs-keyword">var</span> i = 2;
+    <span class="hljs-keyword">return</span> i*i;
 }
-<br>
-// this will work as part of Js closures<br>
-var counter_closure = (function () {<br>
-    var incr;<br>
-    return function() {return incr+= 1;}<br>
-})();<br>
+
+<span class="hljs-title">function</span> counter1() {
+    <span class="hljs-keyword">return</span> a+= 1;
+}
+
+// this wont work as part of Js closures
+<span class="hljs-title">function</span> counter_foo() {
+    <span class="hljs-keyword">var</span> a = 0;
+    a += 1;
+}
+
+// this also wont work as part of Js closures
+<span class="hljs-title">function</span> counter_bar() {
+    <span class="hljs-keyword">var</span> c = 0;
+    <span class="hljs-title">function</span> go() { c+= 1;}
+    go();
+    <span class="hljs-keyword">return</span> counter;
+}
+
+// this will work as part of Js closures
+<span class="hljs-keyword">var</span> counter_closure = (<span class="hljs-title">function</span> () {
+    <span class="hljs-keyword">var</span> incr;
+    <span class="hljs-keyword">return</span> <span class="hljs-title">function</span>() {return incr+= 1;}
+})();
 </code>
 </pre>
 
 <pre style="background-color: #666; border-radius: 10px;">
-<code style="color: white; font-size: 16px; font-weight: 800;" class="shell">
-show(counter1());
-show(counter1());
-show(counter1()); // since we are added the counter three times the value of a is set to 3.
-show(counter_foo());
-show(counter_foo());
-show(counter_foo()); // this is similar to the above but doesnot set the value of a to 3, but returns undefined.
-show(counter_bar());
-show(counter_bar());
-show(counter_bar()); // Neither this works which will always set the value to 1
-show(counter_closure());
-show(counter_closure());
-show(counter_closure()); // Now this is called closures implementation in Js
+<code style="color: white; font-size: 16px;" class="language-javascript">
+<span class="hljs-title">show</span>(counter1());
+<span class="hljs-title">show</span>(counter1());
+<span class="hljs-title">show</span>(counter1()); // since we are added the counter three times the value of a is set to 3.
+<span class="hljs-title">show</span>(counter_foo());
+<span class="hljs-title">show</span>(counter_foo());
+<span class="hljs-title">show</span>(counter_foo()); //similar to the above but doesnot set the value of a to 3, but returns undefined.
+<span class="hljs-title">show</span>(counter_bar());
+<span class="hljs-title">show</span>(counter_bar());
+<span class="hljs-title">show</span>(counter_bar()); // Neither this works which will always set the value to 1
+<span class="hljs-title">show</span>(counter_closure());
+<span class="hljs-title">show</span>(counter_closure());
+<span class="hljs-title">show</span>(counter_closure()); // Now this is called closures implementation in Js
 </code>
 </pre>
                     <p>
@@ -204,7 +207,7 @@ show(counter_closure()); // Now this is called closures implementation in Js
 						variables in Js.
 					</p>
 					<br>
-					<b>Callbacks :</b>
+					<b class="side-heading">Callbacks :</b>
 					<p>
 						A callback function is a function that is passed to another function as a parameter and giving
 						the provision for the function to “call us back” later. Since the callback function is just a normal
@@ -212,32 +215,34 @@ show(counter_closure()); // Now this is called closures implementation in Js
 						properties (or global properties) as parameters to the callback function. Let us look at an example :
 
 <pre style="background-color: #666; border-radius: 10px;">
-<code style="color: white; font-size: 16px; font-weight: 800;" class="shell">
-function manipulate(foo, bar) {<br>
-    console.log("Do you know that " + foo + " is better than " + bar);<br>
-}<br>
+<code style="color: white; font-size: 16px;" class="language-javascript">
+<span class="hljs-title">function</span> manipulate(foo, bar) {
+    <span class="hljs-keyword">console</span>.log(<span class="hljs-string">"Do you know that "</span> + foo + <span class="hljs-string">" is better than "</span> + bar);
+}
 
-function useIt(boo, callback) {<br>
-var t1 = boo.slice(1,5);<br>
-var t2 = boo.slice(31,36);<br>
-callback(t2, t1);<br>
-}<br>
+<span class="hljs-title">function</span> useIt(boo, callback) {
+    <span class="hljs-keyword">var</span> t1 = boo.slice(1,5);
+    <span class="hljs-keyword">var</span> t2 = boo.slice(31,36);
+    callback(t2, t1);
+}
 </code>
 </pre>
-						The above code can be used like this :
-						<br>
+						<p>
+                            The above code can be used like this :
+                        </p>
 <pre style="background-color: #666; border-radius: 10px;">
-<code style="color: white; font-size: 16px; font-weight: 800;" class="shell">
-var str = "Akhil is going to wrestle with hector";<br>
+<code style="color: white; font-size: 16px;" class="language-javascript">
+<span class="hljs-keyword">var</span> str = <span class="hljs-string"> "Akhil is going to wrestle with hector"</span>;
 useIt(str, manipulate); // Gives : Do you know that Akhil is better than hector.
 </code>
 </pre>
-						<br>
-						So that is how we can implement Currying, Closures and Callbacks in Javascript.
+                        <p>
+                            So that is how we can implement Currying, Closures and Callbacks in Javascript.
+                        </p>
 					</p>
 					<p>
 						Thats it folks, <br>
-						<code>Happy Hacking !!</code>
+						Happy Hacking !!
 					</p>
 
 				</div>
@@ -268,6 +273,7 @@ useIt(str, manipulate); // Gives : Do you know that Akhil is better than hector.
     </footer>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/highlight.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/clean-blog.min.js"></script>
 

@@ -36,18 +36,6 @@ li {
     line-height: 33px;
 }
 
-code {
-    color: #c23f3f;
-    background-color: transparent;
-    font-family:"Playfair Display", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    letter-spacing: 0.9px;
-    text-align: justify;
-    font-size: 14px;
-    line-height: 33px;
-}
-
 .intro-header, .post-heading {
     padding-bottom: 10px !important;
 }
