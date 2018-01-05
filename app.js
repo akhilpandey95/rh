@@ -13,7 +13,6 @@ module.exports.unleash = () => {
     var port = process.env.PORT || 1337;
     var app = express();
     var router = express.Router();
-    var errorPage = fs.readFileSync("404.html", "UTF-8");
 
     app.use(express.static('assets'));
     app.set('title', "home | akhil");
