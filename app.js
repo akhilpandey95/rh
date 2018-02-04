@@ -68,6 +68,10 @@ module.exports.unleash = () => {
     	res.sendFile(__dirname + '/templates/rhetorics.html');
     });
 
+    router.get('/projects', (req, res) => {
+    	res.sendFile(__dirname + '/templates/projects.html');
+    });
+
     router.get('/snaps', (req, res) => {
         res.sendFile(__dirname + '/templates/snaps.html');
     });
