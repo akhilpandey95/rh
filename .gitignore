@@ -9,6 +9,7 @@ templates/blogpages/test.html
 templates/blogpages/blogposts/test.html
 
 #logs
+package-lock.json
 *.log
 
 #dependencies
