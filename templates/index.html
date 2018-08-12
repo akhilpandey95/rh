@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/clean-blog.min.css">
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/fonts1.css">
     <link rel="stylesheet" type="text/css" href="css/fonts2.css">
     <script>
@@ -27,6 +28,30 @@
     ga('send', 'pageview');
 
     </script>
+
+    <style>
+    .footer {
+        height: 50px;
+        margin-top: -50px;
+    }
+
+    .square {
+      position: relative;
+      width: 50%;
+    }
+
+    .square:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+
+    .content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    </style>
 
 </head>
 
@@ -68,36 +93,59 @@
                     <div class="site-heading" style="color: #000;">
                         <h1 style=" font-family: 'Ultra', serif; font-weight: 400; font-size: 65px;"><span style="font-family: Roboto;">me:// </span>akhil pandey</h1>
                         <br>
-                        <span class="subheading">Ola ! I am Akhil Pandey, Research student at <a href="http://data.niu.edu" target="_blank">D.A.T.A Lab</a>, NIU. I mostly work on statistical learning, natural language processing, neural networks and unsupervized learning. I am also an Open Source Enthusiast, Scribbler. I represent <code>mozilla</code> and <code>webcompat</code> communities. I enjoy capturing random objects, candid moments and vivid terrains.
+                        <br>
+                        <center>
+                          <img src="img/dp.jpeg" class="img-circle img-responsive" alt="me" width="250" height="200">
+                        </center>
+                        <br>
+                        <span class="subheading">I am Akhil Pandey, Research assistant at <a href="http://data.niu.edu" target="_blank">D.A.T.A Lab</a>, NIU.
+                        I mostly work on statistical learning, natural language processing, neural networks and unsupervized learning. I am also an Open Source
+                        Enthusiast, Scribbler. I represent <code>mozilla</code> and <code>webcompat</code> communities. I enjoy capturing random objects, candid
+                        moments and vivid terrains.
                         You can mail me at <code>"akhilpandey95@icloud.com"</code></span>
                         <br />
                         <span class="subheading">I was a speaker at FOSSASIA 2016, Singapore. Google Summer of Code 2016 Student and Github Student Developer</span>
                     </div>
                 </div>
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <center>
-                        <ul style="list-style: none; margin-left: -730px auto; margin-top: -50px;">
-                            <li>
-                                <span style=" font-family: 'Ultra', serif; font-weight: 400; font-size: 26px;"><img src="img/thumbs/1.png" height="auto"/>&nbsp;&nbsp;&nbsp;- <span style="font-family: Roboto;">keybase.io/</span><span style="color: orange;">akhilhector</span></span>
-                            </li>
-                            <br />
-                            <li>
-                                <span style=" font-family: 'Ultra', serif; font-weight: 400; font-size: 26px; margin-left: 35px;"><img src="img/thumbs/2.png" width="60" height="50 auto;"/>-  <span style="font-family: Roboto;">github.com/</span><span style="color:orange;">akhilpandey95</span></span>
-                            </li>
-                            <br />
-                            <li>
-                                <span style=" font-family: 'Ultra', serif; font-weight: 400; font-size: 26px; margin-left: 15px;"><img src="img/thumbs/4.png" width="40" height="40 auto;" /> - <span style="font-family: Roboto;">freenode/</span><span style="color:orange;">akhilpandey95</span></span>
-                            </li>
-                        </ul>
-                    </center>
-                </div>
             </div>
         </div>
     </header>
 
-    <center style="position:absolute; bottom:0; width:100%; padding-top:15px; height:100px;">
-        <p class="copyright text-muted" style="font-size: 15px;">Weblog of <code>Akhil Pandey</code> <strong>2018</strong></p>
-    </center>
+    <footer class='footer'>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                      <li>
+                          <a target='_blank' href="https://keybase.io/akhilhector">
+                              <span class="fa-stack fa-lg">
+                                  <i class="fa fa-circle fa-stack-2x"></i>
+                                  <i class="fab fa-keybase fa-stack-1x fa-inverse"></i>
+                              </span>
+                          </a>
+                      </li>
+                        <li>
+                            <a target='_blank' href="https://github.com/akhilpandey95">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target='_blank' href="https://www.linkedin.com/in/akhilpandey/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Weblog of <code>Akhil Pandey</code> <strong>2018</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
