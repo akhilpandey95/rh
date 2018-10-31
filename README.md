@@ -1,4 +1,4 @@
-#### www.akhilhector.com
+#### akhilpandey95.com
 
 Ah this website is just an attempt to post what i feel apart from code experiments and misc stuff.
 
@@ -6,7 +6,3 @@ Ah this website is just an attempt to post what i feel apart from code experimen
 * Code
 * Blog Posts
 * Photographs
-
-#### Note :
-
-Essentially blog.akhilhector.com is hosted on gh-pages(Github pages).The main url is hosted elsewhere :P.
