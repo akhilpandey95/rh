@@ -1,0 +1,30 @@
+---
+author: "Akhil Pandey"
+date: 2018-07-08
+title: Morality - it's influence on thought and action
+best: true
+---
+
+I am not a philosopher but I observe the fundamental nature of things in my surroundings. Right from my childhood to this moment when I am orchestrating this article there are countless thoughts that surround my head when my inner self whispers “morality”. My thought process takes quick writhing movements wandering around searching for answers. The reason for me writing this piece is to both look for answers and portray my ethos. 
+
+#### When was your first encounter with morality ?
+The concept of morality has struck chords with my thought process the moment it was introduced to me when I was 8 or 9 years old. I stole a 100 bucks from my mom in order to buy an ice cream and candy. The consequential event was my mother explaining to me what I did was wrong and how I should never repeat it as a child or as an adult.
+
+#### What were your thoughts about it after the event ?
+The very next moment I was puzzled with infinite questions as to what constitutes as right and what constitutes as wrong. The reason for this perplexity was simple, my mind had trouble understanding why did an event that felt right to me didn’t feel right to someone else. As a child, I honestly had enough at this point and as a consequence my mind painted two broad horizons, one was the righteous end and other was the unrighteous end.
+
+#### Was there a problem with these horizons ?
+The aspect became an actual problem when I grew older and started to understand that the dynamics of how the world works are different for different sets of people. The bafflement reached its pinnacle when I got to know that the fundamental set of axioms and presuppositions are different for everyone and each one of us have different fundamental set of rights and wrongs to begin with.
+
+#### What changed then ?
+The whole dynamic about thought process and the social fabric as I perceived changed at that very instant. I started to understand that morality drives the thought process of an individual and little did I know about its significance in the actions performed by people. For me, at that very moment the concept of morality was approaching ambiguity. The concept of morality had a different definition from then on. I figured out that morality is not a collective thought process trying to dissect and figure out what is right and what is wrong instead it is a singular entity deciding what is right or wrong from them. There maybe a contrarian point made here about faith or religion as to how it provokes the concept of morality and how people not as singular entities but as a collective group decide on morals and fundamentally agree that certain things are right and certain things are wrong. It is a good proposition to make but we have to understand that a human being agrees to anything if it fits his/her moral prism. So we can have people who believe in faith not agreeing to what other people in the same faith agree. 
+
+#### What is the problem with morality then ?
+It is not a problem per say, because every one is free to purse life with a different view and have a completely diverse opinion about how things must function in order for us to be optimal. Morality as an aspect is just fascinating for me because I see how it shapes a person’s thinking in diverse contradictory ways. More than fascination it is an aspect of profound complexity because I don’t see a possibility of unwinding oneself from it because there are mysterious ways in which those ethos might seep inside you so deep that you might not even knowing that you are inhibiting certain actions because your inner core says it is not good. It is only a problem for me when I cannot unwind my psyche from thinking about certain things in a certain way because nurture and nature taught me this is moral and this is immoral. Since many of my actions are manifested by my thought process I feel morality as an obstruction rather than advancement.
+
+#### Well morality has its benefits, should it not be taught ?
+The human mind has a fantastic ability to perceive complex aspects. If we instead chisel it in a way where all that is left is a minuscular portion of then our ability to think a situation through will die down. Also, it is more costly to teach our brain what to do rather than say what not to do. ¯We must therefore enforce morality as an opt-in process rather than opt-out.
+
+#### What are your final thoughts on this ?
+I honestly am an extremely optimistic person and henceforth would bet anything on things that work. Opting out of morality worked for me and it might as well for some other people. Thoughts and actions must not be elements that are subjected through a machine that vets if it is okay or not instead they must be just elements that happen as mere serendipitous things. Human beings have the capacity to transcend the constructs of right and wrong. If we can achieve that then the firmament of our mind has only one horizon filled with opportunities not inhibitions. 
+
