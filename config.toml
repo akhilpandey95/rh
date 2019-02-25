@@ -9,9 +9,9 @@ theme               = "cocoa"
 author              = "Akhil Pandey"
 title               = "Akhil Pandey"
 pygmentsuseclasses  = true
-disqusshortname     = "cocoaexamplesite" # Comment out to disable Disqus.
+# disqusshortname     = "cocoaexamplesite" # Comment out to disable Disqus.
 pluralizelisttitles = false
-googleAnalytics     = "UA-123-45"
+googleAnalytics     = "UA-79019000-3"
 
 [permalinks]
 blog  = "blog/:slug/"
