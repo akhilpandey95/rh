@@ -11,7 +11,7 @@ title               = "Akhil Pandey"
 pygmentsuseclasses  = true
 # disqusshortname     = "cocoaexamplesite" # Comment out to disable Disqus.
 pluralizelisttitles = false
-googleAnalytics     = "UA-79019000-3"
+googleAnalytics     = "UA-135077366-1"
 
 [permalinks]
 blog  = "blog/:slug/"
