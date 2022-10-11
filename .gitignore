@@ -31,3 +31,6 @@ tramp
 .DS_Store
 .DS_Store?
 ._*
+
+# hugo build lock
+.hugo_build.lock
