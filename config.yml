@@ -29,7 +29,7 @@ menu:
       url: /blog/
 params:
   homeInfoParams:
-        Title: నమస్తే, My name is Akhil 🖖
+        Title: నమస్తే, My name is Akhil | 🥐 ☕ 🍜
         Content: I'm a Ph.D student working on addressing ways to comprehend, and estimate the Reproducibility crisis in AI, and come up with heuristics to enhance the reproducibility of published work. I am advised by [Dr. Hamed Alhoori](https://alhoori.github.io), and my research is fully funded by the [NSF grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2022443&HistoricalAwards=false).
   socialIcons:
         - name: "Github"
@@ -59,4 +59,7 @@ params:
   avatar: img/me.jpeg
   gatracker: XYZ
   initials: ad
+  ShowToc: true
+  ShowReadingTime: true
+
 
