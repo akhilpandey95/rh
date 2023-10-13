@@ -1,0 +1,62 @@
+baseurl: 'https://akhilpandey95.github.io/'
+builddrafts: false
+canonifyurls: true
+contentdir: content
+languageCode: en-US
+layoutdir: layouts
+publishdir: public
+theme: PaperMod
+author: Akhil Pandey
+title: Akhil Pandey
+pygmentsuseclasses: true
+pluralizelisttitles: false
+googleAnalytics: UA-135077366-1
+permalinks:
+  blog: 'blog/:slug/'
+menu:
+  main:
+    - name: About
+      weight: 2
+      identifier: about
+      url: /about/
+    - name: Projects
+      weight: 4
+      identifier: projects
+      url: /projects/
+    - name: Blog
+      weight: 3
+      identifier: blog
+      url: /blog/
+params:
+  homeInfoParams:
+        Title: నమస్తే, My name is Akhil 🖖
+        Content: I'm a Ph.D student working on addressing ways to comprehend, and estimate the Reproducibility crisis in AI, and come up with heuristics to enhance the reproducibility of published work. I am advised by [Dr. Hamed Alhoori](https://alhoori.github.io), and my research is fully funded by the [NSF grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2022443&HistoricalAwards=false).
+  socialIcons:
+        - name: "Github"
+          url: "https://github.com/akhilpandey95"
+        - name: "LinkedIn"
+          url: "https://www.linkedin.com/in/akhilpandey/"
+        - name: "Twitter"
+          url: "https://twitter.com/akhilpandey95"
+        - name: "Google Scholar"
+          url: "https://scholar.google.com/citations?user=gG8VifwAAAAJ&hl=en"
+        - name: "Instagram"
+          url: "https://www.instagram.com/noiretblanc_stories/"
+  include_rss: false
+  latestpostscount: 5
+  i18n_flags: false
+  author: Akhil Pandey
+  cachebuster: true
+  dateform: 'Jan 2, 2006'
+  dateformfull: 'Mon Jan 2 2006 15:04:05 MST'
+  description: Don't panic
+  email: akhilpandey95@icloud.com
+  extracssfiles:
+    - /css/override.css
+  github: 'https://github.com/akhilpandey95'
+  selfintro: ''
+  highlightjs: true
+  avatar: img/me.jpeg
+  gatracker: XYZ
+  initials: ad
+
