@@ -27,13 +27,14 @@ menu:
       identifier: blog
       url: /blog/
 params:
+  math: true
   social: true
   analytics:
     google:
       SiteVerificationTag: "UA-135077366-1"
   homeInfoParams:
     Title: నమస్తే, My name is Akhil | 🥐 ☕ 🍜
-    Content: I'm a Ph.D student working on addressing ways to comprehend, and estimate the Reproducibility crisis in AI, and come up with heuristics to enhance the reproducibility of published work. I am advised by [Dr. Hamed Alhoori](https://alhoori.github.io), and my research is fully funded by the [NSF grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2022443&HistoricalAwards=false).
+    Content: I am Research Scientist at the [Center for Science of Science and Innovation](https://www.kellogg.northwestern.edu/research/science-of-science.aspx) working for [Dashun Wang](https://www.dashunwang.com/) at the Kellogg School of Management, Northwestern University. [more...](/about)
   socialIcons:
     - name: "Github"
       url: "https://github.com/akhilpandey95"

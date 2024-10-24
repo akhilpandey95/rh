@@ -1,12 +1,14 @@
-+++
-date = "2015-08-19T20:29:37-07:00"
-draft = false
-title = "About"
+---
+title: "About"
+date: "2024-10-24"
+---
 
-+++
+{{< figure src="/img/me.JPG" width="256" align=left link="https://unsplash.com/photos/Z0lL0okYjy0" target="_blank" >}}
 
-I am Akhil Pandey, I'm a Ph.D student working on addressing the [*Reproducibility crisis in AI*](https://www.science.org/doi/full/10.1126/science.359.6377.725?casa_token=B4RgaLsweT0AAAAA%3AsuAiGo_9E7o0T0WkRQPxEQVn3-X9edRZ8OatwAxM2YEifI-S2bGXYNtTwNdRDg38zqEVTqBhLYe1SfE). I am advised by [Dr. Hamed Alhoori](https://alhoori.github.io/), and my research is fully funded by the [NSF grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2022443&HistoricalAwards=false). I mostly work on Positive Unlabeled Learning, Graph Learning, AutoML, Uncertainty Quantification, and Computational Linguistics. I have closely worked under the supervision of [Dr. Prasanna Balaprakash](https://pbalapra.github.io/) from [Argonne National Laboratory](https://www.anl.gov/) as an [ALCF summer student](https://www.alcf.anl.gov/alcf-student-opportunities), and a [Givens Associate](https://www.anl.gov/mcs/givens-associates) to solve Graph Learning Problems. I have given a workshop on using AutoML for Graph Neural Architecture Search, available at [ALCF DeepHyper Automated Machine Learning Workshop](https://deephyper.github.io/events/workshop-anl-2022-summer).
+I am Research Scientist at the [Center for Science of Science and Innovation](https://www.kellogg.northwestern.edu/research/science-of-science.aspx) working for [Dashun Wang](https://www.dashunwang.com/) at the Kellogg School of Management, Northwestern University. As a Research Scientist, I oversee the lab's overall AI efforts, data analytics, and data management. I work closely with other team members to ensure these initiatives align with the lab's goals and contribute to its broader research objectives. My research interests lie in the intersection of Large Language models, Science of Science, Representational Learning, and Uncertainty Quantification.
 
-I am an Open Source Enthusiast and in the past I had the opportunity to represent `mozilla` and `webcompat` communities. I enjoy capturing random objects, candid moments and vivid terrains. I am [peredepain](https://www.instagram.com/peredepain/) on Instagram. I'm available for email at `akhilpandey95@icloud.com` or `aakella@niu.edu`
+Previously, I was a Ph.D student advised by [Dr. Hamed Alhoori](https://alhoori.github.io/), and my dissertation fully funded by the [NSF grant](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2022443&HistoricalAwards=false). focussed on building a predictive modeling framework to investigate the [*Reproducibility crisis in AI*](https://www.science.org/doi/full/10.1126/science.359.6377.725?casa_token=B4RgaLsweT0AAAAA%3AsuAiGo_9E7o0T0WkRQPxEQVn3-X9edRZ8OatwAxM2YEifI-S2bGXYNtTwNdRDg38zqEVTqBhLYe1SfE). Previously, I was a [Givens Research Associate](https://www.anl.gov/education/givens-associates) and an [Argonne Leadership Computing Facility Graduate Student researcher](https://www.alcf.anl.gov/alcf-student-opportunities). I have given a workshop on using AutoML for Graph Neural Architecture Search, available at [ALCF DeepHyper Automated Machine Learning Workshop](https://deephyper.github.io/events/workshop-anl-2022-summer).
 
-I was a speaker at [FOSSASIA 2016, Singapore](https://www.youtube.com/watch?v=iUoCGXDjvvQ). Google Summer of Code 2016 Student.
+I am an Open Source Enthusiast and in the past I had the opportunity to represent `mozilla` and `webcompat` communities. I enjoy capturing random objects, candid moments and vivid terrains. I am [peredepain](https://www.instagram.com/peredepain/) on Instagram. I'm available for email at `akhilpandey.aakella@kellogg.northwestern.edu` (no spam please :D )
+
+In my previous life, [Mozilla Official Contributor](https://www.mozilla.org/credits/), Speaker [FOSSASIA 2016, Singapore](https://www.youtube.com/watch?v=iUoCGXDjvvQ), and Google Summer of Code Student.
