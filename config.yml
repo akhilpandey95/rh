@@ -26,6 +26,10 @@ menu:
       weight: 3
       identifier: blog
       url: /blog/
+    - name: CV
+      weight: 5
+      identifier: cv
+      url: /CV/cv.pdf
 params:
   math: true
   social: true
