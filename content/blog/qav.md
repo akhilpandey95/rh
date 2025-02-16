@@ -1,11 +1,13 @@
 ---
 author: Akhil Pandey
-title: Question as a Vector
+title: Question as a Vector[WIP]
 date: 2024-12-29
 description: Testing the empirical effectiveness of Questions as vectors
 math: true
 ShowBreadCrumbs: false
 ---
+
+> [IMPORTANT]: Actively working on the blog.
 
 > NOTE: Although the idea behind doing something similar to "Question as a vector" ruminated in my mind for quite some time, [1] definitely played a role in fueling the fire to write this idea and present some empirical evidence. So kudos to [1] and is a great read.
 
@@ -32,7 +34,6 @@ Predominantly most of my work revolves around Science of Science and this idea w
 ```python
 TBA
 ```
-
 
 ### References
 1. https://arxiv.org/pdf/2405.16714
