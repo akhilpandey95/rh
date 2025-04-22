@@ -33,6 +33,18 @@ menu:
 params:
   math: true
   social: true
+  extensions:
+    passthrough:
+      delimiters:
+        block:
+        - - \[
+          - \]
+        - - $$
+          - $$
+        inline:
+        - - \(
+          - \)
+      enable: true
   mainSections:
     - projects
   analytics:
