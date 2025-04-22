@@ -19,11 +19,11 @@ menu:
       identifier: about
       url: /about/
     - name: Projects
-      weight: 4
+      weight: 3
       identifier: projects
       url: /projects/
     - name: Blog
-      weight: 3
+      weight: 4
       identifier: blog
       url: /blog/
     - name: CV
@@ -33,6 +33,8 @@ menu:
 params:
   math: true
   social: true
+  mainSections:
+    - projects
   analytics:
     google:
       SiteVerificationTag: "UA-135077366-1"
@@ -60,7 +62,7 @@ params:
   description: Don't panic
   email: akhilpandey95@icloud.com
   extracssfiles:
-    - /css/override.css
+    - /assets/css/extended/override.css
   github: 'https://github.com/akhilpandey95'
   selfintro: ''
   highlightjs: true
@@ -69,5 +71,3 @@ params:
   initials: ad
   ShowToc: true
   ShowReadingTime: true
-
-
