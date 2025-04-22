@@ -146,4 +146,8 @@ $$
 [Akhil Pandey](https://github.com/akhilpandey95), Want to contribute see your name here :), [Open an Issue](https://github.com/akhilpandey95/LLMSciSci/issues/new) ?
 
 ### Acknowledgement
-The computing resources for this work is supported completely by the Google Cloud Research Credits Grant **331845891**.
+The computing resources for this work is supported in part by the Google Cloud Research Credits Grant **331845891**, and Lambda Labs Credits through the support program **D1: CSC-SUPPORT-CDFF-2025-3-31**.
+<figure style="text-align: center;">
+  <img src="https://lambda.ai/hubfs/lambda%20logo%202.svg" width="150" height="auto" alt="Lambda logo">
+  <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/cloud-logo.svg" width="150" height="auto" alt="GCP">
+</figure>

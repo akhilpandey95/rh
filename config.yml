@@ -30,6 +30,12 @@ menu:
       weight: 5
       identifier: cv
       url: /CV/cv.pdf
+markup:
+  goldmark:
+    parser:
+      attribute: true
+    renderer:
+      unsafe: true
 params:
   math: true
   social: true
@@ -74,7 +80,7 @@ params:
   description: Don't panic
   email: akhilpandey95@icloud.com
   extracssfiles:
-    - /assets/css/extended/override.css
+    - /assets/css/extended/override.css 
   github: 'https://github.com/akhilpandey95'
   selfintro: ''
   highlightjs: true

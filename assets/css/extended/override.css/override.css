@@ -1,0 +1,23 @@
+/* Center math blocks and allow wrapping */
+.math {
+  display: block;
+  overflow-x: auto;
+  max-width: 75%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* For inline math, make sure it doesn't break the layout */
+.math-inline {
+  max-width: 100%;
+  overflow-x: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* For cases block specifically */
+.cases {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+}
