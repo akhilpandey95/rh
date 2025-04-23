@@ -1,4 +1,10 @@
 /* Center math blocks and allow wrapping */
+.MathJax_Display {
+  display: block !important;
+  margin: 1em auto !important;   /* vertical breathing room, auto-center horizontally */
+  text-align: center !important;  /* just in case */
+}
+
 .math {
   display: block;
   overflow-x: auto;
