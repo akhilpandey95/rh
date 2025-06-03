@@ -1,6 +1,7 @@
 baseURL: 'https://akhilpandey95.github.io/'
 builddrafts: false
 canonifyurls: true
+googleAnalytics: G-PNYGCP0LEP
 contentdir: content
 languageCode: en-US
 layoutdir: layouts
@@ -86,7 +87,6 @@ params:
   selfintro: ''
   highlightjs: true
   avatar: img/me.jpeg
-  gatracker: 11300374900 
   initials: ad
   ShowToc: true
   ShowReadingTime: true
