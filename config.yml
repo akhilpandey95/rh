@@ -37,6 +37,7 @@ markup:
     renderer:
       unsafe: true
 params:
+  env: production
   math: true
   social: true
   extensions:
@@ -55,7 +56,7 @@ params:
     - projects
   analytics:
     google:
-      SiteVerificationTag: "UA-135077366-1"
+      SiteVerificationTag: "G-PNYGCP0LEP"
   homeInfoParams:
     Title: నమస్తే, My name is Akhil | 🥐 ☕ 🍜
     Content: I am Research Scientist at the [Center for Science of Science and Innovation](https://www.kellogg.northwestern.edu/research/science-of-science.aspx) working for [Dashun Wang](https://www.dashunwang.com/) at the Kellogg School of Management, Northwestern University. [more...](/about)
@@ -85,7 +86,7 @@ params:
   selfintro: ''
   highlightjs: true
   avatar: img/me.jpeg
-  gatracker: XYZ
+  gatracker: 11300374900 
   initials: ad
   ShowToc: true
   ShowReadingTime: true
