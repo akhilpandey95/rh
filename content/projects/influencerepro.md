@@ -5,6 +5,10 @@ date: 2024-07-03
 description: ICSSI'24 Best Poster Award
 math: true
 ShowBreadCrumbs: false
+cover:
+    image: "/img/AC_EA_DARK.png"
+    relative: false
+    caption: ""
 ---
 
 # IRSI

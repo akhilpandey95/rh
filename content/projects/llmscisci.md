@@ -5,6 +5,10 @@ date: 2025-04-21
 description: Experiments, and how-to guide for the lecture "Large language models for Scientometrics"
 math: true
 ShowBreadCrumbs: false
+cover:
+    image: "/img/LLMSciSci_GRPO_dataset.png"
+    relative: false
+    caption: ""
 ---
 
 ### About
@@ -13,6 +17,7 @@ ShowBreadCrumbs: false
 The capabilities of Large Language Models (**LLM's**) to process data from different modalities and excel at different tasks ranging from information extraction, question and answering, math, coding, and recently reasoning simply shows the potential of this technology. Intuitively the complexities of training these models on different datasets/data mixes, opting different architectural choices, choosing different alignment strategies **[1]** seemingly could suggest picking a specific model for each task, but **LLM's** are geared towards being considered as general task solvers.
 
 ![image](/img/SciSci.png)
+>(Credit: Davide Bonazzi) from [*Discover Magazine*](https://www.discovermagazine.com/the-sciences/the-science-of-science)
 
 ### Dataset
 ```plaintext

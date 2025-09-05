@@ -60,7 +60,7 @@ params:
       SiteVerificationTag: "G-PNYGCP0LEP"
   homeInfoParams:
     Title: నమస్తే, My name is Akhil | 🥐 ☕ 🍜
-    Content: I am Research Scientist at the [Center for Science of Science and Innovation](https://www.kellogg.northwestern.edu/research/science-of-science.aspx) working for [Dashun Wang](https://www.dashunwang.com/) at the Kellogg School of Management, Northwestern University. [more...](/about)
+    Content: I am an Applied Research Scientist at the AllSci Corp working on AI4Science objectives. My research interests lie in the intersection of [more...](/about)
   socialIcons:
     - name: "Github"
       url: "https://github.com/akhilpandey95"
