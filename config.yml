@@ -7,8 +7,8 @@ languageCode: en-US
 layoutdir: layouts
 publishdir: public
 theme: PaperMod
-author: Akhil Pandey
-title: Akhil Pandey
+author: Akhil Pandey Akella
+title: Akhil Pandey Akella
 pygmentsuseclasses: true
 pluralizelisttitles: false
 permalinks:
@@ -23,10 +23,10 @@ menu:
       weight: 3
       identifier: projects
       url: /projects/
-    - name: Blog
+    - name: Notes
       weight: 4
-      identifier: blog
-      url: /blog/
+      identifier: notes
+      url: /notes/
     - name: CV
       weight: 5
       identifier: cv
@@ -75,7 +75,7 @@ params:
   include_rss: false
   latestpostscount: 5
   i18n_flags: false
-  author: Akhil Pandey
+  author: Akhil Pandey Akella
   cachebuster: true
   dateform: 'Jan 2, 2006'
   dateformfull: 'Mon Jan 2 2006 15:04:05 MST'
