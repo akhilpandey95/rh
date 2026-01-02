@@ -82,3 +82,14 @@ Most crucial emerging pattern i observe here is, *deep-research* being less abou
 6. https://arxiv.org/abs/2511.02824
 7. https://ai.google.dev/gemini-api/docs/deep-research
 8. https://blog.langchain.com/deep-agents/
+
+```bibtex
+@misc{akhil2025notesdrnote1,
+  author       = {Akella, Akhil Pandey},
+  title        = {What is it about these Deep research models lately?},
+  year         = {2025},
+  month        = {November},
+  url          = {https://akhilpandey95.github.io/notes/dr_note1/},
+  note         = {Accessed: }
+}
+```
