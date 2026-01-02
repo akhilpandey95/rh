@@ -2,7 +2,7 @@
 author: Akhil Pandey
 title: What is it about these Deep research models lately ?
 date: 2025-11-24
-description: Understanding deep research agents/models/queries/tasks | Part 1 
+description: Understanding deep research agents/models/queries/tasks 
 math: true
 ShowBreadCrumbs: true
 ---
