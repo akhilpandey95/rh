@@ -74,6 +74,7 @@ Also, its worth noting that open software SDKs/platforms are quickly converging 
 Most crucial emerging pattern i observe here is, *deep-research* being less about a single model (or) chat platform offering a button with "deep-research" but a gateway into a more sophisticated *interaction pattern* (or paradigm maybe). This slowly gives us a speak into 2026 on how enterprise software is going to reign in on long runnign agentic tasks; Long-running async execution, explicit planning phases, external memory stores, spawnable sub-agents. While its hard to see if open-source/open-weight efforts like DR Tulu, Tongyi will catch up to this evolving abstraction, a relevant point here is the seamless interchangable nature of "deep research" will practically define "what is a useful LLM?" into something that can actually do research rather than just answer questions about research.
 
 ### References
+```markdown
 1. https://allenai.org/blog/dr-tulu
 2. https://tongyi-agent.github.io/blog/introducing-tongyi-deep-research/
 3. https://edisonscientific.com/articles/announcing-kosmos
@@ -82,7 +83,9 @@ Most crucial emerging pattern i observe here is, *deep-research* being less abou
 6. https://arxiv.org/abs/2511.02824
 7. https://ai.google.dev/gemini-api/docs/deep-research
 8. https://blog.langchain.com/deep-agents/
+```
 
+### Cite
 ```bibtex
 @misc{akhil2025notesdrnote1,
   author       = {Akella, Akhil Pandey},
