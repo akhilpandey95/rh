@@ -7,6 +7,8 @@ math: true
 ShowBreadCrumbs: true
 ---
 
+> Update (Feb 11, 2026): Part 2 will land on Feb 20, 2026 with the smol-RL and QDoRA experiments. Preview: [Tinker, smol-RL and QDoRA (Part 2)](../tinker_part2/).
+
 ### Reproducibility is a bedrock of scientific progress
 An underlying principle that governed my doctoral research [1] in applying
 representational learning to understand *reproducibilty*, was the idea that
