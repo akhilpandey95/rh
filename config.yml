@@ -89,4 +89,5 @@ params:
   avatar: img/me.jpeg
   initials: ad
   ShowToc: true
+  TocOpen: true
   ShowReadingTime: true
