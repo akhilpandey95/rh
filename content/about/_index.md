@@ -3,7 +3,7 @@ title: "About"
 date: "2024-10-24"
 ---
 
-{{< figure src="/img/me.JPG" width="256" align=left link="https://unsplash.com/photos/Z0lL0okYjy0" target="_blank" >}}
+{{< figure src="/img/me.JPG" width="256" align=left link="#">}}
 
 I am an Applied Research Scientist at [AllSci Corp](https://allsci.com/), where I build AI co-scientists for long-horizon scientific exploration in the life sciences. My work focuses on developing scientific reasoning systems that can decompose papers into hypotheses, research questions, and results, and combine retrieval, post-training, reinforcement learning, and evidence synthesis to support discovery. My research interests lie at the intersection of Large Language Models, Representational Learning, Science of Science, Information Theory, and Uncertainty Quantification. Previously, I was a Research Scientist at the [Center for Science of Science and Innovation](https://www.kellogg.northwestern.edu/research/science-of-science.aspx), working with [Dashun Wang](https://www.dashunwang.com/) at the Kellogg School of Management, Northwestern University.
 
